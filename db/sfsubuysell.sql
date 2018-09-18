@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 18, 2018 at 04:55 AM
+-- Generation Time: Sep 18, 2018 at 06:09 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -25,11 +25,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `ct_admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE IF NOT EXISTS `admin` (
+DROP TABLE IF EXISTS `ct_admin`;
+CREATE TABLE IF NOT EXISTS `ct_admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `realname` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `nickname` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
@@ -40,17 +40,17 @@ CREATE TABLE IF NOT EXISTS `admin` (
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `ct_admin`
 --
 
-INSERT INTO `admin` (`id`, `realname`, `nickname`, `email`, `position`, `intro`) VALUES
-(1, 'Jianfei Zhao', 'Jianfei', 'jzhao11@mail.sfsu.edu', 'Team Lead', ''),
-(2, 'Feras Alazzeh', 'Feras', 'falazzeh@mail.sfsu.edu', 'Back-end Lead', ''),
-(3, 'Lileana Wright', 'Lily', 'lwright1@mail.sfsu.edu', 'Front-end Engineer', ''),
-(4, 'Edward Baraja', 'Edward', 'ebaraja1@mail.sfsu.edu', 'Front-end Engineer', ''),
-(5, 'Tommy Lik', 'Tommy', 'tommylik1@gmail.com', 'Front-end Lead', ''),
-(6, 'Alex Li', 'Alex', 'awexli@mail.sfsu.edu', 'Front-end Engineer', ''),
-(7, 'Jiawei Xu', 'Norman', 'x1780375010@gmail.com', 'Back-end Engineer', '');
+INSERT INTO `ct_admin` (`id`, `realname`, `nickname`, `email`, `position`, `intro`) VALUES
+(1, 'Jianfei Zhao', 'jianfei', 'jzhao11@mail.sfsu.edu', 'Team Lead', ''),
+(2, 'Feras Alazzeh', 'alazzeh', 'falazzeh@mail.sfsu.edu', 'Back-end Lead', ''),
+(3, 'Lileana Wright', 'lily', 'lwright1@mail.sfsu.edu', 'Front-end Engineer', ''),
+(4, 'Edward Baraja', 'edward', 'ebaraja1@mail.sfsu.edu', 'Front-end Engineer', ''),
+(5, 'Tommy Lik', 'tom', 'tommylik1@gmail.com', 'Front-end Lead', ''),
+(6, 'Alex Li', 'alex', 'awexli@mail.sfsu.edu', 'Front-end Engineer', ''),
+(7, 'Jiawei Xu', 'jiawei', 'x1780375010@gmail.com', 'Back-end Engineer', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
