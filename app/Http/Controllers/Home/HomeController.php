@@ -9,6 +9,7 @@ use App\Models\About;
 use App\Models\Contact;
 use App\Models\Service;
 use App\Models\Partner;
+use App\Models\Admin;
 
 
 class HomeController extends Controller {
@@ -27,17 +28,22 @@ class HomeController extends Controller {
     
     
     public function index() {
-        $partner = Partner::orderby('level', 'desc')->get();
-        $news = News::orderby('id', 'desc')->limit(3)->offset(0)->get();
-        $firstnews = News::orderby('id', 'desc')->first();
-        $leftcase = Cases::orderby('id', 'desc')->limit(4)->offset(0)->get();
-        $rightcase = Cases::orderby('id', 'desc')->limit(4)->offset(4)->get();
-        $view = $this->ismobile ? 'Home/index_phone' : 'Home/index_pc';
-        return view($view, compact('news', 'firstnews', 'leftcase', 'rightcase', 'partner'));
+        $admin = Admin::orderby("id", "asc")->get();
+        return view("Home/index", compact("admin"));
+        
+//         $partner = Partner::orderby('level', 'desc')->get();
+//         $news = News::orderby('id', 'desc')->limit(3)->offset(0)->get();
+//         $firstnews = News::orderby('id', 'desc')->first();
+//         $leftcase = Cases::orderby('id', 'desc')->limit(4)->offset(0)->get();
+//         $rightcase = Cases::orderby('id', 'desc')->limit(4)->offset(4)->get();
+//         $view = $this->ismobile ? 'Home/index_phone' : 'Home/index_pc';
+//         return view($view, compact('news', 'firstnews', 'leftcase', 'rightcase', 'partner'));
     }
     
-    public function about($id) {
-        return view("Home/about".$id);
+    public function about() {
+        $id = Input::get("id");
+        $admin = Admin::where("id", $id)->first();
+        return view("Home/about_".$admin->nickname);
         
 //         $partner = Partner::orderby('level', 'desc')->get();
 //         $about = About::first();
