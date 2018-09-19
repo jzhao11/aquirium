@@ -8,22 +8,29 @@
 <meta content="" name="description">
 
 <!-- Favicons -->
-<link href="img/favicon.png" rel="icon">
-<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="<?php echo asset("public/img/favicon.png"); ?>" rel="icon">
+<link href="<?php echo asset("public/img/apple-touch-icon.png"); ?>" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
 
 <!-- Bootstrap CSS File -->
-<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<?php echo asset("public/lib/bootstrap/css/bootstrap.min.css"); ?>" rel="stylesheet">
 
 <!-- Libraries CSS Files -->
-<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="<?php echo asset("public/lib/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet">
 
 <!-- Main Stylesheet File -->
-<link href="css/style.css" rel="stylesheet">
+<link href="<?php echo asset("public/css/style.css"); ?>" rel="stylesheet">
 </head>
 
+
+<?php
+    $admin = isset($admin) ? $admin : "";
+    if (!$admin) {
+        exit();
+    }
+?>
 <body>
 <div class="container">
 	<div class="col-lg-6 col-lg-offset-3">
@@ -32,9 +39,9 @@
             <!-- navigation at left -->
             <div class="col-md-4">
                 <ul class="nav nav-tabs nav-stacked">
-                	<li><a href="#">Return to Home Page</a></li>
+                	<li><a href="<?php echo asset("index"); ?>">Return to Home Page</a></li>
                 </ul>
-                <img class="img-responsive" src="img/avatar_jianfei.jpg" alt="">
+                <img class="img-responsive" src="<?php echo asset($admin->avatar); ?>" alt="">
                 <ul class="nav nav-tabs nav-stacked" id="myTab">
                     <li class="active"><a href="#about">About</a></li>
                     <li><a href="#profile">Profile</a></li>
@@ -50,12 +57,11 @@
                 
                     <!-- first tab -->
                     <div class="tab-pane active" id="about">
-                        <h3>Jianfei Zhao</h3>
-                        <h5>Team Lead</h5>
+                        <h3><?php echo $admin->realname; ?></h3>
+                        <h5><?php echo $admin->title; ?></h5>
                         <hr>
-                        <p>Hi, my name is Jianfei. I am the lead of team 08.</p>
-                        <p>There are 7 members in our team. It is a pleasure to work with my teammates. 
-                        Hopefully, we can make progress together during the development of our website.</p>
+                        <p><?php echo $admin->intro1; ?></p>
+                        <p><?php echo $admin->intro2; ?></p>
                     </div>
                     <!-- first tab -->
                     
@@ -63,14 +69,14 @@
                     <div class="tab-pane" id="profile">
                         <h4>Role In The Team</h4>
                         <p class="sm">
-                            <grey>Position: </grey>Back End<br/>
-                            <grey>Programming Languages: </grey>Javascript, HTML, PHP<br/>
+                            <grey>Position: </grey><?php echo $admin->position; ?><br/>
+                            <grey>Programming Languages: </grey><?php echo $admin->lang; ?><br/>
                         </p>
                         
                         <h4>Personal Info</h4>
                         <p class="sm">
-                            <grey>Nickname: </grey>Jianfei<br/>
-                            <grey>Hobbies: </grey>Soccer, Chess<br/>
+                            <grey>Nickname: </grey><?php echo $admin->nickname; ?><br/>
+                            <grey>Hobbies: </grey><?php echo $admin->hobby; ?><br/>
                         </p>
                     </div>
                     <!-- second tab -->
@@ -94,11 +100,11 @@
 CSC 648-848 Fall 2018 Team 08
 </div>
 <!-- javaScript libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/php-mail-form/validate.js"></script>
+<script src="<?php echo asset("public/lib/jquery/jquery.min.js"); ?>"></script>
+<script src="<?php echo asset("public/lib/bootstrap/js/bootstrap.min.js"); ?>"></script>
+<script src="<?php echo asset("public/lib/php-mail-form/validate.js"); ?>"></script>
 
 <!-- javascript file for this page -->
-<script src="js/main.js"></script>
+<script src="<?php echo asset("public/js/main.js"); ?>"></script>
 </body>
 </html>

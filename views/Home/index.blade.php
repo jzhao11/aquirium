@@ -37,11 +37,11 @@
         	<div class="col-md-8">
     			<div class="tab-content">
                     <div class="tab-pane active">
-                        <h3>Welcome to SFSUBUYSELL!</h3>
+                        <h3>Welcome to the SFSUBUYSELL website!</h3>
                         <h5>CSC 648-848 Team 08</h5>
                         <hr>
-                        <p>This is the first paragraph of introduction.</p>
-                        <p>This is the second paragraph of introduction. This is the second paragraph of introduction. This is the second paragraph of introduction. This is the second paragraph of introduction.</p>
+                        <p>This is the home page for team 08.</p>
+                        <p>Here is a list of members in our team. By clicking the names, you will be redirected to the personal ABOUT page for each member.</p>
                     </div>
                 </div>
             </div>
