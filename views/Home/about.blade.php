@@ -24,6 +24,13 @@
 <link href="<?php echo asset("public/css/style.css"); ?>" rel="stylesheet">
 </head>
 
+
+<?php
+    $admin = isset($admin) ? $admin : "";
+    if (!$admin) {
+        exit();
+    }
+?>
 <body>
 <div class="container">
 	<div class="col-lg-6 col-lg-offset-3">
@@ -34,7 +41,7 @@
                 <ul class="nav nav-tabs nav-stacked">
                 	<li><a href="<?php echo asset("index"); ?>">Return to Home Page</a></li>
                 </ul>
-                <img class="img-responsive" src="<?php echo asset("public/img/avatar_jianfei.jpg"); ?>" alt="">
+                <img class="img-responsive" src="<?php echo asset($admin->avatar); ?>" alt="">
                 <ul class="nav nav-tabs nav-stacked" id="myTab">
                     <li class="active"><a href="#about">About</a></li>
                     <li><a href="#profile">Profile</a></li>
@@ -50,11 +57,11 @@
                 
                     <!-- first tab -->
                     <div class="tab-pane active" id="about">
-                        <h3>Jianfei Zhao</h3>
-                        <h5>Team Lead</h5>
+                        <h3><?php echo $admin->realname; ?></h3>
+                        <h5><?php echo $admin->title; ?></h5>
                         <hr>
-                        <p>This is the first paragraph of introduction.</p>
-                        <p>This is the second paragraph of introduction. This is the second paragraph of introduction. This is the second paragraph of introduction. This is the second paragraph of introduction.</p>
+                        <p><?php echo $admin->intro1; ?></p>
+                        <p><?php echo $admin->intro2; ?></p>
                     </div>
                     <!-- first tab -->
                     
@@ -62,15 +69,14 @@
                     <div class="tab-pane" id="profile">
                         <h4>Role In The Team</h4>
                         <p class="sm">
-                            <grey>Position: </grey>Back-end<br/>
-                            <grey>Programming Languages: </grey>PHP, Javascript<br/>
+                            <grey>Position: </grey><?php echo $admin->position; ?><br/>
+                            <grey>Programming Languages: </grey><?php echo $admin->lang; ?><br/>
                         </p>
                         
                         <h4>Personal Info</h4>
                         <p class="sm">
-                            <grey>Email: </grey>jzhao11@mail.sfsu.edu<br/>
-                            <grey>Nickname: </grey>Christian<br/>
-                            <grey>Hobbies: </grey>Soccer, Chess<br/>
+                            <grey>Nickname: </grey><?php echo $admin->nickname; ?><br/>
+                            <grey>Hobbies: </grey><?php echo $admin->hobby; ?><br/>
                         </p>
                     </div>
                     <!-- second tab -->

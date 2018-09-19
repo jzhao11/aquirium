@@ -43,7 +43,7 @@ class HomeController extends Controller {
     public function about() {
         $id = Input::get("id");
         $admin = Admin::where("id", $id)->first();
-        return view("Home/about_".$admin->nickname);
+        return view("Home/about", compact("admin"));
         
 //         $partner = Partner::orderby('level', 'desc')->get();
 //         $about = About::first();
