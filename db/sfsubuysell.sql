@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 2018-10-10 20:56:37
--- 服务器版本： 5.7.21
+-- Generation Time: Oct 10, 2018 at 09:08 PM
+-- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 表的结构 `ct_admin`
+-- Table structure for table `ct_admin`
 --
 
 DROP TABLE IF EXISTS `ct_admin`;
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `ct_admin` (
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- 转存表中的数据 `ct_admin`
+-- Dumping data for table `ct_admin`
 --
 
 INSERT INTO `ct_admin` (`id`, `realname`, `nickname`, `email`, `title`, `position`, `avatar`, `intro1`, `intro2`, `lang`, `hobby`) VALUES
