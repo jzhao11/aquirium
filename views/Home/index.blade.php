@@ -176,16 +176,16 @@ $category_id = isset($category_id) ? $category_id : "";
 function search() {
 	var category_id = $("#category_id").val();
 	var search_txt = $("#search_txt").val();
-	location.href = "/index?category_id=" + category_id + "&search_txt=" + search_txt;
+	location.href = "index?category_id=" + category_id + "&search_txt=" + search_txt;
 }
 
 function filter(filter_id) {
 	var category_id = $("#category_id").val();
 	var search_txt = $("#search_txt").val();
 	if (category_id == 0) {
-		location.href = "/index?category_id=" + filter_id + "&search_txt=" + search_txt;
+		location.href = "index?category_id=" + filter_id + "&search_txt=" + search_txt;
 	} else {
-		location.href = "/index?category_id=" + category_id + "&search_txt=" + search_txt + "&filter_id=" + filter_id;
+		location.href = "index?category_id=" + category_id + "&filter_id=" + filter_id;
 	}
 }
 </script>
