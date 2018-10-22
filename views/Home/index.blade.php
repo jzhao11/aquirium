@@ -149,7 +149,7 @@ $category_id = isset($category_id) ? $category_id : "";
 	     	  	<p><?php echo $e->title; ?></p>
 	     	  	<ul class="grid_2-bottom">
 	     	  		<li class="grid_2-left"><p><small>$<?php echo $e->price; ?></small></p></li>
-	     	  		<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="Get It">View</div></li>
+	     	  		<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="View">View</div></li>
 	     	  		<div class="clearfix"> </div>
 	     	  	</ul>
 	     	  </div>
