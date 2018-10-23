@@ -3,14 +3,12 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-use App\Models\News;
-use App\Models\Cases;
-use App\Models\About;
-use App\Models\Contact;
-use App\Models\Service;
-use App\Models\Partner;
+// use App\Models\News;
+// use App\Models\Cases;
+// use App\Models\Contact;
 use App\Models\Admin;
-
+use App\Models\Category;
+use App\Models\Item;
 
 class HomeController extends Controller {
     private $ismobile;
@@ -25,88 +23,62 @@ class HomeController extends Controller {
         echo filedownload($file_url);
     }
     
-    
-    
     public function index() {
-        $admin = Admin::orderby("id", "asc")->get();
-        return view("Home/index", compact("admin"));
+        $filter_id = Input::get("filter_id");
+        $category_id = Input::get("category_id");
+        $search_txt = Input::get("search_txt");
+        $order_by = "created_at";
+        $order = "desc";
+        $category_cond = $category_id ? "category_id = ".$category_id : "category_id >= 0";
+        $filter_cond = $filter_id ? "filter_id = ".$filter_id : "filter_id >= 0";
+        $item = Item::whereRaw($category_cond)
+                ->whereRaw($filter_cond)
+                ->whereRaw("status < 2")
+                ->whereRaw("title like '%".$search_txt."%'")
+                // or description like '%".$search_txt."%'
+                ->orderBy($order_by, $order)
+                ->get();
         
-//         $partner = Partner::orderby('level', 'desc')->get();
-//         $news = News::orderby('id', 'desc')->limit(3)->offset(0)->get();
-//         $firstnews = News::orderby('id', 'desc')->first();
-//         $leftcase = Cases::orderby('id', 'desc')->limit(4)->offset(0)->get();
-//         $rightcase = Cases::orderby('id', 'desc')->limit(4)->offset(4)->get();
-//         $view = $this->ismobile ? 'Home/index_phone' : 'Home/index_pc';
-//         return view($view, compact('news', 'firstnews', 'leftcase', 'rightcase', 'partner'));
+        if (!count($item)) {
+            $item = Item::whereRaw($category_cond)
+                    ->whereRaw("status < 2")
+                    ->orderBy($order_by, $order)
+                    ->get();
+        }
+        
+        $category = Category::where("depth", 0)->get();
+        $filter = $category_id ? Category::where("parent_id", $category_id)->get() : $category;
+        return view("Home/index", compact("category", "filter", "item", "search_txt", "category_id"));
     }
     
     public function about() {
+        $admin = Admin::orderby("id", "asc")->get();
+        return view("Home/about", compact("admin"));
+    }
+    
+    public function personal() {
         $id = Input::get("id");
         $admin = Admin::where("id", $id)->first();
-        return view("Home/about", compact("admin"));
-        
-//         $partner = Partner::orderby('level', 'desc')->get();
-//         $about = About::first();
-//         $view = $this->ismobile ? 'Home/about_phone' : 'Home/about_pc';
-//         return view($view, compact('about', 'partner'));
+        return view("Home/personal", compact("admin"));
     }
     
-    public function contact() {
-        $view = $this->ismobile ? 'Home/contact_phone' : 'Home/contact_pc';
-        return view($view);
-    }
     
-    public function contactcreate() {
-        $input = Input::get();
-        return Contact::firstOrCreate($input);
-    }
-    
-    public function cases() {
-        $case_all = Cases::orderby('id', 'desc')->limit(8)->offset(0)->get();
-        $case = Cases::orderby('id', 'desc')->get();
-        $view = $this->ismobile ? 'Home/cases_phone' : 'Home/cases_pc';
-        
-        return view($view, compact('case', 'case_all'));
-    }
-    
-    public function casedetail() {
-        $case_id = Input::get('id');
-        $case = Cases::where('id', $case_id)->first();
-        
-        return view('Home/casedetail', compact('case'));
-    }
-    
-    public function news() {
-        $topnews = News::orderby('id', 'desc')->take(2)->get();
-        $news = News::orderby('id', 'desc')->paginate(4);
-        $view = $this->ismobile ? 'Home/news_phone' : 'Home/news_pc';
-        
-        return view($view, compact('news', 'topnews'));
-    }
-    
-    public function newsdetailajax() {
-        $news = News::where('id', Input::get('id'))->first();
-        return $news;
-    }
-    
-    public function newsdetail() {
-        $news_id = Input::get('id');
-        $news = News::where('id', $news_id)->first();
-        $news_prev = News::where('id', '<', $news_id)->orderby('id', 'desc')->first();
-        $news_next = News::where('id', '>', $news_id)->orderby('id', 'asc')->first();
-        
-        return view('Home/newsdetail', compact('news', 'news_prev', 'news_next'));
-    }
-    
-    public function service() {
-        $partner = Partner::orderby('level', 'desc')->get();
-        $service_web = Service::where('key', 'web')->first();
-        $service_mobile = Service::where('key', 'mobile')->first();
-        $service_app = Service::where('key', 'app')->first();
-        $view = $this->ismobile ? 'Home/service_phone' : 'Home/service_pc';
-        
-        return view($view, compact('partner', 'service_web', 'service_mobile', 'service_app'));
-    }
+//     public function news() {
+//         $news = News::orderby('id', 'desc')->limit(3)->offset(0)->get();
+//         $leftcase = Cases::orderby('id', 'desc')->limit(4)->offset(0)->get();
+//         $rightcase = Cases::orderby('id', 'desc')->limit(4)->offset(4)->get();
+//         $topnews = News::orderby('id', 'desc')->take(2)->get();
+//         $news = News::orderby('id', 'desc')->paginate(4);
+//         $view = $this->ismobile ? 'Home/news_phone' : 'Home/news_pc';
+//         return view($view, compact('news', 'topnews'));
+//     }
+//     public function newsdetail() {
+//         $news_id = Input::get('id');
+//         $news = News::where('id', $news_id)->first();
+//         $news_prev = News::where('id', '<', $news_id)->orderby('id', 'desc')->first();
+//         $news_next = News::where('id', '>', $news_id)->orderby('id', 'asc')->first();
+//         return view('Home/newsdetail', compact('news', 'news_prev', 'news_next'));
+//     }
 }
 
 ?>
