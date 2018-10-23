@@ -21,71 +21,45 @@
 <link href="<?php echo asset("public/lib/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet">
 
 <!-- Main Stylesheet File -->
-<link href="<?php echo asset("public/css/style.css"); ?>" rel="stylesheet">
+<link href="<?php echo asset("public/css/aboutstyle.css"); ?>" rel="stylesheet">
 </head>
 
-
 <?php
-    $admin = isset($admin) ? $admin : "";
-    if (!$admin) {
-        exit();
-    }
+    $admin = isset($admin) ? $admin : array();
 ?>
+
 <body>
 <div class="container">
 	<div class="col-lg-6 col-lg-offset-3">
-        <div class="row w">
-        
-            <!-- navigation at left -->
+    	<div class="row w">
+    	
+            <!-- team introduction -->
+        	<div class="col-md-8">
+    			<div class="tab-content">
+                    <div class="tab-pane active">
+                        <h3>Welcome to the SFSUBUYSELL website!</h3>
+                        <h5>CSC 648-848 Team 08</h5>
+                        <hr>
+                        <p>This is the home page for team 08.</p>
+                        <p>Here is a list of members in our team. By clicking the names, you will be redirected to the personal ABOUT page for each member.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- team introduction -->
+            
+            <!-- list of members -->
             <div class="col-md-4">
                 <ul class="nav nav-tabs nav-stacked">
-                	<li><a href="<?php echo asset("index"); ?>">Return to Home Page</a></li>
-                </ul>
-                <img class="img-responsive" src="<?php echo asset($admin->avatar); ?>" alt="">
-                <ul class="nav nav-tabs nav-stacked" id="myTab">
-                    <li class="active"><a href="#about">About</a></li>
-                    <li><a href="#profile">Profile</a></li>
+                <?php
+                    foreach ($admin as $item) {
+                ?>
+                	<li><a href="<?php echo asset("personal?id=".$item->id); ?>"><?php echo $item->realname; ?></a></li>
+                <?php
+                    }
+                ?>
                 </ul>
             </div>
-            <!-- navigation at left -->
-        
-            <!-- content at right -->
-            <div class="col-md-8">
-            
-            	<!-- tab content -->
-    			<div class="tab-content">
-                
-                    <!-- first tab -->
-                    <div class="tab-pane active" id="about">
-                        <h3><?php echo $admin->realname; ?></h3>
-                        <h5><?php echo $admin->title; ?></h5>
-                        <hr>
-                        <p><?php echo $admin->intro1; ?></p>
-                        <p><?php echo $admin->intro2; ?></p>
-                    </div>
-                    <!-- first tab -->
-                    
-                    <!-- second tab -->
-                    <div class="tab-pane" id="profile">
-                        <h4>Role In The Team</h4>
-                        <p class="sm">
-                            <grey>Position: </grey><?php echo $admin->position; ?><br/>
-                            <grey>Programming Languages: </grey><?php echo $admin->lang; ?><br/>
-                        </p>
-                        
-                        <h4>Personal Info</h4>
-                        <p class="sm">
-                            <grey>Nickname: </grey><?php echo $admin->nickname; ?><br/>
-                            <grey>Hobbies: </grey><?php echo $admin->hobby; ?><br/>
-                        </p>
-                    </div>
-                    <!-- second tab -->
-                
-                </div>
-                <!-- tab content -->
-                
-            </div>
-            <!-- content at right -->
+            <!-- list of members -->
             
         </div>
         <!-- row w -->
@@ -95,10 +69,11 @@
     
 </div>
 <!-- container -->
-  
+
 <div class="credits">
 CSC 648-848 Fall 2018 Team 08
 </div>
+
 <!-- javaScript libraries -->
 <script src="<?php echo asset("public/lib/jquery/jquery.min.js"); ?>"></script>
 <script src="<?php echo asset("public/lib/bootstrap/js/bootstrap.min.js"); ?>"></script>
@@ -106,5 +81,6 @@ CSC 648-848 Fall 2018 Team 08
 
 <!-- javascript file for this page -->
 <script src="<?php echo asset("public/js/main.js"); ?>"></script>
+
 </body>
 </html>
