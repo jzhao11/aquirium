@@ -861,6 +861,8 @@ ul.grid_2-bottom li.grid_2-left p small {
 	-o-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 }
+
+/* the hover event before clicking each view !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 .btn.btn-primary:hover:before {
 	width: 100%;
 	left: 0;
@@ -869,6 +871,8 @@ ul.grid_2-bottom li.grid_2-left p small {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
+*/
+
 .btn.btn-primary:after {
 	content: "";
 	position: absolute;

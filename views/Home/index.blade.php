@@ -16,18 +16,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900" rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="<?php echo asset("public/js/jquery-1.11.3.min.js"); ?>"></script>
 <script src="<?php echo asset("public/js/responsiveslides.min.js"); ?>"></script>
-<script>
-    $(function () {
-      $("#slider").responsiveSlides({
-      	auto: true,
-      	nav: true,
-      	speed: 500,
-        namespace: "callbacks",
-        pager: true,
-      });
-    });
-</script>
-<!-- <script type="text/javascript" src="js/hover_pack.js"></script> -->
 </head>
 
 
@@ -39,6 +27,16 @@ $search_txt = isset($search_txt) ? $search_txt : "";
 $category_id = isset($category_id) ? $category_id : "";
 ?>
 <body>
+<div class="header">
+	<div class="h_menu4">
+		<div class="container">
+				<a href="<?php echo asset("index"); ?>" style="color:white;padding-left:1em;padding-right:1em">Home</a>
+				<a href="<?php echo asset("about"); ?>" style="color:white;padding-left:1em;padding-right:1em" target="new_window">Team</a>
+	      </div>
+     </div>
+</div>
+
+
 <div class="column_center">
   <div class="container">
 	<div class="search">
