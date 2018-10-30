@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Home</title>
+<title>SFSU-Fulda Software Engineering Project CSC 648-848, Fall 2018. For Demonstration Only</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Fashionpress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -42,7 +42,7 @@ $category_id = isset($category_id) ? $category_id : "";
 	<div class="search">
 	  <div class="stay">
 	  Search
-		<select id="category_id">
+		<select id="category_id" onchange="change(this.value)">
 			<option value="0"></option>
         <?php
         foreach ($category as $e) {
@@ -54,7 +54,7 @@ $category_id = isset($category_id) ? $category_id : "";
         }
         ?>
 	   </select>
-	  </div>  
+	  </div> 
 	    
 	    
 	  <div class="stay_right">
@@ -85,8 +85,50 @@ $category_id = isset($category_id) ? $category_id : "";
 	          <?php
 			  }
 			  ?>
+				<!-- 
+				<li class="item2"><a href="#"><img class="arrow-img" src="<?php echo asset("public/img/f_menu.png"); ?>" alt=""/>Books</a>
+				</li>
+				<li class="item3"><a href="#"><img class="arrow-img" src="<?php echo asset("public/img/f_menu.png"); ?>" alt=""/>Devices</a>
+				</li>
+				 -->
+				<!-- 
+				<li class="item7"><a href="#"><img class="arrow-img" src="<?php echo asset("public/img/f_menu.png"); ?>" alt=""/>Top Fashion</a>
+					<ul class="cute">
+						<li class="subitem1"><a href="#">Cute Kittens </a></li>
+						<li class="subitem2"><a href="#">Strange Stuff </a></li>
+						<li class="subitem3"><a href="#">Automatic Fails </a></li>
+					</ul>
+				</li>
+				<li class="item8"><a href="#"><img class="arrow-img" src="<?php echo asset("public/img/f_menu.png"); ?>" alt=""/>Summer Collection</a>
+					<ul class="cute">
+						<li class="subitem1"><a href="#">Cute Kittens </a></li>
+						<li class="subitem2"><a href="#">Strange Stuff </a></li>
+						<li class="subitem3"><a href="#">Automatic Fails </a></li>
+					</ul>
+				</li>
+				 -->
 			</ul>
 		</div>
+		<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+			
+			});
+		</script>
        </div>
        <div class="tlinks"></div>
 	   </div> 
@@ -132,17 +174,29 @@ $category_id = isset($category_id) ? $category_id : "";
 function search() {
 	var category_id = $("#category_id").val();
 	var search_txt = $("#search_txt").val();
-	location.href = "index?category_id=" + category_id + "&search_txt=" + search_txt;
+	if (search_txt.length > 40) {
+		alert("sorry, text for search has to be less than 40 characters");
+	} else {
+		location.href = "index?category_id=" + category_id + "&search_txt=" + search_txt;
+	}
 }
 
 function filter(filter_id) {
 	var category_id = $("#category_id").val();
 	var search_txt = $("#search_txt").val();
-	if (category_id == 0) {
-		location.href = "index?category_id=" + filter_id + "&search_txt=" + search_txt;
+	if (search_txt.length > 40) {
+		alert("sorry, text for search has to be less than 40 characters");
 	} else {
-		location.href = "index?category_id=" + category_id + "&filter_id=" + filter_id;
+    	if (category_id == 0) {
+    		location.href = "index?category_id=" + filter_id + "&search_txt=" + search_txt;
+    	} else {
+    		location.href = "index?category_id=" + category_id + "&filter_id=" + filter_id;
+    	}
 	}
+}
+
+function change(category_id) {
+	location.href = "index?category_id=" + category_id;
 }
 </script>
 </html>		
