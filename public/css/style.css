@@ -1240,7 +1240,7 @@ ul.tab_list {
 	transition: all 0.3s ease-out;
 	text-transform: uppercase;
 	background:#fff;
-	width: 33.33333%;
+	width: 50%; /*33.33333%; this is the percent for description/additional/reviews*/
 }
 .resp-tab-item:hover {
 	text-shadow: none;
