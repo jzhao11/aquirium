@@ -16,6 +16,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900" rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="<?php echo asset("public/js/jquery-1.11.3.min.js"); ?>"></script>
 <script src="<?php echo asset("public/js/responsiveslides.min.js"); ?>"></script>
+<script src="<?php echo asset("public/js/functions.js"); ?>"></script>
 </head>
 
 
@@ -27,16 +28,8 @@ $search_txt = isset($search_txt) ? $search_txt : "";
 $category_id = isset($category_id) ? $category_id : "";
 ?>
 <body>
-<div class="header">
-	<div class="h_menu4">
-		<div class="container">
-				<a href="<?php echo asset("index"); ?>" style="color:white;padding-left:1em;padding-right:1em">Home</a>
-				<a href="<?php echo asset("about"); ?>" style="color:white;padding-left:1em;padding-right:1em" target="new_window">Team</a>
-	      </div>
-     </div>
-</div>
-
-
+@extends("Home.navigation")
+@section("child")
 <div class="column_center">
   <div class="container">
 	<div class="search">
@@ -168,35 +161,6 @@ $category_id = isset($category_id) ? $category_id : "";
 	  </div>  	    
 	</div>
 </div>
-
+@endsection
 </body>
-<script>
-function search() {
-	var category_id = $("#category_id").val();
-	var search_txt = $("#search_txt").val();
-	if (search_txt.length > 40) {
-		alert("sorry, text for search has to be less than 40 characters");
-	} else {
-		location.href = "index?category_id=" + category_id + "&search_txt=" + search_txt;
-	}
-}
-
-function filter(filter_id) {
-	var category_id = $("#category_id").val();
-	var search_txt = $("#search_txt").val();
-	if (search_txt.length > 40) {
-		alert("sorry, text for search has to be less than 40 characters");
-	} else {
-    	if (category_id == 0) {
-    		location.href = "index?category_id=" + filter_id + "&search_txt=" + search_txt;
-    	} else {
-    		location.href = "index?category_id=" + category_id + "&filter_id=" + filter_id;
-    	}
-	}
-}
-
-function change(category_id) {
-	location.href = "index?category_id=" + category_id;
-}
-</script>
 </html>		
