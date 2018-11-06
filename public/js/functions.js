@@ -26,6 +26,16 @@ function change(category_id) {
 	location.href = "index?category_id=" + category_id;
 }
 
+function register() {
+	var is_checked = $("#terms").prop("checked");
+	if (is_checked) {
+		alert("You have successfully registered!");
+		location.href = "index";
+	} else {
+		alert("You have to agree to our terms before registration!");
+	}
+}
+
 
 
 

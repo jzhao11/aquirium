@@ -47,6 +47,7 @@ Route::group(["namespace" => "Home"], function(){
     
     Route::any("/about", "HomeController@about");
     Route::any("/personal", "HomeController@personal");
+    Route::any("/logindetail", "HomeController@logindetail");
     
     Route::any("/test", "HomeController@test");
     Route::any("/news", "HomeController@news");

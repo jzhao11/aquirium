@@ -3,11 +3,26 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+// use App\Models\News;
+// use App\Models\Cases;
+// use App\Models\Contact;
 use App\Models\Admin;
 use App\Models\Category;
 use App\Models\Item;
 
 class HomeController extends Controller {
+    private $ismobile;
+    
+    public function __construct() {
+        $this->ismobile = ismobile();
+        
+    }
+    
+    public function testdownload() {
+        $file_url = "http://www6.tjctime.com/mshow/public/uploads/image/20170728/1501231386122.png";
+        echo filedownload($file_url);
+    }
+    
     public function index() {
         $filter_id = Input::get("filter_id");
         $category_id = Input::get("category_id");
@@ -20,6 +35,7 @@ class HomeController extends Controller {
                 ->whereRaw($filter_cond)
                 ->whereRaw("status < 2")
                 ->whereRaw("title like '%".$search_txt."%'")
+                // or description like '%".$search_txt."%'
                 ->orderBy($order_by, $order)
                 ->get();
         
@@ -45,6 +61,28 @@ class HomeController extends Controller {
         $admin = Admin::where("id", $id)->first();
         return view("Home/personal", compact("admin"));
     }
+    
+    public function logindetail() {
+        return view("Home/login");
+    }
+    
+    
+//     public function news() {
+//         $news = News::orderby('id', 'desc')->limit(3)->offset(0)->get();
+//         $leftcase = Cases::orderby('id', 'desc')->limit(4)->offset(0)->get();
+//         $rightcase = Cases::orderby('id', 'desc')->limit(4)->offset(4)->get();
+//         $topnews = News::orderby('id', 'desc')->take(2)->get();
+//         $news = News::orderby('id', 'desc')->paginate(4);
+//         $view = $this->ismobile ? 'Home/news_phone' : 'Home/news_pc';
+//         return view($view, compact('news', 'topnews'));
+//     }
+//     public function newsdetail() {
+//         $news_id = Input::get('id');
+//         $news = News::where('id', $news_id)->first();
+//         $news_prev = News::where('id', '<', $news_id)->orderby('id', 'desc')->first();
+//         $news_next = News::where('id', '>', $news_id)->orderby('id', 'asc')->first();
+//         return view('Home/newsdetail', compact('news', 'news_prev', 'news_next'));
+//     }
 }
 
 ?>
