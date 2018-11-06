@@ -1,3 +1,41 @@
+function search() {
+	var category_id = $("#category_id").val();
+	var search_txt = $("#search_txt").val();
+	if (search_txt.length > 40) {
+		alert("sorry, text for search has to be less than 40 characters");
+	} else {
+		location.href = "index?category_id=" + category_id + "&search_txt=" + search_txt;
+	}
+}
+
+function filter(filter_id) {
+	var category_id = $("#category_id").val();
+	var search_txt = $("#search_txt").val();
+	if (search_txt.length > 40) {
+		alert("sorry, text for search has to be less than 40 characters");
+	} else {
+    	if (category_id == 0) {
+    		location.href = "index?category_id=" + filter_id + "&search_txt=" + search_txt;
+    	} else {
+    		location.href = "index?category_id=" + category_id + "&filter_id=" + filter_id;
+    	}
+	}
+}
+
+function change(category_id) {
+	location.href = "index?category_id=" + category_id;
+}
+
+
+
+
+
+
+
+
+
+
+
 function alldelete(checkboxname, modelname) {
 	//herein str cannot be initialized as ''
 	//otherwise the url would be '.../alldelete/', which would cause error
@@ -9,7 +47,7 @@ function alldelete(checkboxname, modelname) {
 			str += $(this).val();
 		}
 	});
-	if (confirm('确认删除多条吗?')) {
+	if (confirm('delete them all?')) {
 		location.href = modelname + 'save/alldelete/' + str;
 	} else {
 		return;
@@ -25,7 +63,7 @@ function alldelete(checkboxname, modelname) {
 //			str += $(this).val();
 //		}
 //	});
-//	if (confirm('确认删除多条吗?')) {
+//	if (confirm('delete them all?')) {
 //		location.href = modelname + 'save?action=alldelete&id=' + str;
 //	} else {
 //		return;
@@ -60,6 +98,22 @@ function singledelete(modelname) {
 	});
 }
 
+function jsdelete(modelname, id) {
+	if (confirm("confirm this delete?")) {
+		$.ajax({
+			url: "/" + modelname + "delete/" + id,
+		    type: "POST",
+		    data: {},
+		    success: function () {
+		    	location.href = "/" + modelname + "retrieve";
+		    },
+		    error: function () {
+		        alert("please wait");
+		    }
+		});
+	}
+}
+
 //all select
 function allselect(checkboxname) {
 	$('input[name="' + checkboxname + '"]').attr("checked", true);
@@ -73,6 +127,6 @@ function alldeselect(checkboxname) {
 //sort
 function sort(column, modelname) {
 	var orderby = $('#orderby').val();
-	orderby = (orderby == 'desc') ? 'asc' : 'desc';		//反写排序方式
+	orderby = (orderby == 'desc') ? 'asc' : 'desc';		//reverse the order
 	location.href = modelname + 'retrieve?page=1&orderby=' + orderby + '&column=' + column;
 }
