@@ -27,7 +27,7 @@
 				<form>
 				  <div>
 					<span>Username *</span>
-					<input type="text"> 
+					<input require type="text"> 
 				  </div>
 				  <div>
 					<span>SFSU ID</span>
@@ -35,15 +35,15 @@
 				  </div>
 				  <div>
 					<span>Email Address *</span>
-					<input type="text"> 
+					<input require type="text"> 
 				  </div>
 				  <div>
 					<span>Password *</span>
-					<input type="text">
+					<input require type="text">
 				  </div>
 				  <div>
 					<span>Confirm Password *</span>
-					<input type="text">
+					<input require type="text">
 				  </div>
 				  <div>
 				    <input type="checkbox" id="terms"><i></i>Agree to Terms
@@ -70,7 +70,7 @@
 				<form>
 				  <div>
 					<span>Username</span>
-					<input type="text"> 
+					<input require type="text"> 
 				  </div>
 				  <div>
 					<span>Password</span>

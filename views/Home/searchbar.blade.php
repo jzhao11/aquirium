@@ -20,11 +20,12 @@ $category_id = isset($category_id) ? $category_id : "";
         ?>
 	   </select>
 	  </div> 
-	  
+	  <form>
 	  <div class="stay_right">
 		  <input type="text" value="<?php echo $search_txt; ?>" id="search_txt">  <!-- onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" -->
 		  <input type="submit" value="" onclick="search()">
-	  </div>
+		</div>
+			</form>
 	  <div class="clearfix"> </div>
 	</div>
     <div class="clearfix"> </div>
