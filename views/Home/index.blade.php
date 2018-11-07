@@ -1,71 +1,11 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>SFSU-Fulda Software Engineering Project CSC 648-848, Fall 2018. For Demonstration Only</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Fashionpress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="<?php echo asset("public/lib/bootstrap/css/bootstrap.css"); ?>" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!-- Custom Theme files -->
-<link href="<?php echo asset("public/css/style.css"); ?>" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<!--webfont-->
-<link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900" rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="<?php echo asset("public/js/jquery-1.11.3.min.js"); ?>"></script>
-<script src="<?php echo asset("public/js/responsiveslides.min.js"); ?>"></script>
-</head>
-
-
 <?php
-$category = isset($category) ? $category : "";
 $filter = isset($filter) ? $filter : "";
 $item = isset($item) ? $item : "";
-$search_txt = isset($search_txt) ? $search_txt : "";
-$category_id = isset($category_id) ? $category_id : "";
 ?>
-<body>
-<div class="header">
-	<div class="h_menu4">
-		<div class="container">
-				<a href="<?php echo asset("index"); ?>" style="color:white;padding-left:1em;padding-right:1em">Home</a>
-				<a href="<?php echo asset("about"); ?>" style="color:white;padding-left:1em;padding-right:1em" target="new_window">Team</a>
-	      </div>
-     </div>
-</div>
 
-
-<div class="column_center">
-  <div class="container">
-	<div class="search">
-	  <div class="stay">
-	  Search
-		<select id="category_id" onchange="change(this.value)">
-			<option value="0"></option>
-        <?php
-        foreach ($category as $e) {
-        ?>
-			<option value="<?php echo $e->id; ?>" <?php if ($e->id == $category_id) { echo "selected"; } ?>>
-            <?php echo $e->title; ?>
-			</option>
-        <?php
-        }
-        ?>
-	   </select>
-	  </div> 
-	    
-	    
-	  <div class="stay_right">
-		  <input type="text" value="<?php echo $search_txt; ?>" id="search_txt">  <!-- onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" -->
-		  <input type="submit" value="" onclick="search()">
-	  </div>
-	  <div class="clearfix"> </div>
-	</div>
-    <div class="clearfix"> </div>
-  </div>
-</div>
+@extends("Home.base")
+@section("bodycontent")
+@include("Home.searchbar")
 <div class="main">
   <div class="content_top">
   	<div class="container">
@@ -148,7 +88,7 @@ $category_id = isset($category_id) ? $category_id : "";
 	     	  	<ul class="grid_2-bottom">
 	     	  		<li class="grid_2-left"><p><small>$<?php echo $e->price; ?></small></p></li>
 	     	  		<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="View">View</div></li>
-	     	  		<div class="clearfix"> </div>
+	     	  		<div class="clearfix"></div>
 	     	  	</ul>
 	     	  </div>
 	     	</div>
@@ -168,35 +108,4 @@ $category_id = isset($category_id) ? $category_id : "";
 	  </div>  	    
 	</div>
 </div>
-
-</body>
-<script>
-function search() {
-	var category_id = $("#category_id").val();
-	var search_txt = $("#search_txt").val();
-	if (search_txt.length > 40) {
-		alert("sorry, text for search has to be less than 40 characters");
-	} else {
-		location.href = "index?category_id=" + category_id + "&search_txt=" + search_txt;
-	}
-}
-
-function filter(filter_id) {
-	var category_id = $("#category_id").val();
-	var search_txt = $("#search_txt").val();
-	if (search_txt.length > 40) {
-		alert("sorry, text for search has to be less than 40 characters");
-	} else {
-    	if (category_id == 0) {
-    		location.href = "index?category_id=" + filter_id + "&search_txt=" + search_txt;
-    	} else {
-    		location.href = "index?category_id=" + category_id + "&filter_id=" + filter_id;
-    	}
-	}
-}
-
-function change(category_id) {
-	location.href = "index?category_id=" + category_id;
-}
-</script>
-</html>		
+@endsection
