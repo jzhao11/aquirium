@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 22, 2018 at 04:15 PM
+-- Generation Time: Nov 11, 2018 at 09:07 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -152,10 +152,10 @@ INSERT INTO `ct_item` (`id`, `user_id`, `category_id`, `filter_id`, `title`, `de
 (8, 0, 9, 11, 'Math Book 2', 'This is the description of Math Book 2.\r\nThis is the description of Math Book 2.', 38.04, '', 'public/uploads/image/20181022/1540158398350.jpg', '', '', '', '', 0, '2018-10-22 12:46:38', '2018-10-22 12:48:07'),
 (9, 0, 9, 11, 'Math Book 3', 'This is the description of Math Book 3.\r\nThis is the description of Math Book 3.', 38.42, '', 'public/uploads/image/20181022/1540158412964.jpg', '', '', '', '', 0, '2018-10-22 12:46:52', '2018-10-22 12:48:00'),
 (10, 0, 9, 11, 'Math Book 4', 'This is the description of Math Book 4.\r\nThis is the description of Math Book 4.', 38.8, '', 'public/uploads/image/20181022/1540158424120.jpg', '', '', '', '', 0, '2018-10-22 12:47:04', '2018-10-22 12:47:49'),
-(11, 0, 9, 24, 'History Book 0', '', 39.18, '', 'public/uploads/image/20181022/1540172452553.jpg', '', '', '', '', 0, '2018-10-22 16:40:52', '2018-10-22 16:40:52'),
-(12, 0, 9, 24, 'History Book 1', '', 39.56, '', 'public/uploads/image/20181022/1540172471205.jpg', '', '', '', '', 0, '2018-10-22 16:41:11', '2018-10-22 16:41:11'),
-(13, 0, 9, 25, 'Physics Book 0', '', 39.94, '', 'public/uploads/image/20181022/1540172496429.jpg', '', '', '', '', 0, '2018-10-22 16:41:36', '2018-10-22 16:41:36'),
-(14, 0, 9, 25, 'Physics Book 1', '', 40.32, '', 'public/uploads/image/20181022/1540172519235.jpg', '', '', '', '', 0, '2018-10-22 16:41:59', '2018-10-22 16:41:59'),
+(11, 0, 9, 24, 'History Book 0', 'This is the description of History Book 0.\r\nThis is the description of History Book 0.', 39.18, '', 'public/uploads/image/20181022/1540172452553.jpg', '', '', '', '', 0, '2018-10-22 16:40:52', '2018-11-09 22:20:32'),
+(12, 0, 9, 24, 'History Book 1', 'This is the description of History Book 1.\r\nThis is the description of History Book 1.', 39.56, '', 'public/uploads/image/20181022/1540172471205.jpg', '', '', '', '', 0, '2018-10-22 16:41:11', '2018-11-09 22:20:55'),
+(13, 0, 9, 25, 'Physics Book 0', 'This is the description of Physics Book 0.\r\nThis is the description of Physics Book 0.', 39.94, '', 'public/uploads/image/20181022/1540172496429.jpg', '', '', '', '', 0, '2018-10-22 16:41:36', '2018-11-09 22:21:29'),
+(14, 0, 9, 25, 'Physics Book 1', 'This is the description of Physics Book 1.\r\nThis is the description of Physics Book 1.', 40.32, '', 'public/uploads/image/20181022/1540172519235.jpg', '', '', '', '', 0, '2018-10-22 16:41:59', '2018-11-09 22:21:11'),
 (15, 0, 20, 22, 'BasketBalls 0', 'This is the description of BasketBalls 0.\r\nThis is the description of BasketBalls 0.', 40.7, '', 'public/uploads/image/20181022/1540176871653.jpg', '', '', '', '', 0, '2018-10-22 17:54:31', '2018-10-22 17:54:31'),
 (16, 0, 20, 22, 'BasketBalls 1', 'This is the description of BasketBalls 1.\r\nThis is the description of BasketBalls 1.', 41.08, '', 'public/uploads/image/20181022/1540176890322.jpg', '', '', '', '', 0, '2018-10-22 17:54:50', '2018-10-22 17:54:50'),
 (17, 0, 20, 27, 'Boards Game 0', 'This is the description of Boards Game 0.\r\nThis is the description of Boards Game 0.', 41.46, '', 'public/uploads/image/20181022/1540176913237.jpg', '', '', '', '', 0, '2018-10-22 17:55:13', '2018-10-22 17:55:13'),
@@ -188,8 +188,65 @@ INSERT INTO `ct_item` (`id`, `user_id`, `category_id`, `filter_id`, `title`, `de
 (44, 0, 1, 7, 'Shoes 1', 'This is the description of shoes 1.\r\nThis is the description of shoes 1.', 51.72, '', 'public/uploads/image/20181022/1540183784117.jpg', '', '', '', '', 0, '2018-10-22 19:49:45', '2018-10-22 19:49:45'),
 (45, 0, 1, 7, 'Shoes 2', 'This is the description of shoes 2.\r\nThis is the description of shoes 2.', 52.1, '', 'public/uploads/image/20181022/1540183802383.jpg', '', '', '', '', 0, '2018-10-22 19:50:02', '2018-10-22 19:50:02'),
 (46, 0, 1, 2, 'T shirt 0', 'This is the description of t-shirt 0.\r\nThis is the description of t-shirt 0.', 52.48, '', 'public/uploads/image/20181022/1540183947792.jpg', '', '', '', '', 0, '2018-10-22 19:52:27', '2018-10-22 19:52:27'),
-(47, 0, 1, 2, 'T shirt 1', 'This is the description of t-shirt 1.\r\nThis is the description of t-shirt 1.', 52.86, '', 'public/uploads/image/20181022/1540183964544.jpg', '', '', '', '', 0, '2018-10-22 19:52:44', '2018-10-22 19:52:44'),
+(47, 0, 1, 2, 'T shirt 1', 'This is the description of t-shirt 1.\r\nThis is the description of t-shirt 1.', 52.86, '', 'public/uploads/image/20181022/1540183964544.jpg', '', '', '', '', 0, '2018-10-22 19:52:44', '2018-11-09 22:21:47'),
 (48, 0, 1, 2, 'T shirt 2', 'This is the description of t-shirt 2.\r\nThis is the description of t-shirt 2.', 53.24, '', 'public/uploads/image/20181022/1540183976532.jpg', '', '', '', '', 0, '2018-10-22 19:52:56', '2018-10-22 19:52:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ct_message`
+--
+
+DROP TABLE IF EXISTS `ct_message`;
+CREATE TABLE IF NOT EXISTS `ct_message` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) NOT NULL,
+  `from_user_id` int(11) NOT NULL,
+  `to_usre_id` int(11) NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `lft` int(11) DEFAULT NULL,
+  `rgt` int(11) DEFAULT NULL,
+  `depth` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ct_message_item_id_index` (`item_id`),
+  KEY `ct_message_from_user_id_index` (`from_user_id`),
+  KEY `ct_message_to_usre_id_index` (`to_usre_id`),
+  KEY `ct_message_parent_id_index` (`parent_id`),
+  KEY `ct_message_lft_index` (`lft`),
+  KEY `ct_message_rgt_index` (`rgt`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ct_user`
+--
+
+DROP TABLE IF EXISTS `ct_user`;
+CREATE TABLE IF NOT EXISTS `ct_user` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stu_id` int(11) NOT NULL,
+  `avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `priority` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `ct_user`
+--
+
+INSERT INTO `ct_user` (`id`, `username`, `password`, `email`, `stu_id`, `avatar`, `priority`, `created_at`, `updated_at`) VALUES
+(1, 'nobodyknows', '96e79218965eb72c92a549dd5a330112', 'nobodyknows@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:55:45', '2018-11-11 08:55:45'),
+(2, 'naruto', 'e3ceb5881a0a1fdaad01296d7554868d', 'naruto@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:56:25', '2018-11-11 08:56:25'),
+(3, 'sasuke', '1a100d2c0dab19c4430e7d73762b3423', 'sasuke@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:58:21', '2018-11-11 08:58:21');
 
 -- --------------------------------------------------------
 
@@ -209,7 +266,9 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 
 INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2018_10_21_100515_create_category_table', 1),
-('2018_10_21_163720_create_item_table', 2);
+('2018_10_21_163720_create_item_table', 2),
+('2018_11_10_032735_create_user_table', 3),
+('2018_11_10_075541_create_message_table', 4);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

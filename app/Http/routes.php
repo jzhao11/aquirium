@@ -48,6 +48,7 @@ Route::group(["namespace" => "Home"], function(){
     Route::any("/about", "HomeController@about");
     Route::any("/personal", "HomeController@personal");
     Route::any("/logindetail", "HomeController@logindetail");
+    Route::any("/dashboard", "HomeController@dashboard");
     
     Route::any("/test", "HomeController@test");
     Route::any("/news", "HomeController@news");
@@ -63,12 +64,12 @@ Route::group(["namespace" => "Home"], function(){
  * start of CategoryController
  */
 Route::group(["namespace" => "Home"], function(){
+    Route::any("/categorycreatedetail", "CategoryController@categorycreatedetail");
+    Route::any("/categoryupdatedetail", "CategoryController@categoryupdatedetail");
     Route::any("/categoryretrieve", "CategoryController@categoryretrieve");
     Route::any("/categorycreate", "CategoryController@categorycreate");
-    Route::any("/categoryupdate/{id}", "CategoryController@categoryupdate");
-    Route::any("/categorydelete/{id}", "CategoryController@categorydelete");
-    Route::any("/categorycreatedetail", "CategoryController@categorycreatedetail");
-    Route::any("/categoryupdatedetail/{id}", "CategoryController@categoryupdatedetail");
+    Route::any("/categoryupdate", "CategoryController@categoryupdate");
+    Route::any("/categorydelete", "CategoryController@categorydelete");
 });
 /*
  * end of CategoryController
@@ -78,14 +79,14 @@ Route::group(["namespace" => "Home"], function(){
  * start of ItemController
  */
 Route::group(["namespace" => "Home"], function(){
-    Route::any("/itemretrievedetail/{id}", "ItemController@itemretrievedetail");
-    Route::any("/itemcreatedetail", "ItemController@itemcreatedetail");
-    Route::any("/itemupdatedetail/{id}", "ItemController@itemupdatedetail");
-    Route::any("/itemretrieve", "ItemController@itemretrieve");
-    Route::any("/itemretrievebyuser/{user_id}", "ItemController@itemretrievebyuser");
-    Route::any("/itemcreate", "ItemController@itemcreate");
-    Route::any("/itemupdate/{id}", "ItemController@itemupdate");
-    Route::any("/itemdelete/{id}", "ItemController@itemdelete");
+    Route::any("/itemretrievedetail", "ItemController@itemRetrieveDetail");
+    Route::any("/itemcreatedetail", "ItemController@itemCreateDetail");
+    Route::any("/itemupdatedetail", "ItemController@itemUpdateDetail");
+    Route::any("/itemretrieve", "ItemController@itemRetrieve");
+    Route::any("/itemretrievebyuser/{user_id}", "ItemController@itemRetrievebyuser");
+    Route::any("/itemcreate", "ItemController@itemCreate");
+    Route::any("/itemupdate", "ItemController@itemUpdate");
+    Route::any("/itemdelete", "ItemController@itemDelete");
 });
 /*
  * end of ItemController
@@ -95,16 +96,32 @@ Route::group(["namespace" => "Home"], function(){
  * start of UserController
  */
 Route::group(["namespace" => "Home"], function(){
-    Route::any("/userretrievedetail/{id}", "UserController@retrieveDetail");
-    Route::any("/usercreatedetail", "UserController@createDetail");
-    Route::any("/userupdatedetail/{id}", "UserController@updateDetail");
-    Route::any("/userretrieve", "UserController@retrieve");
-    Route::any("/usercreate", "UserController@create");
-    Route::any("/userupdate/{id}", "UserController@update");
-    Route::any("/userdelete/{id}", "UserController@delete");
+    Route::any("/userretrievedetail", "UserController@userRetrieveDetail");
+    Route::any("/usercreatedetail", "UserController@userCreateDetail");
+    Route::any("/userupdatedetail", "UserController@userUpdateDetail");
+    Route::any("/usercreate", "UserController@userCreate");
+    Route::any("/userupdate", "UserController@userUpdate");
+    Route::any("/userdelete", "UserController@userDelete");
+    Route::any("/userretrieve", "UserController@userRetrieve");
 });
 /*
  * end of UserController
+ */
+
+/*
+ * start of MessageController
+ */
+Route::group(["namespace" => "Home"], function(){
+    Route::any("/messageretrievedetail", "MessageController@messageRetrieveDetail");
+    Route::any("/messagecreatedetail", "MessageController@messageCreateDetail");
+    Route::any("/messageupdatedetail", "MessageController@messageUpdateDetail");
+    Route::any("/messageretrieve", "MessageController@messageRetrieve");
+    Route::any("/messagecreate", "MessageController@messageCreate");
+    Route::any("/messageupdate", "MessageController@messageUpdate");
+    Route::any("/messagedelete", "MessageController@messageDelate");
+});
+/*
+ * end of MessageController
  */
 
 /*
