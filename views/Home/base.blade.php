@@ -15,6 +15,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--webfont-->
 <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900" rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="<?php echo asset("public/js/jquery-1.11.3.min.js"); ?>"></script>
+<script src="<?php echo asset("public/lib/bootstrap/js/bootstrap.js"); ?>"></script>
 <script src="<?php echo asset("public/js/responsiveslides.min.js"); ?>"></script>
 <script src="<?php echo asset("public/js/functions.js"); ?>"></script>
 </head>

@@ -5,7 +5,7 @@ $item = isset($item) ? $item : "";
 
 @extends("Home.base")
 @section("bodycontent")
-@include("Home.searchbar")
+@include("Home.searchBar")
 <div class="main">
   <div class="content_top">
   	<div class="container">
@@ -79,20 +79,25 @@ $item = isset($item) ? $item : "";
 	    foreach ($item as $e) {
 	    ?>
         <div class="col-md-4 top_grid1-box1">
-		<a href="#">
 	     	<div class="grid_1">
-	     	  <div class="b-link-stroke b-animate-go  thickbox">
-		        <img src="<?php echo asset($e->title_img); ?>" class="img-responsive" alt="" style="height:12em"/> </div>
-	     	  <div class="grid_2">
-	     	  	<p><?php echo $e->title; ?></p>
-	     	  	<ul class="grid_2-bottom">
-	     	  		<li class="grid_2-left"><p><small>$<?php echo $e->price; ?></small></p></li>
-	     	  		<li class="grid_2-right"><div class="btn btn-primary btn-normal btn-inline " target="_self" title="View">View</div></li>
-	     	  		<div class="clearfix"></div>
-	     	  	</ul>
-	     	  </div>
+                <div class="b-link-stroke b-animate-go  thickbox">
+                    <a href="<?php echo asset("itemretrievedetail?id=".$e->id); ?>" target="item_<?php echo $e->id; ?>">
+                    <img src="<?php echo asset($e->title_img); ?>" class="img-responsive" alt="" style="height:12em"/>
+                    </a>
+                </div>
+                <div class="grid_2">
+                	<p><?php echo $e->title; ?></p>
+                    <ul class="grid_2-bottom">
+                    	<li class="grid_2-left"><p><small>$<?php echo $e->price; ?></small></p></li>
+                    	<li class="grid_2-right">
+                    		<a href="<?php echo asset("itemretrievedetail?id=".$e->id); ?>" target="item_<?php echo $e->id; ?>">
+                    		<div class="btn btn-primary btn-normal btn-inline" target="_self" title="View">View</div>
+                    		</a>
+                    	</li>
+                    	<div class="clearfix"></div>
+                    </ul>
+                </div>
 	     	</div>
-        </a>
 		</div>
         <?php
             if (++$i % 3 == 0) {
