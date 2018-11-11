@@ -7,23 +7,25 @@ use App\Models\Item;
 use App\Models\Category;
 
 class ItemController extends Controller {
-    public function itemretrieve() {
+    public function itemRetrieve() {
         $item = Item::orderBy("created_at", "desc")->get();
-        return view("Home/itemretrieve", compact("item"));
+        $leftnavbar = "item";
+        return view("Home/itemRetrieve", compact("item", "leftnavbar"));
     }
     
-    public function itemcreatedetail() {
+    public function itemCreateDetail() {
         $category = Category::where("depth", 0)->get();
-        return view("Home/itemcreatedetail", compact("category"));
+        return view("Home/itemCreateDetail", compact("category"));
     }
     
-    public function itemupdatedetail($id) {
+    public function itemUpdateDetail() {
+        $id = Input::get("id");
         $category = Category::where("depth", 0)->get();
         $item = Item::where("id", $id)->first();
-        return view("Home/itemupdatedetail", compact("category", "item"));
+        return view("Home/itemUpdateDetail", compact("category", "item"));
     }
     
-    public function itemcreate() {
+    public function itemCreate() {
         $input = Input::get();
         foreach ($_FILES as $key => $file) {
             if ($file['tmp_name']) {
@@ -33,11 +35,12 @@ class ItemController extends Controller {
         }
         
         Item::firstOrCreate($input);
-        return redirect()->action("Home\\ItemController@itemretrieve");
+        return redirect()->action("Home\\ItemController@itemRetrieve");
     }
     
-    public function itemupdate($id) {
+    public function itemUpdate() {
         $input = Input::get();
+        $id = $input["id"];
         foreach ($_FILES as $key => $file) {
             if ($file['tmp_name']) {
                 $url = fileupload($file);
@@ -46,19 +49,23 @@ class ItemController extends Controller {
         }
         
         Item::where("id", $id)->update($input);
-        return redirect()->action("Home\\ItemController@itemretrieve");
+        return redirect()->action("Home\\ItemController@itemRetrieve");
     }
     
-    public function itemdelete($id) {
+    public function itemDelete() {
+        $id = Input::get("id");
         Item::where("id", $id)->delete();
-        return redirect()->action("Home\\ItemController@itemretrieve");
+        return redirect()->action("Home\\ItemController@itemRetrieve");
     }
     
     
     
     
-    public function retrieveDetail($id) {
-        return "ItemController/retrieveDetail".$id;
+    public function itemRetrieveDetail() {
+        $id = Input::get("id");
+        $item = Item::where("id", $id)->first();
+        $category = Category::where("depth", 0)->get();
+        return view("Home/itemRetrieveDetail", compact("item", "category"));
     }
     
     public function retrieveByUser($user_id) {

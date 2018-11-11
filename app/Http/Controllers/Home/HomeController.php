@@ -66,7 +66,6 @@ class HomeController extends Controller {
         return view("Home/login");
     }
     
-    
 //     public function news() {
 //         $news = News::orderby('id', 'desc')->limit(3)->offset(0)->get();
 //         $leftcase = Cases::orderby('id', 'desc')->limit(4)->offset(0)->get();
