@@ -1,3 +1,7 @@
+<!-- this is the home/entry page -->
+<!-- this page is also used for showing results of filtering -->
+<!-- this page is also used for showing results of searching -->
+
 <?php
 $filter = isset($filter) ? $filter : "";
 $item = isset($item) ? $item : "";

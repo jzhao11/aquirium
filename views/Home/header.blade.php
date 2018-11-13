@@ -1,3 +1,7 @@
+<!-- this is the common header for all other pages -->
+<!-- top navigation bar is defined here -->
+<!-- user priority to be checked after login -->
+
 <div class="header">
     <div class="h_menu4">
         <div class="container">
@@ -22,8 +26,8 @@
                     
                     	<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     		<div style="height:1.5em"><a style="color:black;" class="dropdown-item" href="<?php echo asset("itemretrieve"); ?>">Items</a></div>
-                            <div style="height:1.5em"><a style="color:black;" class="dropdown-item" href="<?php echo asset("messageretrieve"); ?>">Messages</a></div>
                             <div style="height:1.5em"><a style="color:black;" class="dropdown-item" href="<?php echo asset("userretrieve"); ?>">Users</a></div>
+                            <div style="height:1.5em"><a style="color:black;" class="dropdown-item" href="<?php echo asset("messageretrieve"); ?>">Messages</a></div>
                             <div style="height:1.5em"><a style="color:black;" class="dropdown-item" href="<?php echo asset("index"); ?>">Log Out</a></div>
                         </div>
                     </div>

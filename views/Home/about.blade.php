@@ -1,3 +1,7 @@
+<!-- this is the ABOUT home page for TEAM 08 -->
+<!-- all the team members are listed -->
+<!-- the personal page for each member can be accessed by clicking the name -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

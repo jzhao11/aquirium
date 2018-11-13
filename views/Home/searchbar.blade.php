@@ -1,3 +1,7 @@
+<!-- this is the common searchbar for all other pages -->
+<!-- only alphabetic and numeric characters are valid input -->
+<!-- the length of the search text should be <= 40 characters -->
+
 <?php
 $search_txt = isset($search_txt) ? $search_txt : "";
 $category = isset($category) ? $category : "";

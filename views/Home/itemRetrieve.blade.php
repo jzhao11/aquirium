@@ -1,3 +1,7 @@
+<!-- this is the dashboard list page for items -->
+<!-- the detail of each item can be accessed by clicking "View Detail" -->
+<!-- this page is visible to registered user and admin user -->
+
 @extends("Home.base")
 @section("bodycontent")
 <div class="main" style="background:#fff">
@@ -22,42 +26,42 @@
                   <td>Basketball</td>
                   <td>Perry</td>
                   <td>$33.33</td>
-                  <td><a href="<?php echo asset("userretrievedetail?id="); ?>">View Detail</a></td>
+                  <td><a href="#">View Detail</a></td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
                   <td>Math Book</td>
                   <td>Jacob</td>
                   <td>$44.33</td>
-                  <td><a href="<?php echo asset("userretrievedetail?id="); ?>">View Detail</a></td>
+                  <td><a href="#">View Detail</a></td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
                   <td>Cleaner</td>
                   <td>Larry</td>
                   <td>$66.33</td>
-                  <td><a href="<?php echo asset("userretrievedetail?id="); ?>">View Detail</a></td>
+                  <td><a href="#">View Detail</a></td>
                 </tr>
                 <tr>
                   <th scope="row">4</th>
                   <td>Mattress</td>
                   <td>Patch</td>
                   <td>$77.33</td>
-                  <td><a href="<?php echo asset("userretrievedetail?id="); ?>">View Detail</a></td>
+                  <td><a href="#">View Detail</a></td>
                 </tr>
                 <tr>
                   <th scope="row">5</th>
                   <td>Skateboard</td>
                   <td>Thomas</td>
                   <td>$88.33</td>
-                  <td><a href="<?php echo asset("userretrievedetail?id="); ?>">View Detail</a></td>
+                  <td><a href="#">View Detail</a></td>
                 </tr>
                 <tr>
                   <th scope="row">6</th>
                   <td>Shoes</td>
                   <td>Jimmy</td>
                   <td>$99.33</td>
-                  <td><a href="<?php echo asset("userretrievedetail?id="); ?>">View Detail</a></td>
+                  <td><a href="#">View Detail</a></td>
                 </tr>
                 </tbody>
             </table>
