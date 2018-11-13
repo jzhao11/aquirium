@@ -1,4 +1,10 @@
 <?php
+/*
+ * this is the controller for general purpose
+ * this controller is used for home page, registration/login, and team's ABOUT page
+ * this controller is also for filtering and searching results
+ */
+
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
@@ -11,17 +17,6 @@ use App\Models\Category;
 use App\Models\Item;
 
 class HomeController extends Controller {
-    private $ismobile;
-    
-    public function __construct() {
-        $this->ismobile = ismobile();
-        
-    }
-    
-    public function testdownload() {
-        $file_url = "http://www6.tjctime.com/mshow/public/uploads/image/20170728/1501231386122.png";
-        echo filedownload($file_url);
-    }
     
     public function index() {
         $filter_id = Input::get("filter_id");

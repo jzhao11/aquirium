@@ -1,9 +1,15 @@
-@extends("Home.base")
-@section("bodycontent")
-@include("Home.searchBar")
+<!-- this is the detail page for posting a new item -->
+<!-- after clicking "POST", unregistered user will be redirected to register/login -->
+<!-- after clicking "POST", registered user will be redirected to dashboard -->
+<!-- the newly posted item will not go live until approved by admin -->
+
 <?php
 $category = isset($category) ? $category : "";
 ?>
+
+@extends("Home.base")
+@section("bodycontent")
+@include("Home.searchBar")
 
 <div class="about">
     <div class="container">

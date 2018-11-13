@@ -1,4 +1,10 @@
 <?php
+/*
+ * this is the controller for user-related functions
+ * this controller is used to create-retrieve-update-delete DB records of users
+ * this controller corresponds to the table "ct_user"
+ */
+
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;

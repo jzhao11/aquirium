@@ -2,13 +2,63 @@
 <!-- the detail of each item can be accessed by clicking "View Detail" -->
 <!-- this page is visible to registered user and admin user -->
 
-@extends("Home.base")
-@section("bodycontent")
-<div class="main" style="background:#fff">
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>SFSU-Fulda Software Engineering Project CSC 648-848, Fall 2018. For Demonstration Only</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Fashionpress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="lib/bootstrap/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--webfont-->
+<link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900" rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script src="js/functions.js"></script>
+</head>
+
+<body>
+<div class="main">
 	<div class="content_top">
     <div class="container">
-    
-    	@include("Home.leftNavBar")
+    	<div class="col-md-3 sidebar_box">
+			<div class="sidebar">
+		        <div class="menu_box">
+		            <h3 class="menu_head">Dashboard</h3>
+		            <ul class="menu">
+		                <li>
+		                	<a href="#">
+		                	Items
+		                	</a>
+		            	</li>
+		                <li>
+		                	<a href="#">
+		                    Users
+		                    </a>
+		                </li>
+		                <li>
+		                	<a href="#">
+		                	Messages
+		                	</a>
+		            	</li>
+		                <li>
+		                	<a href="#">Personal Info</a>
+		            	</li>
+		                <li>
+		                	<a href="#">Log Out</a>
+		            	</li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+		
         <div class="col-md-9 content_right">
             <table class="table">
                 <thead>
@@ -69,4 +119,8 @@
     </div>
 	</div>
 </div>
-@endsection
+
+</body>
+
+</html>
+

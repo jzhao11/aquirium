@@ -1,3 +1,9 @@
+<!-- this is the common left nav bar for dashboard -->
+<!-- user priority to be checked after login -->
+<!-- the "Items" tab is visible to registered user and admin user -->
+<!-- the "Messages" tab is visible to registered user and admin user -->
+<!-- the "Users" tab is only visible to admin user -->
+
 <?php
 $leftnavbar = isset($leftnavbar) ? $leftnavbar : "";
 ?>

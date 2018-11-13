@@ -1,8 +1,13 @@
+<!-- this is the detail for contacting seller -->
+<!-- title image of the item is pre-filled -->
+<!-- the usernames for buyer (FROM) and seller (TO) are pre-filled -->
+<!-- the pre-filled fields are disabled to change -->
+
 @extends("Home.base")
 @section("bodycontent")
 <div class="about">
 	<div class="container">
-		<div class="col-md-9" style="margin-left:10em; margin-right:10em">
+		<div class="col-sm-8 col-sm-offset-2">
 			<div class="contact-form">
 				<form method="post" action="#">
 					<p class="comment-form-author"><label for="author">Item:</label>
@@ -18,7 +23,7 @@
 					<p class="comment-form-author"><label for="author">Message:</label>
 						<textarea value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your message here...';}">Enter your message here...</textarea>
 					</p>
-					<input name="submit" type="submit" id="submit" value="Submit">
+					<button type="submit" class="btn btn-primary">Send</button>
 				</form>
 			</div>
 		</div>

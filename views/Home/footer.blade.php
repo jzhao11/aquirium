@@ -1,3 +1,7 @@
+<!-- this is the common footer for all other pages -->
+<!-- most links are dummy and for demonstration only -->
+<!-- copyright 2018 Aquirium all rights reserved -->
+
 <div class="footer">
 	<div class="container">
 		<div class="col-md-3 f_grid1">

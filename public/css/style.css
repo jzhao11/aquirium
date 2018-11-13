@@ -3,9 +3,10 @@ h1, h2, h3 {margin-top: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
 html, body{
-   font-family: 'Lato', sans-serif;
-   font-size: 100%;
-   background:#fff; 
+	font-family: 'Lato', sans-serif;
+	font-size: 100%;
+	background:#fff;
+	min-width: 375px; /*added*/
 }
 body a{
 	transition: 0.5s all;
@@ -15,7 +16,7 @@ body a{
 	-moz-transition: 0.5s all;
 }
 .header_top{
-	background:#f7f7f7;
+	background:#eee;
 }
 .logo{
 	float:left;
@@ -29,7 +30,7 @@ ul.shopping_grid{
 }
 ul.shopping_grid li{
 	float: left;
-	background: #eee;
+	background: #bbb;
 	padding: 25px 20px 0;
 	border-right: 1px solid #f7f7f7;
 	font: 600 15px/15px 'Lato', sans-serif;
@@ -443,7 +444,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	}
 }
 .column_center {
-	background: #ffffff;
+	background: url(../img/bg.jpg); /*#eeeeee; #ffffff;*/
 	/*
 	background: -moz-linear-gradient(45deg,  #dee9f1 50%, #f1ede9 57%, #f9eae4 100%);
 	background: -webkit-gradient(linear, left bottom, right top, color-stop(50%,#dee9f1), color-stop(57%,#f1ede9), color-stop(100%,#f9eae4));
@@ -475,7 +476,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	padding:7px 10px;
 	outline: none;
 	color: #000;
-	background: #eee;
+	background: #fff; /*#eee;*/
 	border: none;
 	width:72%;
 	line-height: 1.5em;
@@ -491,8 +492,8 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 /*--index_content--*/
 .main{
-	background:#eee;
-	padding: 1em 0 5em;
+	background: #eee;
+	padding: 1em 0 3em; /*1em 0 5em*/
 }
 h3.menu_head {
 	background:#df1f26;
@@ -512,7 +513,7 @@ h3.menu_head {
 	padding: 0;
 	margin:0;
     list-style: none;
-	background: #efefef;
+	background: #f7f7f7; /*#efefef;*/
 }
 ul {
 	padding: 0;
@@ -1118,7 +1119,6 @@ p.quick_desc {
 .wish-list {
 	padding: 15px 0;
 	border-bottom: 1px solid #E5E5E5;
-	border-top: 1px solid #E5E5E5;
 }
 .wish-list li {
 	display: inline-block;
@@ -1223,7 +1223,7 @@ ul.tab_list {
 	border-left:none;
 }
 .resp-tab-item{
-	color: #777;
+	color: #000; /*#777;*/
 	font-size: 0.8125em;
 	cursor: pointer;
 	padding: 12px 10px;
@@ -1239,7 +1239,7 @@ ul.tab_list {
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
 	text-transform: uppercase;
-	background:#fff;
+	background: #d8d8d8; /*#fff;*/
 	width: 50%; /*33.33333%; this is the percent for description/additional/reviews*/
 }
 .resp-tab-item:hover {
@@ -1249,7 +1249,7 @@ ul.tab_list {
 .resp-tab-active{
 	background:#f84545;
 	text-shadow: none;
-	color:#fff;
+	color:#000; /*#fff;*/
 }
 .resp-tabs-container {
 	padding: 0px;
@@ -1314,7 +1314,7 @@ h3.single_head{
 }
 /*--about--*/
 .about{
-	padding:5em 0;
+	padding: 1em 0;
 }
 .span1 h3, h3.m_3{
 	text-align: center;
@@ -1391,21 +1391,21 @@ p.comment-form-author {
 .contact-form input[type="text"] {
 	padding: 10px;
 	width: 95%;
-	color: #9198A3;
+	color: #333; /*#9198A3;*/
 	font: 300 16px/25px Lato, sans-serif;
 	background: #fff;
 	outline: none;
 	display: block;
-	border: 1px solid #eee;
+	border: 1px solid #aaa;
 }
 .contact-form textarea {
 	padding: 10px;
 	display: block;
 	width: 95%;
 	background: #fff;
-	border: 1px solid #eee;
+	border: 1px solid #aaa;
 	outline: none;
-	color: #9198A3;
+	color: #333; /*#9198A3;*/
 	font: 300 16px/25px Lato, sans-serif;
 	-webkit-appearance: none;
 	resize: none;
