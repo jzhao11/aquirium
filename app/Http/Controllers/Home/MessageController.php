@@ -1,4 +1,10 @@
 <?php
+/*
+ * this is the controller for message-related functions
+ * this controller is used to create-retrieve-update-delete DB records of messages
+ * this controller corresponds to the table "ct_message"
+ */
+
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;

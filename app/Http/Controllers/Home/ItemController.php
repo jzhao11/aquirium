@@ -1,4 +1,10 @@
 <?php
+/*
+ * this is the controller for item-related functions
+ * this controller is used to create-retrieve-update-delete DB records of items
+ * this controller corresponds to the table "ct_item"
+ */
+
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
@@ -7,6 +13,7 @@ use App\Models\Item;
 use App\Models\Category;
 
 class ItemController extends Controller {
+    
     public function itemRetrieve() {
         $item = Item::orderBy("created_at", "desc")->get();
         $leftnavbar = "item";
