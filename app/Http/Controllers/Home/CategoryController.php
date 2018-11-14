@@ -1,4 +1,10 @@
 <?php
+/*
+ * this is the controller for generating all the categories
+ * the categories are managed by using nested set as data structure
+ * the categories cannot be edited by any users in front end
+ */
+
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;

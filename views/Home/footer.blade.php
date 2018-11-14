@@ -1,7 +1,10 @@
+<!-- this is the common footer for all other pages -->
+<!-- most links are dummy and for demonstration only -->
+<!-- copyright 2018 Aquirium all rights reserved -->
+
 <div class="footer">
 	<div class="container">
 		<div class="col-md-3 f_grid1">
-			<h3>About</h3>
 			<h3><a href="<?php echo asset("index"); ?>" style="color:#df1f26;padding-left:0">AQUIRIUM</a></h3>
 			<p>Aquirium is a buy-sell web application specifically designed for students at San Francisco State University (SFSU).</p>
 		</div>

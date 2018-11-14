@@ -1,4 +1,10 @@
 <?php
+/*
+ * this is the extended controller for probable controller inheritance
+ * when needed, this controller should be used as an inheritance layer btw class Controller and derived ones
+ * this controller is currently inactive
+ */
+
 namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 

@@ -3,22 +3,15 @@
 <!-- this page should only be accessed from home page or search results -->
 <!-- this page should be popped up as a new tab in browser -->
 
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Single</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Fashionpress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="lib/bootstrap/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="js/hover_pack.js"></script>
-<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+<?php
+$item = isset($item) ? $item : "";
+?>
+
+@extends("Home.base")
+@section("bodycontent")
+@include("Home.searchbar")
+<script type="text/javascript" src="<?php echo asset("public/js/hover_pack.js"); ?>"></script>
+<script src="<?php echo asset("public/js/easyResponsiveTabs.js"); ?>" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function () {
     $('#horizontalTab').easyResponsiveTabs({
@@ -28,10 +21,8 @@ $(document).ready(function () {
     });
 });
 </script>
-</head>
 
-<body>
-<div class="main">
+<div class="main" style="background:#fff">
 	<div class="content_top">
  	<div class="container">
 		<div class="col-md-13 single_right">
@@ -40,27 +31,27 @@ $(document).ready(function () {
 				<div class="grid images_3_of_2">
 				<ul id="">
 					<li>
-						<img src="img/p5.jpg" class="img-responsive" width="120%" />
+						<img src="<?php echo asset($item->title_img); ?>" class="img-responsive img-thumbnail rounded" width="120%" />
 					</li>
 				</ul>
 				<div class="clearfix"></div>		
 			</div> 
 			<div class="desc1 span_3_of_2">
 				<div class="wish-list">
-   					<h1 class="quick">Title of the item</h1>
+   					<h1 class="quick"><?php echo $item->title; ?></h1>
    				</div>
 			    <div class="wish-list">
-    				<h3>Price: $120.00</h3>
+    				<h3>Price: $<?php echo $item->price; ?></h3>
 				</div>
 			    <div class="wish-list">
     				<h3>Sold By: Username</h3>
 				</div>
 				<div class="wish-list">
-					<h3>Post Date: 2018/07/04</h3>
+					<h3>Post Date: <?php echo substr($item->created_at, 0, 10); ?></h3>
 				</div>
 				<div class="quantity_box">
 	   		    </div>
-			    <a href="#" class="btn bt1 btn-primary btn-normal btn-inline " target="_self">CONTACT SELLER</a>
+			    <a href="<?php echo asset("messagecreatedetail?to_user_id=".$item->user_id."&item_id=".$item->id); ?>" class="btn bt1 btn-primary btn-normal btn-inline" target="message_<?php echo $item->id; ?>">CONTACT SELLER</a>
 			</div>
 		    <div class="clearfix"> </div>
 				</div>
@@ -78,12 +69,7 @@ $(document).ready(function () {
 						<div class="facts">
 							<ul class="tab_list">
 								<li>
-									<a href="#">
-									This is the description of item.<br/>
-									This is the description of item.<br/>
-									This is the description of item.<br/>
-									This is the description of item.<br/>
-									</a>
+									<div id="description" style="text-align:center"><?php echo $item->description; ?></div>
 								</li>
 							</ul>           
 						</div>
@@ -92,12 +78,12 @@ $(document).ready(function () {
 						<div class="facts">
 							<ul class="tab_list">
 								<li>
-									<a href="#">
+									<div style="text-align:center">
 									This is the additional information of item.<br/>
 									This is the additional information of item.<br/>
 									This is the additional information of item.<br/>
 									This is the additional information of item.<br/>
-									</a>
+									</div>
 								</li>
 							</ul>           
 						</div>
@@ -109,6 +95,11 @@ $(document).ready(function () {
 	</div> 
 	</div>
 </div>
-
-</body>
-</html>		
+<script>
+$(function(){
+    var element = $("div[id='description']");
+    var temp =  element.text().replace(/\n/g,'<br/>');
+    element.html(temp);
+});
+</script>
+@endsection

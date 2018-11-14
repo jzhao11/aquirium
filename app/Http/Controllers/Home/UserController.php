@@ -1,34 +1,54 @@
 <?php
+/*
+ * this is the controller for user-related functions
+ * this controller is used to create-retrieve-update-delete DB records of users
+ * this controller corresponds to the table "ct_user"
+ */
+
 namespace App\Http\Controllers\Home;
 
-class UserController extends ExtendedController {
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
+use App\Models\User;
+
+class UserController extends Controller {
     
-    public function retrieveDetail($id) {
-        return "UserController/retrieveDetail".$id;
+    public function userRetrieveDetail() {
     }
     
-    public function createDetail() {
-        return "UserController/createDetail";
+    public function userCreateDetail() {
     }
     
-    public function updateDetail($id) {
+    public function userUpdateDetail() {
+        $id = Input::get("id");
         return "UserController/updateDetail";
     }
     
-    public function retrieve() {
-        return "UserController/retrieve";
+    public function userRetrieve() {
+        $user = User::orderBy("created_at", "desc")->get();
+        $leftnavbar = "user";
+        return view("Home/userRetrieve", compact("user", "leftnavbar"));
     }
     
-    public function create() {
-        return "UserController/create";
+    public function userCreate() {
+        $input = Input::get();
+        $input["password"] = md5($input["password"]);
+        
+        foreach ($_FILES as $key => $file) {
+            if ($file['tmp_name']) {
+                $url = fileupload($file);
+                $input[$key] = $url;
+            }
+        }
+        
+        User::firstOrCreate($input);
+        return redirect()->action("Home\\ItemController@itemRetrieve");
     }
     
-    public function update($id) {
-        return "UserController/update";
+    public function userUpdate() {
     }
     
-    public function delete($id) {
-        return "UserController/delete";
+    public function userDelete() {
     }
 }
 
