@@ -5,6 +5,7 @@
 <?php
 $filter = isset($filter) ? $filter : "";
 $item = isset($item) ? $item : "";
+$empty_flag = isset($empty_flag) ? $empty_flag : 0;
 ?>
 
 @extends("Home.base")
@@ -13,7 +14,9 @@ $item = isset($item) ? $item : "";
 <div class="main">
   <div class="content_top">
   	<div class="container">
+       <!-- 
 	   <div class="col-md-3 sidebar_box">
+	   
 	   	 <div class="sidebar">
 			<div class="menu_box">
 		    <h3 class="menu_head">Filters</h3>
@@ -29,31 +32,8 @@ $item = isset($item) ? $item : "";
 	          <?php
 			  }
 			  ?>
-				<!-- 
-				<li class="item2"><a href="#"><img class="arrow-img" src="<?php echo asset("public/img/f_menu.png"); ?>" alt=""/>Books</a>
-				</li>
-				<li class="item3"><a href="#"><img class="arrow-img" src="<?php echo asset("public/img/f_menu.png"); ?>" alt=""/>Devices</a>
-				</li>
-				 -->
-				<!-- 
-				<li class="item7"><a href="#"><img class="arrow-img" src="<?php echo asset("public/img/f_menu.png"); ?>" alt=""/>Top Fashion</a>
-					<ul class="cute">
-						<li class="subitem1"><a href="#">Cute Kittens </a></li>
-						<li class="subitem2"><a href="#">Strange Stuff </a></li>
-						<li class="subitem3"><a href="#">Automatic Fails </a></li>
-					</ul>
-				</li>
-				<li class="item8"><a href="#"><img class="arrow-img" src="<?php echo asset("public/img/f_menu.png"); ?>" alt=""/>Summer Collection</a>
-					<ul class="cute">
-						<li class="subitem1"><a href="#">Cute Kittens </a></li>
-						<li class="subitem2"><a href="#">Strange Stuff </a></li>
-						<li class="subitem3"><a href="#">Automatic Fails </a></li>
-					</ul>
-				</li>
-				 -->
 			</ul>
 		</div>
-		<!--initiate accordion-->
 		<script type="text/javascript">
 			$(function() {
 			    var menu_ul = $('.menu > li > ul'),
@@ -74,9 +54,16 @@ $item = isset($item) ? $item : "";
 			});
 		</script>
        </div>
+       
        <div class="tlinks"></div>
-	   </div> 
-	   <div class="col-md-9 content_right">
+	   </div>
+	    -->
+	   <div class="col-md-12 content_right">
+	    <?php
+        if ($empty_flag) {
+	        echo "<div style='margin-left:1em'><h5>Sorry, items not found. Here are some newly posted items.</h5></div>";
+	    }
+	    ?>
 	    <div class="top_grid2">
 	    <?php
 	    $i = 0;
@@ -95,7 +82,7 @@ $item = isset($item) ? $item : "";
                     	<li class="grid_2-left"><p><small>$<?php echo $e->price; ?></small></p></li>
                     	<li class="grid_2-right">
                     		<a href="<?php echo asset("itemretrievedetail?id=".$e->id); ?>" target="item_<?php echo $e->id; ?>">
-                    		<div class="btn btn-primary btn-normal btn-inline" target="_self" title="View">View</div>
+                    		<div class="btn btn-primary btn-normal btn-inline" target="_self" title="Contact">Contact</div>
                     		</a>
                     	</li>
                     	<div class="clearfix"></div>
