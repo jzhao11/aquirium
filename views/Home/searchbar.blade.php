@@ -10,9 +10,10 @@ $category_id = isset($category_id) ? $category_id : "";
 <div class="column_center">
 	<div class="container">
 	<div class="search">
-		<div class="stay">Search
-		<select id="category_id" onchange="change(this.value)">
-			<option value="0"></option>
+		<div class="text-center">
+		<!-- Search -->
+		<select id="category_id" onchange="change(this.value)" style="width:12%">
+			<option value="0">All</option>
         <?php
         foreach ($category as $e) {
         ?>
@@ -23,10 +24,7 @@ $category_id = isset($category_id) ? $category_id : "";
         }
         ?>
 		</select>
-		</div> 
-		<!-- <form> -->
-		<div class="stay_right">
-		  	<input type="text" value="<?php echo $search_txt; ?>" id="search_txt">  <!-- onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" -->
+		  	<input type="text" value="<?php echo $search_txt; ?>" id="search_txt" style="width:30%">
 		  	<input type="submit" id="search" value="" onclick="search()">
 		</div>
 		<!-- </form> -->

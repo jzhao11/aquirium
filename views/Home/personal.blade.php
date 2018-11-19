@@ -30,8 +30,8 @@
 
 
 <?php
-    $admin = isset($admin) ? $admin : "";
-    if (!$admin) {
+    $about = isset($about) ? $about : "";
+    if (!$about) {
         exit();
     }
 ?>
@@ -45,7 +45,7 @@
                 <ul class="nav nav-tabs nav-stacked">
                 	<li><a href="<?php echo asset("about"); ?>">Return to Home Page</a></li>
                 </ul>
-                <img class="img-responsive" src="<?php echo asset($admin->avatar); ?>" alt="">
+                <img class="img-responsive" src="<?php echo asset($about->avatar); ?>" alt="">
                 <ul class="nav nav-tabs nav-stacked" id="myTab">
                     <li class="active"><a href="#about">About</a></li>
                     <li><a href="#profile">Profile</a></li>
@@ -61,11 +61,11 @@
                 
                     <!-- first tab -->
                     <div class="tab-pane active" id="about">
-                        <h3><?php echo $admin->realname; ?></h3>
-                        <h5><?php echo $admin->title; ?></h5>
+                        <h3><?php echo $about->realname; ?></h3>
+                        <h5><?php echo $about->title; ?></h5>
                         <hr>
-                        <p><?php echo $admin->intro1; ?></p>
-                        <p><?php echo $admin->intro2; ?></p>
+                        <p><?php echo $about->intro1; ?></p>
+                        <p><?php echo $about->intro2; ?></p>
                     </div>
                     <!-- first tab -->
                     
@@ -73,14 +73,14 @@
                     <div class="tab-pane" id="profile">
                         <h4>Role In The Team</h4>
                         <p class="sm">
-                            <grey>Position: </grey><?php echo $admin->position; ?><br/>
-                            <grey>Programming Languages: </grey><?php echo $admin->lang; ?><br/>
+                            <grey>Position: </grey><?php echo $about->position; ?><br/>
+                            <grey>Programming Languages: </grey><?php echo $about->lang; ?><br/>
                         </p>
                         
                         <h4>Personal Info</h4>
                         <p class="sm">
-                            <grey>Nickname: </grey><?php echo $admin->nickname; ?><br/>
-                            <grey>Hobbies: </grey><?php echo $admin->hobby; ?><br/>
+                            <grey>Nickname: </grey><?php echo $about->nickname; ?><br/>
+                            <grey>Hobbies: </grey><?php echo $about->hobby; ?><br/>
                         </p>
                     </div>
                     <!-- second tab -->
