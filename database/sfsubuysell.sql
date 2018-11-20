@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 11, 2018 at 09:07 PM
+-- Generation Time: Nov 20, 2018 at 10:29 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -25,11 +25,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ct_admin`
+-- Table structure for table `about`
 --
 
-DROP TABLE IF EXISTS `ct_admin`;
-CREATE TABLE IF NOT EXISTS `ct_admin` (
+DROP TABLE IF EXISTS `about`;
+CREATE TABLE IF NOT EXISTS `about` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `realname` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `nickname` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
@@ -45,10 +45,10 @@ CREATE TABLE IF NOT EXISTS `ct_admin` (
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `ct_admin`
+-- Dumping data for table `about`
 --
 
-INSERT INTO `ct_admin` (`id`, `realname`, `nickname`, `email`, `title`, `position`, `avatar`, `intro1`, `intro2`, `lang`, `hobby`) VALUES
+INSERT INTO `about` (`id`, `realname`, `nickname`, `email`, `title`, `position`, `avatar`, `intro1`, `intro2`, `lang`, `hobby`) VALUES
 (1, 'Jianfei Zhao', 'Jianfei', 'jzhao11@mail.sfsu.edu', 'Team Lead', 'Back End', 'public/img/avatar_jianfei.jpg', 'Hi, my name is Jianfei. I am the lead of team 08.', 'There are 7 members in our team. It is a pleasure to work with my teammates.                          Hopefully, we can make progress together during the development of our website.', 'Javascript, HTML, PHP', 'Soccer, Chess'),
 (2, 'Feras Alazzeh', 'Feras', 'falazzeh@mail.sfsu.edu', 'Head Back End Engineer', 'Back End', 'public/img/avatar_feras.jpg', 'My name is Feras Alazzeh and I am from Northern California. ', 'I am a Senior at San Francisco State University and I plan on graduating in the Fall of 2019 with a degree in Computer Science and a minor in Mathemantics.                          I am currently working as a Software Engineer at SFMTA.', 'Python, Javascript, Java, CSS, HTML', 'Football'),
 (3, 'Lileana Wright', 'Lilly', 'lwright1@mail.sfsu.edu', 'Front End Engineer', 'Front End', '', 'My name is Lileana Wright and I am from Southern California. ', 'I am a Senior at San Francisco State University and I plan on graduating in the Spring of 2019 with a degree in Computer Science and a minor in Labor Studies.', 'PHP, Javascript', 'Swimming, Cooking'),
@@ -60,11 +60,11 @@ INSERT INTO `ct_admin` (`id`, `realname`, `nickname`, `email`, `title`, `positio
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ct_category`
+-- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `ct_category`;
-CREATE TABLE IF NOT EXISTS `ct_category` (
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE IF NOT EXISTS `category` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `priority` int(11) NOT NULL,
@@ -79,10 +79,10 @@ CREATE TABLE IF NOT EXISTS `ct_category` (
 ) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `ct_category`
+-- Dumping data for table `category`
 --
 
-INSERT INTO `ct_category` (`id`, `title`, `priority`, `parent_id`, `lft`, `rgt`, `depth`) VALUES
+INSERT INTO `category` (`id`, `title`, `priority`, `parent_id`, `lft`, `rgt`, `depth`) VALUES
 (1, 'Clothes', 2, NULL, 1, 8, 0),
 (2, 'T-shirts', 1, 1, 2, 3, 1),
 (7, 'Shoes', 0, 1, 4, 5, 1),
@@ -110,11 +110,11 @@ INSERT INTO `ct_category` (`id`, `title`, `priority`, `parent_id`, `lft`, `rgt`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ct_item`
+-- Table structure for table `item`
 --
 
-DROP TABLE IF EXISTS `ct_item`;
-CREATE TABLE IF NOT EXISTS `ct_item` (
+DROP TABLE IF EXISTS `item`;
+CREATE TABLE IF NOT EXISTS `item` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -138,10 +138,10 @@ CREATE TABLE IF NOT EXISTS `ct_item` (
 ) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `ct_item`
+-- Dumping data for table `item`
 --
 
-INSERT INTO `ct_item` (`id`, `user_id`, `category_id`, `filter_id`, `title`, `description`, `price`, `unit`, `title_img`, `detail_img0`, `detail_img1`, `detail_img2`, `detail_img3`, `status`, `created_at`, `updated_at`) VALUES
+INSERT INTO `item` (`id`, `user_id`, `category_id`, `filter_id`, `title`, `description`, `price`, `unit`, `title_img`, `detail_img0`, `detail_img1`, `detail_img2`, `detail_img3`, `status`, `created_at`, `updated_at`) VALUES
 (1, 0, 9, 10, 'Computer Science Book 0', 'This is the description of Computer Science Book 0.\r\nThis is the description of Computer Science Book 0.', 35.38, '', 'public/uploads/image/20181021/1540115039634.jpg', '', '', '', '', 1, '2018-10-22 00:43:59', '2018-10-22 01:10:33'),
 (2, 0, 9, 10, 'Computer Science Book 1', 'This is the description of Computer Science Book 1.\r\nThis is the description of Computer Science Book 1.', 35.76, '', 'public/uploads/image/20181021/1540116544521.jpg', '', '', '', '', 0, '2018-10-22 01:09:04', '2018-10-22 01:11:30'),
 (3, 0, 9, 10, 'Computer Science Book 2', 'This is the description of Computer Science Book 2.\r\nThis is the description of Computer Science Book 2.', 36.14, '', 'public/uploads/image/20181021/1540116568719.jpg', '', '', '', '', 0, '2018-10-22 01:09:28', '2018-10-22 01:11:42'),
@@ -194,11 +194,11 @@ INSERT INTO `ct_item` (`id`, `user_id`, `category_id`, `filter_id`, `title`, `de
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ct_message`
+-- Table structure for table `message`
 --
 
-DROP TABLE IF EXISTS `ct_message`;
-CREATE TABLE IF NOT EXISTS `ct_message` (
+DROP TABLE IF EXISTS `message`;
+CREATE TABLE IF NOT EXISTS `message` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `item_id` int(11) NOT NULL,
   `from_user_id` int(11) NOT NULL,
@@ -222,35 +222,6 @@ CREATE TABLE IF NOT EXISTS `ct_message` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ct_user`
---
-
-DROP TABLE IF EXISTS `ct_user`;
-CREATE TABLE IF NOT EXISTS `ct_user` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `stu_id` int(11) NOT NULL,
-  `avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `priority` tinyint(4) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `ct_user`
---
-
-INSERT INTO `ct_user` (`id`, `username`, `password`, `email`, `stu_id`, `avatar`, `priority`, `created_at`, `updated_at`) VALUES
-(1, 'nobodyknows', '96e79218965eb72c92a549dd5a330112', 'nobodyknows@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:55:45', '2018-11-11 08:55:45'),
-(2, 'naruto', 'e3ceb5881a0a1fdaad01296d7554868d', 'naruto@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:56:25', '2018-11-11 08:56:25'),
-(3, 'sasuke', '1a100d2c0dab19c4430e7d73762b3423', 'sasuke@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:58:21', '2018-11-11 08:58:21');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `migrations`
 --
 
@@ -269,6 +240,36 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2018_10_21_163720_create_item_table', 2),
 ('2018_11_10_032735_create_user_table', 3),
 ('2018_11_10_075541_create_message_table', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stu_id` int(11) NOT NULL,
+  `avatar` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `priority` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `stu_id`, `avatar`, `priority`, `created_at`, `updated_at`) VALUES
+(1, 'nobodyknows', '96e79218965eb72c92a549dd5a330112', 'nobodyknows@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:55:45', '2018-11-11 08:55:45'),
+(2, 'naruto', 'e3ceb5881a0a1fdaad01296d7554868d', 'naruto@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:56:25', '2018-11-11 08:56:25'),
+(3, 'sasuke', '1a100d2c0dab19c4430e7d73762b3423', 'sasuke@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:58:21', '2018-11-11 08:58:21'),
+(4, 'itachi', '550a141f12de6341fba65b0ad0433500', 'itachi@mail.sfsu.edu', 0, '', 0, '2018-11-12 13:44:06', '2018-11-12 13:44:06');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
