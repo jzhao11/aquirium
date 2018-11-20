@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Input;
 // use App\Models\News;
 // use App\Models\Cases;
 // use App\Models\Contact;
-use App\Models\Admin;
+use App\Models\About;
 use App\Models\Category;
 use App\Models\Item;
 
@@ -32,51 +32,36 @@ class HomeController extends Controller {
                 ->whereRaw("title like '%".$search_txt."%'")
                 // or description like '%".$search_txt."%'
                 ->orderBy($order_by, $order)
-                ->get();
+                ->paginate(6);
         
+        $empty_flag = 0;
         if (!count($item)) {
             $item = Item::whereRaw($category_cond)
                     ->whereRaw("status < 2")
                     ->orderBy($order_by, $order)
-                    ->get();
+                    ->paginate(6);
+            $empty_flag = 1;
         }
         
         $category = Category::where("depth", 0)->get();
         $filter = $category_id ? Category::where("parent_id", $category_id)->get() : $category;
-        return view("Home/index", compact("category", "filter", "item", "search_txt", "category_id"));
+        return view("Home/index", compact("category", "filter", "item", "search_txt", "category_id", "empty_flag"));
     }
     
     public function about() {
-        $admin = Admin::orderby("id", "asc")->get();
-        return view("Home/about", compact("admin"));
+        $about = About::orderby("id", "asc")->get();
+        return view("Home/about", compact("about"));
     }
     
     public function personal() {
         $id = Input::get("id");
-        $admin = Admin::where("id", $id)->first();
-        return view("Home/personal", compact("admin"));
+        $about = About::where("id", $id)->first();
+        return view("Home/personal", compact("about"));
     }
     
     public function logindetail() {
         return view("Home/login");
     }
-    
-//     public function news() {
-//         $news = News::orderby('id', 'desc')->limit(3)->offset(0)->get();
-//         $leftcase = Cases::orderby('id', 'desc')->limit(4)->offset(0)->get();
-//         $rightcase = Cases::orderby('id', 'desc')->limit(4)->offset(4)->get();
-//         $topnews = News::orderby('id', 'desc')->take(2)->get();
-//         $news = News::orderby('id', 'desc')->paginate(4);
-//         $view = $this->ismobile ? 'Home/news_phone' : 'Home/news_pc';
-//         return view($view, compact('news', 'topnews'));
-//     }
-//     public function newsdetail() {
-//         $news_id = Input::get('id');
-//         $news = News::where('id', $news_id)->first();
-//         $news_prev = News::where('id', '<', $news_id)->orderby('id', 'desc')->first();
-//         $news_next = News::where('id', '>', $news_id)->orderby('id', 'asc')->first();
-//         return view('Home/newsdetail', compact('news', 'news_prev', 'news_next'));
-//     }
 }
 
 ?>
