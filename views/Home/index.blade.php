@@ -6,18 +6,19 @@
 $filter = isset($filter) ? $filter : "";
 $item = isset($item) ? $item : "";
 $empty_flag = isset($empty_flag) ? $empty_flag : 0;
+$search_txt = isset($search_txt) ? $search_txt : "";
+$category_id = isset($category_id) ? $category_id : "";
 ?>
 
 @extends("Home.base")
 @section("bodycontent")
 @include("Home.searchBar")
 <div class="main">
-  <div class="content_top">
+	<div class="content_top">
   	<div class="container">
-       <!-- 
-	   <div class="col-md-3 sidebar_box">
-	   
-	   	 <div class="sidebar">
+        <!-- 
+        <div class="col-md-3 sidebar_box">
+        <div class="sidebar">
 			<div class="menu_box">
 		    <h3 class="menu_head">Filters</h3>
 			  <ul class="menu">
@@ -33,8 +34,8 @@ $empty_flag = isset($empty_flag) ? $empty_flag : 0;
 			  }
 			  ?>
 			</ul>
-		</div>
-		<script type="text/javascript">
+        </div>
+        <script type="text/javascript">
 			$(function() {
 			    var menu_ul = $('.menu > li > ul'),
 			           menu_a  = $('.menu > li > a');
@@ -53,17 +54,28 @@ $empty_flag = isset($empty_flag) ? $empty_flag : 0;
 			
 			});
 		</script>
-       </div>
-       
-       <div class="tlinks"></div>
-	   </div>
+        </div>
+        <div class="tlinks"></div>
+        </div>
 	    -->
-	   <div class="col-md-12 content_right">
+		<div class="col-md-12 content_right">
+		<div style="text-align:right">
 	    <?php
         if ($empty_flag) {
-	        echo "<div style='margin-left:1em'><h5>Sorry, items not found. Here are some newly posted items.</h5></div>";
+	        echo "Sorry, items not found. Here are some newly posted items. ";
 	    }
+	    echo "Showing ".$item->firstItem()." to ".$item->lastItem()." out of ".$item->total();
 	    ?>
+	    </div>
+	    <div style="text-align:right">
+    	<?php
+    	if ($empty_flag) {
+    	    echo $item->appends(["category_id" => $category_id])->links();
+    	} else {
+    	    echo $item->appends(["category_id" => $category_id, "search_txt" => $search_txt])->links();
+    	}
+    	?>
+	    </div>
 	    <div class="top_grid2">
 	    <?php
 	    $i = 0;
@@ -96,12 +108,12 @@ $empty_flag = isset($empty_flag) ? $empty_flag : 0;
             }
         }
         ?>
-        <div class="clearfix"> </div>
-        <div class="clearfix"> </div>
-		<div class="clearfix"> </div>
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>
+		<div class="clearfix"></div>
 	    </div> 
-       </div>
-	  </div>  	    
+		</div>
+	</div>  	    
 	</div>
 </div>
 @endsection

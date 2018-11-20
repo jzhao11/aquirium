@@ -16,6 +16,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- jQuery (necessary for Bootstrap"s JavaScript plugins) -->
 <!-- Custom Theme files -->
 <link href="<?php echo asset("public/css/style.css"); ?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo asset("public/css/pagination.css"); ?>" rel="stylesheet" type="text/css" />
 <!-- Custom Theme files -->
 <!--webfont-->
 <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
