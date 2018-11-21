@@ -29,7 +29,7 @@
 </head>
 
 <?php
-    $admin = isset($admin) ? $admin : array();
+    $about = isset($about) ? $about : array();
 ?>
 
 <body>
@@ -55,9 +55,9 @@
             <div class="col-md-4">
                 <ul class="nav nav-tabs nav-stacked">
                 <?php
-                    foreach ($admin as $item) {
+                    foreach ($about as $e) {
                 ?>
-                	<li><a href="<?php echo asset("personal?id=".$item->id); ?>"><?php echo $item->realname; ?></a></li>
+                	<li><a href="<?php echo asset("personal?id=".$e->id); ?>"><?php echo $e->realname; ?></a></li>
                 <?php
                     }
                 ?>

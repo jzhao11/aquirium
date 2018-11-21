@@ -4,10 +4,11 @@
 
 <div class="footer">
 	<div class="container">
-		<div class="col-md-3 f_grid1">
-			<h3><a href="<?php echo asset("index"); ?>" style="color:#df1f26;padding-left:0">AQUIRIUM</a></h3>
+		<div class="col-md-6 f_grid1">
+			<h3><a href="<?php echo asset("index"); ?>" style="color:#EE9A00;padding-left:0">AQUIRIUM</a></h3>
 			<p>Aquirium is a buy-sell web application specifically designed for students at San Francisco State University (SFSU).</p>
 		</div>
+		<!--
 		<div class="col-md-3 f_grid1 f_grid2">
 			<h3>Follow</h3>
 			<ul class="social">
@@ -17,6 +18,7 @@
 				<li><a href=""><i class="instagram"> </i><p class="m_3">Instagram</p><div class="clearfix"> </div></a></li>
 			</ul>
 		</div>
+		-->
 		<div class="col-md-6 f_grid3">
 			<h3>Contact Info</h3>
 			<ul class="list">
