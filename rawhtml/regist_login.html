@@ -66,6 +66,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 	<label for="cfmpassword">Confirm Password *</label>
                 	<input type="password" class="form-control" id="cfmpassword" required placeholder="Confirm Your Password">
                 </div>
+		    </div>
+		    <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+  <script>
+  grecaptcha.ready(function() {
+      grecaptcha.execute('reCAPTCHA_site_key', {action: 'homepage'}).then(function(token) {
+         ...
+      });
+  });
+  </script>
+		    </div
                 <div class="form-check">
                 	<input type="checkbox" class="form-check-input is-invalid" required id="agreetoterms">
                 	<label class="form-check-label" for="agreetoterms">Agree to Terms *</label>
