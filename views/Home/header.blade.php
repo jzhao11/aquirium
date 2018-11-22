@@ -18,9 +18,9 @@
     		</div>
     		<ul class="shopping_grid">
     			<li><a href="<?php echo asset("about"); ?>" style="color:black" target="new_window">Team</a></li>
-                <li><a href="<?php echo asset("itemcreatedetail"); ?>" style="color:black">Sell</a></li>
+                <li><a href="<?php echo asset("itemcreatedetail"); ?>" target="sell" style="color:black">Sell</a></li>
                 <li>
-                	<a href="<?php echo asset("logindetail"); ?>" style="color:black">Register</a>
+                	<a href="<?php echo asset("registerdetail"); ?>" style="color:black">Register</a>
                 	&nbsp;&nbsp;/&nbsp;&nbsp;
 	                <a href="<?php echo asset("logindetail"); ?>" style="color:black">Log In</a>
                 </li>

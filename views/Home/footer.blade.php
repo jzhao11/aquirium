@@ -7,6 +7,7 @@
 		<div class="col-md-6 f_grid1">
 			<h3><a href="<?php echo asset("index"); ?>" style="color:#EE9A00;padding-left:0">AQUIRIUM</a></h3>
 			<p>Aquirium is a buy-sell web application specifically designed for students at San Francisco State University (SFSU).</p>
+			<p><br></p>
 		</div>
 		<!--
 		<div class="col-md-3 f_grid1 f_grid2">
