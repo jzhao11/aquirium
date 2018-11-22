@@ -93,7 +93,7 @@ $category_id = isset($category_id) ? $category_id : "";
                     <ul class="grid_2-bottom">
                     	<li class="grid_2-left"><p><small>$<?php echo $e->price; ?></small></p></li>
                     	<li class="grid_2-right">
-                    		<a href="<?php echo asset("itemretrievedetail?id=".$e->id); ?>" target="item_<?php echo $e->id; ?>">
+                    		<a href="<?php echo asset("messagecreatedetail?to_user_id=".$e->user_id."&item_id=".$e->id); ?>" target="contact_<?php echo $e->id; ?>">
                     		<div class="btn btn-primary btn-normal btn-inline" target="_self" title="Contact">Contact</div>
                     		</a>
                     	</li>
