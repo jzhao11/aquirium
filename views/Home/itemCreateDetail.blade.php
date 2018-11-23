@@ -48,8 +48,8 @@ $category = isset($category) ? $category : "";
                 <label for="title_img">Title Image *</label>
                 <input type="file" class="form-control-file" id="title_img">
             </div>
-            <button type="button" class="btn btn-primary">Post</button>
-            <!-- <button type="button" class="btn btn-primary pull-right">Cancel</button> -->
+            <button type="button" class="btn" onclick="cancel()">CANCEL</button>
+            <button type="button" class="btn btn-primary pull-right">POST</button>
         </form>
         </div>
     </div>

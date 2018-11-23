@@ -10,20 +10,26 @@
 		<div class="col-sm-8 col-sm-offset-2">
 			<div class="contact-form">
 				<form method="post" action="#">
-					<p class="comment-form-author"><label for="author">Item:</label>
+					<div class="form-group">
+						<label>Item:</label>
 						<img src="<?php echo asset("public/img/p5.jpg"); ?>" class="img-thumbnail rounded"><br>
 						Title of the item
-					</p>
-					<p class="comment-form-author"><label for="author">To:</label>
-						<input type="text" class="textbox" disabled value="Seller Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name here...';}">
-					</p>
-					<p class="comment-form-author"><label for="author">From:</label>
-						<input type="text" class="textbox" disabled value="Buyer Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-					</p>
-					<p class="comment-form-author"><label for="author">Message:</label>
+					</div>
+					<div class="form-group">
+						<label>Price:</label>$12
+					</div>
+					<div class="form-group">
+						<label>To:</label>Seller Username
+					</div>
+					<div class="form-group">
+						<label>From:</label>Buyer Username
+					</div>
+					<div class="form-group">
+						<label>Message:</label>
 						<textarea value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your message here...';}">Enter your message here...</textarea>
-					</p>
-					<button type="submit" class="btn btn-primary">Send</button>
+					</div>
+					<button type="button" class="btn" onclick="cancel()">CANCEL</button>
+					<button type="button" class="btn btn-primary pull-right" style="margin-right:5%">SEND</button>
 				</form>
 			</div>
 		</div>

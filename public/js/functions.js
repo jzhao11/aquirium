@@ -4,11 +4,49 @@ function search() {
 	if (search_txt.length > 40) {
 		alert("sorry, text for search has to be less than 40 characters");
 	} else {
+		search_txt = $.trim(search_txt);
+		for (var i = 0; i < search_txt.length; ++i) {
+			var tmp = search_txt[i];
+			if (!((tmp >= 'a' && tmp <= 'z') || (tmp >= 'A' && tmp <= 'Z') || (tmp >= '0' && tmp <= '9'))) {
+				alert("sorry, your input is invalid");
+				return;
+			}
+		}
 		location.href = "index?category_id=" + category_id + "&search_txt=" + search_txt;
 	}
 }
 
-function filter(filter_id) {
+function change(category_id) {
+	location.href = "index?category_id=" + category_id;
+}
+
+function message(msg) {
+	alert(msg);
+}
+
+function cancel() {
+	self.opener = null;
+    self.close();
+}
+
+
+
+
+
+
+
+
+function oldregister() {
+	var is_checked = $("#terms").prop("checked");
+	if (is_checked) {
+		alert("You have successfully registered!");
+		location.href = "index";
+	} else {
+		alert("You have to agree to our terms before registration!");
+	}
+}
+
+function oldfilter(filter_id) {
 	var category_id = $("#category_id").val();
 	var search_txt = $("#search_txt").val();
 	if (search_txt.length > 40) {
@@ -21,30 +59,6 @@ function filter(filter_id) {
     	}
 	}
 }
-
-function change(category_id) {
-	location.href = "index?category_id=" + category_id;
-}
-
-function register() {
-	var is_checked = $("#terms").prop("checked");
-	if (is_checked) {
-		alert("You have successfully registered!");
-		location.href = "index";
-	} else {
-		alert("You have to agree to our terms before registration!");
-	}
-}
-
-
-
-
-
-
-
-
-
-
 
 function alldelete(checkboxname, modelname) {
 	//herein str cannot be initialized as ''
@@ -63,22 +77,6 @@ function alldelete(checkboxname, modelname) {
 		return;
 	}
 }
-
-//function multidelete(checkboxname, modelname) {
-//	var str = '';
-//	$('input[name="' + checkboxname + '"]:checked').each(function(){
-//		if (str) {
-//			str += ',' + $(this).val();
-//		} else {
-//			str += $(this).val();
-//		}
-//	});
-//	if (confirm('delete them all?')) {
-//		location.href = modelname + 'save?action=alldelete&id=' + str;
-//	} else {
-//		return;
-//	}
-//}
 
 //confirm delete
 function confirmdelete(id) {
