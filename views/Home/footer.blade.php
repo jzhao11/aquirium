@@ -39,10 +39,10 @@
    	<div class="container">
    		<div class="cssmenu">
 			<ul>
-				<li><a href="login.html">Privacy Policy</a></li>
-				<li><a href="checkout.html">Terms of Service</a></li>
-				<li><a href="login.html">Contact Us</a></li>
-				<li><a href="register.html">Support & FAQ</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Terms of Service</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Support & FAQ</a></li>
 			</ul>
 		</div>
 		<div class="copy">
