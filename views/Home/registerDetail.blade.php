@@ -12,7 +12,7 @@ according to different user behaviors -->
     <div class="col-sm-8 col-sm-offset-2">
 	    <h3>REGISTRATION</h3>
 		<p>Required fields are marked with *</p><br>
-        <form action="<?php echo asset("register"); ?>" data-toggle="validator" role="form">
+        <form action="<?php echo asset("register"); ?>" id="register" data-toggle="validator" role="form">
             <div class="form-group">
                 <label for="username" class="control-label">Usernme *</label>
                 <input type="text" class="form-control" name="username" id="username" data-minlength="6" placeholder="Enter Username" data-error="This username is invalid." required>
@@ -43,10 +43,17 @@ according to different user behaviors -->
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
-            	<button type="submit" class="btn btn-primary" onclick="confirmmsg('You have successfully registered!')">REGISTER</button>
+            	<button type="submit" class="btn btn-primary">REGISTER</button>
             </div>
         </form>
     </div>
 	<div class="clearfix"></div>
 </div>
+<script>
+$("#register").validator().on("submit", function (e) {
+    if (!e.isDefaultPrevented()) {
+    	message("You have successfully registered!");
+    }
+});
+</script>
 @endsection
