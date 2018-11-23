@@ -444,17 +444,13 @@ ul.callbacks_tabs.callbacks1_tabs {
 	}
 }
 .column_center {
-	background: url(../img/bg.jpg); /*#eeeeee; #ffffff;*/
-	/*
-	background: -moz-linear-gradient(45deg,  #dee9f1 50%, #f1ede9 57%, #f9eae4 100%);
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(50%,#dee9f1), color-stop(57%,#f1ede9), color-stop(100%,#f9eae4));
-	background: -webkit-linear-gradient(45deg,  #dee9f1 50%,#f1ede9 57%,#f9eae4 100%);
-	background: -o-linear-gradient(45deg,  #dee9f1 50%,#f1ede9 57%,#f9eae4 100%);
-	background: -ms-linear-gradient(45deg,  #dee9f1 50%,#f1ede9 57%,#f9eae4 100%);
-	background: linear-gradient(45deg,  #dee9f1 50%,#f1ede9 57%,#f9eae4 100%);
-	*/
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dee9f1', endColorstr='#f9eae4',GradientType=1 );
-	padding:10px 0;
+	background: url(../img/bg.jpg) no-repeat center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height:10px;
+	padding:0.5em 0 0.5em 0;
 }
 .search {
 	position: relative;
@@ -946,7 +942,7 @@ span.m_2{
 	margin-top: 2em;
 }
 .f_grid1 {
-	border-right: 1px solid #fff;
+	/*border-right: 1px solid #fff;*/ /* white border line in footer */
 }
 .f_grid2{
 	margin: 0 4% 0 7%;
@@ -1380,7 +1376,7 @@ ul.about_box h4 {
 }
 /*--contact--*/
 p.comment-form-author {
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 }
 .contact-form label {
 	display: block;

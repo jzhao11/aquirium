@@ -12,20 +12,18 @@
     </div>
      -->
     <div class="header_top">
-    	<div class="container">
-    		<div class="logo">
-    			<h3><a href="<?php echo asset("index"); ?>" style="color:#EE9A00;padding-left:0.5em;">AQUIRIUM</a></h3>
-    		</div>
-    		<ul class="shopping_grid">
+		<div class="col-md-6 logo">
+			<h3><a href="<?php echo asset("index"); ?>" style="color:#EE9A00;padding-left:0.5em;">AQUIRIUM</a></h3>
+		</div>
+		<div class="pull-right">
+    		<ul class="shopping_grid pull-right">
     			<li><a href="<?php echo asset("about"); ?>" style="color:black" target="new_window">Team</a></li>
-                <li><a href="<?php echo asset("itemcreatedetail"); ?>" style="color:black">Sell</a></li>
+                <li><a href="<?php echo asset("itemcreatedetail"); ?>" target="sell" style="color:black">Sell</a></li>
+                <?php
+                if (session("user_id")) {
+                ?>
                 <li>
-                	<a href="<?php echo asset("logindetail"); ?>" style="color:black">Register</a>
-                	&nbsp;&nbsp;/&nbsp;&nbsp;
-	                <a href="<?php echo asset("logindetail"); ?>" style="color:black">Log In</a>
-                </li>
-                <li>
-					<div class="dropdown show">
+    				<div class="dropdown show">
                         <a class="dropdown-toggle" href="#" role="button" style="color:black" 
                         id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         	Dashboard
@@ -38,9 +36,21 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="<?php echo asset("index"); ?>" style="color:black">Log Out</a></li>
+                <li><a href="<?php echo asset("logout"); ?>" style="color:black">Log Out</a></li>
+                <?php
+                } else {
+                ?>
+                <li>
+                	<a href="<?php echo asset("registerdetail"); ?>" style="color:black">Register</a>
+            	</li>
+                <li>
+					<a href="<?php echo asset("logindetail"); ?>" style="color:black">Log In</a>
+				</li>
+                <?php
+                }
+                ?>
     		</ul>
-    	    <div class="clearfix"> </div>
-    	</div>
+		</div>
+	    <div class="clearfix"> </div>
     </div>
 </div>
