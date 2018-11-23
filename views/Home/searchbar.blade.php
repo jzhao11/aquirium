@@ -9,7 +9,7 @@ $category_id = isset($category_id) ? $category_id : "";
 ?>
 <div class="column_center">
 	<div class="container">
-	<form action="index">
+	<form action="index" id="search">
     	<div class="search">
     		<div class="text-center">
     		<!-- Search -->
@@ -26,7 +26,7 @@ $category_id = isset($category_id) ? $category_id : "";
             ?>
     		</select>
     		  	<input type="text" value="<?php echo $search_txt; ?>" id="search_txt" name="search_txt" style="width:30%">
-    		  	<input type="submit" id="search" value="" onclick="search()">
+    		  	<input type="submit" id="search" value="">
     		</div>
     		
     		<div class="clearfix"> </div>
@@ -35,16 +35,9 @@ $category_id = isset($category_id) ? $category_id : "";
     <div class="clearfix"> </div>
     </div>
 </div>
-
-
-<script> 
-$(document).ready(function(){
-	$("form").keydown(function(e){
-		var curKey = e.which;
-		if(curKey == 13){
-			$("#search").click(); 
-			return false; 
-		} 
-	});
-}); 
+<script>
+$("#search").submit(function(event) {
+    event.preventDefault();
+    search();
+});
 </script>
