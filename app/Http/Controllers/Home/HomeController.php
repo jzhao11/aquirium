@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Input;
 use App\Models\About;
 use App\Models\Category;
 use App\Models\Item;
+use App\Models\User;
 
 class HomeController extends Controller {
     
@@ -56,8 +57,53 @@ class HomeController extends Controller {
         return view("Home/personal", compact("about"));
     }
     
-    public function logindetail() {
-        return view("Home/login");
+    public function loginDetail() {
+        $item = Input::get("item");
+        $message = Input::get("message");
+        return view("Home/logindetail", compact("item", "message"));
+    }
+    
+    public function registerDetail() {
+        $item = Input::get("item");
+        $message = Input::get("message");
+        return view("Home/registerdetail", compact("item", "message"));
+    }
+    
+    public function login() {
+        $username = Input::get("username");
+        $password = md5(Input::get("password"));
+        $url = "itemcreatedetail";
+        $user = User::where("username", $username)->first();
+        if (!$user) {
+            return -1;
+        } else if ($user->password != $password) {
+            return -2;
+        } else {
+            session()->put("user_id", $user->id);
+            session()->put("user_name", $user->username);
+            session()->put("user_priority", $user->priority);
+            return $url;
+        }
+    }
+    
+    public function register() {
+        $url = "logindetail";
+        $user["username"] = Input::get("username");
+        $user["email"] = Input::get("email");
+        $user["password"] = md5(Input::get("password"));
+        if (User::where("username", $user["username"])->first()) {
+            return -1;
+        } else {
+            //var_dump(User::firstOrCreate($input));die;
+            User::firstOrCreate($user);
+            //return redirect()->action("Home\\ItemController@itemRetrieve");
+            return $url;
+        }
+    }
+    
+    public function logout() {
+        session()->flush();
+        return redirect()->action("Home\\HomeController@index");
     }
 }
 
