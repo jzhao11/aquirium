@@ -9,9 +9,6 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-// use App\Models\News;
-// use App\Models\Cases;
-// use App\Models\Contact;
 use App\Models\About;
 use App\Models\Category;
 use App\Models\Item;
