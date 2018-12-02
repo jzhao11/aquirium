@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 20, 2018 at 10:29 PM
+-- Generation Time: Dec 01, 2018 at 07:38 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -142,20 +142,20 @@ CREATE TABLE IF NOT EXISTS `item` (
 --
 
 INSERT INTO `item` (`id`, `user_id`, `category_id`, `filter_id`, `title`, `description`, `price`, `unit`, `title_img`, `detail_img0`, `detail_img1`, `detail_img2`, `detail_img3`, `status`, `created_at`, `updated_at`) VALUES
-(1, 0, 9, 10, 'Computer Science Book 0', 'This is the description of Computer Science Book 0.\r\nThis is the description of Computer Science Book 0.', 35.38, '', 'public/uploads/image/20181021/1540115039634.jpg', '', '', '', '', 1, '2018-10-22 00:43:59', '2018-10-22 01:10:33'),
-(2, 0, 9, 10, 'Computer Science Book 1', 'This is the description of Computer Science Book 1.\r\nThis is the description of Computer Science Book 1.', 35.76, '', 'public/uploads/image/20181021/1540116544521.jpg', '', '', '', '', 0, '2018-10-22 01:09:04', '2018-10-22 01:11:30'),
-(3, 0, 9, 10, 'Computer Science Book 2', 'This is the description of Computer Science Book 2.\r\nThis is the description of Computer Science Book 2.', 36.14, '', 'public/uploads/image/20181021/1540116568719.jpg', '', '', '', '', 0, '2018-10-22 01:09:28', '2018-10-22 01:11:42'),
-(4, 0, 9, 10, 'Computer Science Book 3', 'This is the description of Computer Science Book 3.\r\nThis is the description of Computer Science Book 3.', 36.52, '', 'public/uploads/image/20181021/1540116589960.jpg', '', '', '', '', 0, '2018-10-22 01:09:49', '2018-10-22 01:11:52'),
-(5, 0, 9, 10, 'Computer Science Book 4', 'This is the description of Computer Science Book 4.\r\nThis is the description of Computer Science Book 4.', 36.9, '', 'public/uploads/image/20181021/1540116604142.jpg', '', '', '', '', 0, '2018-10-22 01:10:04', '2018-10-22 01:12:02'),
-(6, 0, 9, 11, 'Math Book 0', 'This is the description of Math Book 0.\r\nThis is the description of Math Book 0.', 37.28, '', 'public/uploads/image/20181022/1540158367133.jpg', '', '', '', '', 0, '2018-10-22 12:46:07', '2018-10-22 12:47:33'),
-(7, 0, 9, 11, 'Math Book 1', 'This is the description of Math Book 1.\r\nThis is the description of Math Book 1.', 37.66, '', 'public/uploads/image/20181022/1540158381999.jpg', '', '', '', '', 0, '2018-10-22 12:46:21', '2018-10-22 12:48:18'),
-(8, 0, 9, 11, 'Math Book 2', 'This is the description of Math Book 2.\r\nThis is the description of Math Book 2.', 38.04, '', 'public/uploads/image/20181022/1540158398350.jpg', '', '', '', '', 0, '2018-10-22 12:46:38', '2018-10-22 12:48:07'),
-(9, 0, 9, 11, 'Math Book 3', 'This is the description of Math Book 3.\r\nThis is the description of Math Book 3.', 38.42, '', 'public/uploads/image/20181022/1540158412964.jpg', '', '', '', '', 0, '2018-10-22 12:46:52', '2018-10-22 12:48:00'),
-(10, 0, 9, 11, 'Math Book 4', 'This is the description of Math Book 4.\r\nThis is the description of Math Book 4.', 38.8, '', 'public/uploads/image/20181022/1540158424120.jpg', '', '', '', '', 0, '2018-10-22 12:47:04', '2018-10-22 12:47:49'),
-(11, 0, 9, 24, 'History Book 0', 'This is the description of History Book 0.\r\nThis is the description of History Book 0.', 39.18, '', 'public/uploads/image/20181022/1540172452553.jpg', '', '', '', '', 0, '2018-10-22 16:40:52', '2018-11-09 22:20:32'),
-(12, 0, 9, 24, 'History Book 1', 'This is the description of History Book 1.\r\nThis is the description of History Book 1.', 39.56, '', 'public/uploads/image/20181022/1540172471205.jpg', '', '', '', '', 0, '2018-10-22 16:41:11', '2018-11-09 22:20:55'),
-(13, 0, 9, 25, 'Physics Book 0', 'This is the description of Physics Book 0.\r\nThis is the description of Physics Book 0.', 39.94, '', 'public/uploads/image/20181022/1540172496429.jpg', '', '', '', '', 0, '2018-10-22 16:41:36', '2018-11-09 22:21:29'),
-(14, 0, 9, 25, 'Physics Book 1', 'This is the description of Physics Book 1.\r\nThis is the description of Physics Book 1.', 40.32, '', 'public/uploads/image/20181022/1540172519235.jpg', '', '', '', '', 0, '2018-10-22 16:41:59', '2018-11-09 22:21:11'),
+(1, 0, 9, 10, 'Computer Science Book CSC510', 'This is the description of Computer Science Book 0.\r\nThis is the description of Computer Science Book 0.', 35.38, '', 'public/uploads/image/20181021/1540115039634.jpg', '', '', '', '', 1, '2018-10-22 00:43:59', '2018-10-22 01:10:33'),
+(2, 0, 9, 10, 'Computer Science Book CSC413', 'This is the description of Computer Science Book 1.\r\nThis is the description of Computer Science Book 1.', 35.76, '', 'public/uploads/image/20181021/1540116544521.jpg', '', '', '', '', 0, '2018-10-22 01:09:04', '2018-10-22 01:11:30'),
+(3, 0, 9, 10, 'Computer Science Book CSC848', 'This is the description of Computer Science Book 2.\r\nThis is the description of Computer Science Book 2.', 36.14, '', 'public/uploads/image/20181021/1540116568719.jpg', '', '', '', '', 0, '2018-10-22 01:09:28', '2018-10-22 01:11:42'),
+(4, 0, 9, 10, 'Computer Science Book CSC220', 'This is the description of Computer Science Book 3.\r\nThis is the description of Computer Science Book 3.', 36.52, '', 'public/uploads/image/20181021/1540116589960.jpg', '', '', '', '', 0, '2018-10-22 01:09:49', '2018-10-22 01:11:52'),
+(5, 0, 9, 10, 'Computer Science Book CSC648', 'This is the description of Computer Science Book 4.\r\nThis is the description of Computer Science Book 4.', 36.9, '', 'public/uploads/image/20181021/1540116604142.jpg', '', '', '', '', 0, '2018-10-22 01:10:04', '2018-10-22 01:12:02'),
+(6, 0, 9, 11, 'Math Book MATH228', 'This is the description of Math Book 0.\r\nThis is the description of Math Book 0.', 37.28, '', 'public/uploads/image/20181022/1540158367133.jpg', '', '', '', '', 0, '2018-10-22 12:46:07', '2018-10-22 12:47:33'),
+(7, 0, 9, 11, 'Math Book MATH324', 'This is the description of Math Book 1.\r\nThis is the description of Math Book 1.', 37.66, '', 'public/uploads/image/20181022/1540158381999.jpg', '', '', '', '', 0, '2018-10-22 12:46:21', '2018-10-22 12:48:18'),
+(8, 0, 9, 11, 'Math Book MATH325', 'This is the description of Math Book 2.\r\nThis is the description of Math Book 2.', 38.04, '', 'public/uploads/image/20181022/1540158398350.jpg', '', '', '', '', 0, '2018-10-22 12:46:38', '2018-10-22 12:48:07'),
+(9, 0, 9, 11, 'Math Book MATH227', 'This is the description of Math Book 3.\r\nThis is the description of Math Book 3.', 38.42, '', 'public/uploads/image/20181022/1540158412964.jpg', '', '', '', '', 0, '2018-10-22 12:46:52', '2018-10-22 12:48:00'),
+(10, 0, 9, 11, 'Math Book MATH226', 'This is the description of Math Book 4.\r\nThis is the description of Math Book 4.', 38.8, '', 'public/uploads/image/20181022/1540158424120.jpg', '', '', '', '', 0, '2018-10-22 12:47:04', '2018-10-22 12:47:49'),
+(11, 0, 9, 24, 'History Book HIST422', 'This is the description of History Book 0.\r\nThis is the description of History Book 0.', 39.18, '', 'public/uploads/image/20181022/1540172452553.jpg', '', '', '', '', 0, '2018-10-22 16:40:52', '2018-11-09 22:20:32'),
+(12, 0, 9, 24, 'History Book HIST428', 'This is the description of History Book 1.\r\nThis is the description of History Book 1.', 39.56, '', 'public/uploads/image/20181022/1540172471205.jpg', '', '', '', '', 0, '2018-10-22 16:41:11', '2018-11-09 22:20:55'),
+(13, 0, 9, 25, 'Physics Book PHYS222', 'This is the description of Physics Book 0.\r\nThis is the description of Physics Book 0.', 39.94, '', 'public/uploads/image/20181022/1540172496429.jpg', '', '', '', '', 0, '2018-10-22 16:41:36', '2018-11-09 22:21:29'),
+(14, 0, 9, 25, 'Physics Book PHYS230', 'This is the description of Physics Book 1.\r\nThis is the description of Physics Book 1.', 40.32, '', 'public/uploads/image/20181022/1540172519235.jpg', '', '', '', '', 0, '2018-10-22 16:41:59', '2018-11-09 22:21:11'),
 (15, 0, 20, 22, 'BasketBalls 0', 'This is the description of BasketBalls 0.\r\nThis is the description of BasketBalls 0.', 40.7, '', 'public/uploads/image/20181022/1540176871653.jpg', '', '', '', '', 0, '2018-10-22 17:54:31', '2018-10-22 17:54:31'),
 (16, 0, 20, 22, 'BasketBalls 1', 'This is the description of BasketBalls 1.\r\nThis is the description of BasketBalls 1.', 41.08, '', 'public/uploads/image/20181022/1540176890322.jpg', '', '', '', '', 0, '2018-10-22 17:54:50', '2018-10-22 17:54:50'),
 (17, 0, 20, 27, 'Boards Game 0', 'This is the description of Boards Game 0.\r\nThis is the description of Boards Game 0.', 41.46, '', 'public/uploads/image/20181022/1540176913237.jpg', '', '', '', '', 0, '2018-10-22 17:55:13', '2018-10-22 17:55:13'),
@@ -259,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `user`
@@ -269,7 +269,10 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `stu_id`, `avatar`, `
 (1, 'nobodyknows', '96e79218965eb72c92a549dd5a330112', 'nobodyknows@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:55:45', '2018-11-11 08:55:45'),
 (2, 'naruto', 'e3ceb5881a0a1fdaad01296d7554868d', 'naruto@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:56:25', '2018-11-11 08:56:25'),
 (3, 'sasuke', '1a100d2c0dab19c4430e7d73762b3423', 'sasuke@mail.sfsu.edu', 0, '', 0, '2018-11-11 08:58:21', '2018-11-11 08:58:21'),
-(4, 'itachi', '550a141f12de6341fba65b0ad0433500', 'itachi@mail.sfsu.edu', 0, '', 0, '2018-11-12 13:44:06', '2018-11-12 13:44:06');
+(4, 'itachi', '550a141f12de6341fba65b0ad0433500', 'itachi@mail.sfsu.edu', 0, '', 0, '2018-11-12 13:44:06', '2018-11-12 13:44:06'),
+(5, 'tsunade', '5b1b68a9abf4d2cd155c81a9225fd158', 'tsunade@mail.sfsu.edu', 0, '', 0, '2018-11-22 15:52:36', '2018-11-22 15:52:36'),
+(6, 'sakura', 'f379eaf3c831b04de153469d1bec345e', 'sakura@mail.sfsu.edu', 0, '', 0, '2018-11-23 20:07:32', '2018-11-23 20:07:32'),
+(9, 'jzhao11', '96e79218965eb72c92a549dd5a330112', '1@1', 0, '', 0, '2018-12-01 23:39:56', '2018-12-01 23:39:56');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
