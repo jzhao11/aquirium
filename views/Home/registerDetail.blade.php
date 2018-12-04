@@ -4,6 +4,11 @@
 according to different user behaviors -->
 <!-- failure of registration/login will stay on this page -->
 
+<?php
+$item = isset($item) ? $item : "";
+$message = isset($message) ? $message : "";
+?>
+
 @extends("Home.base")
 @section("bodycontent")
 <script type="text/javascript" src="<?php echo asset("public/lib/bootstrap/js/validator.js"); ?>"></script>
@@ -12,10 +17,10 @@ according to different user behaviors -->
     <div class="col-sm-8 col-sm-offset-2">
 	    <h3>REGISTRATION</h3>
 		<p>Required fields are marked with *</p><br>
-        <form action="<?php echo asset("register"); ?>" id="register" data-toggle="validator" role="form">
+        <form id="register" data-toggle="validator" role="form">
             <div class="form-group">
                 <label for="username" class="control-label">Usernme *</label>
-                <input type="text" class="form-control" name="username" id="username" data-minlength="6" placeholder="Enter Username" data-error="This username is invalid." required>
+                <input type="text" class="form-control" name="username" id="username" data-minlength="6" placeholder="Enter Username" data-error="Minimum of 6 characters" required>
             	<div class="help-block with-errors">Minimum of 6 characters</div>
             </div>
             <div class="form-group">
@@ -42,9 +47,14 @@ according to different user behaviors -->
                 <label for="inputPassword" class="control-label">Agree to Terms *</label>
                 <div class="help-block with-errors"></div>
             </div>
+            
+            
+            captcha!
             <div class="form-group">
             	<button type="submit" class="btn btn-primary">REGISTER</button>
             </div>
+            <input type="hidden" id="item" value="<?php echo $item; ?>">
+            <input type="hidden" id="message" value="<?php echo $message; ?>">
         </form>
     </div>
 	<div class="clearfix"></div>
@@ -52,8 +62,32 @@ according to different user behaviors -->
 <script>
 $("#register").validator().on("submit", function (e) {
     if (!e.isDefaultPrevented()) {
-    	message("You have successfully registered!");
+    	e.preventDefault();
+    	register();
     }
 });
+
+function register(){
+    $.ajax ({
+        url: "<?php echo url("register")?>",
+        type: "POST",
+        data: {
+            "username":$("#username").val(),
+			"password":$("#password").val(),
+			"email":$("#email").val(),
+			"stu_id":$("stu_id").val(),
+			"item":$("#item").val(),
+			"message":$("#message").val()
+		},
+        success: function (rst) {
+            if (rst == -1) {
+				alert("This username already existed!");
+            } else {
+            	message("You have successfully registered!");
+                location.href = rst;
+            }
+        }
+    });
+}
 </script>
 @endsection
