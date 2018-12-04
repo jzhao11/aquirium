@@ -18,7 +18,7 @@
 		<div class="pull-right">
     		<ul class="shopping_grid pull-right">
     			<li><a href="<?php echo asset("about"); ?>" style="color:black" target="new_window">Team</a></li>
-                <li><a href="<?php echo asset("itemcreatedetail"); ?>" target="sell" style="color:black">Sell</a></li>
+                <li><a href="<?php echo asset("itemcreatedetail"); ?>" target="sell" style="color:black">Post</a></li>
                 <?php
                 if (session("user_id")) {
                 ?>
