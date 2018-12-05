@@ -25,6 +25,7 @@ $message = isset($message) ? $message : "";
             <div class="form-group">
             	<label for="password" class="control-label">Password *</label>
                 <input type="password" class="form-control" id="password" data-minlength="6" placeholder="Enter Password" required>
+            	<a href="#">Forgot Password?</a>
             </div>
             <div class="form-group">
             	<button type="submit" class="btn btn-primary">LOG IN</button>
