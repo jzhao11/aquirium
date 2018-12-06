@@ -25,7 +25,7 @@
 			<ul class="list">
 				<li><p>Phone: 1.415.xxx.xxxx</p></li>
 				<li><p>Fax: 1.800.xxx.xxxx</p></li>
-				<li><p>Email: <a href="mailto:info@aquirium.com">info@aquirium.com</a></p></li>
+				<li><p>Email: <a>xxxx@aquirium.xxx</a></p></li>
 			</ul>
 			<ul class="list1">
 				<li><p>SFSU-Fulda Software Engineering Project CSC 648-848, Fall 2018. For Demonstration Only</p></li>
@@ -39,10 +39,10 @@
    	<div class="container">
    		<div class="cssmenu">
 			<ul>
-				<li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Terms of Service</a></li>
-				<li><a href="#">Contact Us</a></li>
-				<li><a href="#">Support & FAQ</a></li>
+				<li><a>Privacy Policy</a></li>
+				<li><a>Terms of Service</a></li>
+				<li><a>Contact Us</a></li>
+				<li><a>Support & FAQ</a></li>
 			</ul>
 		</div>
 		<div class="copy">
