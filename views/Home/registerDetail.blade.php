@@ -11,6 +11,7 @@ $message = isset($message) ? $message : "";
 
 @extends("Home.base")
 @section("bodycontent")
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript" src="<?php echo asset("public/lib/bootstrap/js/validator.js"); ?>"></script>
 
 <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
@@ -20,8 +21,8 @@ $message = isset($message) ? $message : "";
         <form id="register" data-toggle="validator" role="form">
             <div class="form-group">
                 <label for="username" class="control-label">Usernme *</label>
-                <input type="text" class="form-control" name="username" id="username" data-minlength="6" placeholder="Enter Username" data-error="Minimum of 6 characters" required>
-            	<div class="help-block with-errors">Minimum of 6 characters</div>
+                <input type="text" class="form-control" name="username" id="username" data-minlength="4" placeholder="Enter Username" data-error="Minimum of 4 characters" required>
+            	<div class="help-block with-errors">Minimum of 4 characters</div>
             </div>
             <div class="form-group">
             	<label for="email" class="control-label">Email *</label>
@@ -42,14 +43,15 @@ $message = isset($message) ? $message : "";
                 <input type="password" class="form-control" id="passwordconfirmation" data-match="#password" data-match-error="This confirmation does not match the passord." placeholder="Confirm Password" required>
                 <div class="help-block with-errors"></div>
             </div>
+            
+            <!-- google captcha -->
+		    <div class="g-recaptcha" data-sitekey="6Lf3134UAAAAAGrFfs9oykBzz905ou1kbSPwAxR4"></div>
+		    
             <div class="form-group">
                 <input type="checkbox" id="terms" data-error="You need to agree to the terms." required>
                 <label for="inputPassword" class="control-label">Agree to Terms *</label>
                 <div class="help-block with-errors"></div>
             </div>
-            
-            
-            captcha!
             <div class="form-group">
             	<button type="submit" class="btn btn-primary">REGISTER</button>
             </div>

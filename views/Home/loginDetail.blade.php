@@ -19,13 +19,13 @@ $message = isset($message) ? $message : "";
         <form id="login" data-toggle="validator" role="form">
             <div class="form-group">
                 <label for="username" class="control-label">Usernme *</label>
-                <input type="text" class="form-control" id="username" data-minlength="6" placeholder="Enter Username" data-error="This username is invalid." required>
+                <input type="text" class="form-control" id="username" data-minlength="4" placeholder="Enter Username" data-error="This username is invalid." required>
             	<div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
             	<label for="password" class="control-label">Password *</label>
                 <input type="password" class="form-control" id="password" data-minlength="6" placeholder="Enter Password" required>
-            	<a href="#">Forgot Password?</a>
+            	<a>Forgot Password?</a>
             </div>
             <div class="form-group">
             	<button type="submit" class="btn btn-primary">LOG IN</button>

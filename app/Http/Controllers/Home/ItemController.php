@@ -15,9 +15,14 @@ use App\Models\Category;
 class ItemController extends Controller {
     
     public function itemRetrieve() {
-        $item = Item::orderBy("created_at", "desc")->get();
-        $leftnavbar = "item";
-        return view("Home/itemRetrieve", compact("item", "leftnavbar"));
+        if (!session("user_id") || !session("user_name")) {
+            return redirect()->action("Home\\HomeController@loginDetail");
+        } else {
+            $user_id = session("user_id");
+            $item = Item::where("user_id", $user_id)->orderBy("created_at", "desc")->get();
+            $leftnavbar = "item";
+            return view("Home/itemRetrieve", compact("item", "leftnavbar"));
+        }
     }
     
     public function itemCreateDetail() {
@@ -73,10 +78,6 @@ class ItemController extends Controller {
         $item = Item::where("id", $id)->first();
         $category = Category::where("depth", 0)->get();
         return view("Home/itemRetrieveDetail", compact("item", "category"));
-    }
-    
-    public function retrieveByUser($user_id) {
-        return "ItemController/retrieveByUser".$user_id;
     }
 }
 

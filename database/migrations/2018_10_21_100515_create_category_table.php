@@ -11,7 +11,7 @@ class CreateCategoryTable extends Migration {
      */
     public function up() {
         //
-        Schema::create("ct_category", function(Blueprint $table) {
+        Schema::create("category", function(Blueprint $table) {
             $table->increments("id");
             $table->string("title");
             $table->integer("priority");

@@ -22,9 +22,13 @@ class UserController extends Controller {
     }
     
     public function userRetrieve() {
-        $user = User::orderBy("created_at", "desc")->get();
-        $leftnavbar = "user";
-        return view("Home/userRetrieve", compact("user", "leftnavbar"));
+        if (session("user_priority") != 1) {
+            return redirect()->action("Home\\ItemController@itemRetrieve");
+        } else {
+            $user = User::orderBy("created_at", "desc")->get();
+            $leftnavbar = "user";
+            return view("Home/userRetrieve", compact("user", "leftnavbar"));
+        }
     }
     
     public function userUpdate() {

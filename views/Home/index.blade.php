@@ -76,14 +76,15 @@ $category_id = isset($category_id) ? $category_id : "";
     	}
     	?>
 	    </div>
+	    <br>
 	    <div class="top_grid2">
 	    <?php
 	    $i = 0;
 	    foreach ($item as $e) {
 	    ?>
-        <div class="col-md-4 top_grid1-box1">
+        <div class="col-md-4 top_grid1-box1" style="padding-right:0; padding-left:0;">
 	     	<div class="grid_1">
-                <div class="b-link-stroke b-animate-go  thickbox">
+                <div class="b-link-stroke b-animate-go thickbox thumbnail">
                     <a href="<?php echo asset("itemretrievedetail?id=".$e->id); ?>" target="item_<?php echo $e->id; ?>">
                     <img src="<?php echo asset($e->title_img); ?>" class="img-responsive" alt="" style="height:12em"/>
                     </a>

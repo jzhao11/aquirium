@@ -17,6 +17,7 @@ use App\Models\User;
 class HomeController extends Controller {
     
     public function index() {
+        session()->put("redirection", "itemretrieve");
         $filter_id = Input::get("filter_id");
         $category_id = Input::get("category_id");
         $search_txt = Input::get("search_txt");
@@ -26,24 +27,24 @@ class HomeController extends Controller {
         $filter_cond = $filter_id ? "filter_id = ".$filter_id : "filter_id >= 0";
         $item = Item::whereRaw($category_cond)
                 ->whereRaw($filter_cond)
-                ->whereRaw("status < 2")
-                ->whereRaw("title like '%".$search_txt."%'")
-                // or description like '%".$search_txt."%'
+                ->whereRaw("status = 1")
+                ->whereRaw("title like '%".$search_txt."%' or description like '%".$search_txt."%'")
                 ->orderBy($order_by, $order)
                 ->paginate(6);
         
         $empty_flag = 0;
         if (!count($item)) {
             $item = Item::whereRaw($category_cond)
-                    ->whereRaw("status < 2")
+                    ->whereRaw("status = 1")
                     ->orderBy($order_by, $order)
                     ->paginate(6);
             $empty_flag = 1;
         }
         
         $category = Category::where("depth", 0)->get();
+        $category_title = ($category_selected = Category::where("id", $category_id)->first()) ? $category_selected->title : "All";
         $filter = $category_id ? Category::where("parent_id", $category_id)->get() : $category;
-        return view("Home/index", compact("category", "filter", "item", "search_txt", "category_id", "empty_flag"));
+        return view("Home/index", compact("category", "category_title", "filter", "item", "search_txt", "category_id", "empty_flag"));
     }
     
     public function about() {
@@ -58,21 +59,26 @@ class HomeController extends Controller {
     }
     
     public function loginDetail() {
-        $item = Input::get("item");
-        $message = Input::get("message");
-        return view("Home/logindetail", compact("item", "message"));
+        if (session("user_id") && session("user_name")) {
+            return redirect()->action("Home\\ItemController@itemRetrieve");
+        } else {
+            $item = Input::get("item");
+            return view("Home/logindetail", compact("item"));
+        }
     }
     
     public function registerDetail() {
-        $item = Input::get("item");
-        $message = Input::get("message");
-        return view("Home/registerdetail", compact("item", "message"));
+        if (session("user_id") && session("user_name")) {
+            return redirect()->action("Home\\ItemController@itemRetrieve");
+        } else {
+            $item = Input::get("item");
+            return view("Home/registerdetail", compact("item"));
+        }
     }
     
     public function login() {
         $username = Input::get("username");
         $password = md5(Input::get("password"));
-        $url = "itemcreatedetail";
         $user = User::where("username", $username)->first();
         if (!$user) {
             return -1;
@@ -82,22 +88,22 @@ class HomeController extends Controller {
             session()->put("user_id", $user->id);
             session()->put("user_name", $user->username);
             session()->put("user_priority", $user->priority);
-            return $url;
+            return 0;
         }
     }
     
     public function register() {
-        $url = "logindetail";
         $user["username"] = Input::get("username");
         $user["email"] = Input::get("email");
         $user["password"] = md5(Input::get("password"));
         if (User::where("username", $user["username"])->first()) {
             return -1;
         } else {
-            //var_dump(User::firstOrCreate($input));die;
-            User::firstOrCreate($user);
-            //return redirect()->action("Home\\ItemController@itemRetrieve");
-            return $url;
+            $user = User::firstOrCreate($user);
+            session()->put("user_id", $user->id);
+            session()->put("user_name", $user->username);
+            session()->put("user_priority", $user->priority);
+            return 0;
         }
     }
     
