@@ -2,13 +2,13 @@ function search() {
 	var category_id = $("#category_id").val();
 	var search_txt = $("#search_txt").val();
 	if (search_txt.length > 40) {
-		alert("sorry, text for search has to be less than 40 characters");
+		alert("Your input has to be within 40 characters.");
 	} else {
 		search_txt = $.trim(search_txt);
 		for (var i = 0; i < search_txt.length; ++i) {
 			var tmp = search_txt[i];
 			if (!((tmp >= 'a' && tmp <= 'z') || (tmp >= 'A' && tmp <= 'Z') || (tmp >= '0' && tmp <= '9'))) {
-				alert("sorry, your input is invalid");
+				alert("Your input has to be alphabetic or numeric characters.");
 				return;
 			}
 		}
