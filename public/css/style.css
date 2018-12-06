@@ -6,7 +6,7 @@ html, body{
 	font-family: 'Lato', sans-serif;
 	font-size: 100%;
 	background:#fff;
-	min-width: 375px; /*added*/
+	min-width: 400px; /*added*/
 }
 body a{
 	transition: 0.5s all;
@@ -755,10 +755,11 @@ ul.user li.user_desc p a{
 }
 .grid_1{
 	background:#fff;
-	border:5px solid #fff;
+	border:5px solid #eee;
+	padding:0.5em;
 }
 .grid_2{
-	padding:1em 1em 0;
+	padding:0.3em 0.5em;
 }
 .grid_2 p{
 	font: 600 15px/15px 'Lato', sans-serif;
@@ -1748,11 +1749,11 @@ p.cart {
 	color:#000;
 }
 ul.nav {
-	background: #222;
-	padding-top: 1em;
+	background: #f8f8f8;
+	/* padding-top: 1em; */
 }
 .nav > li {
-	margin: 1em 0;
+	/* margin: 1em 0; */
 }
 .banner_desc h1 {
 	font: 300 32px/32px 'Lato', sans-serif;
