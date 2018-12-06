@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 04, 2018 at 05:13 AM
+-- Generation Time: Dec 06, 2018 at 06:00 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -142,54 +142,54 @@ CREATE TABLE IF NOT EXISTS `item` (
 --
 
 INSERT INTO `item` (`id`, `user_id`, `category_id`, `filter_id`, `title`, `description`, `price`, `unit`, `title_img`, `detail_img0`, `detail_img1`, `detail_img2`, `detail_img3`, `status`, `created_at`, `updated_at`) VALUES
-(1, 0, 9, 10, 'Computer Science Book CSC510', 'This is the description of Computer Science Book 0.\r\nThis is the description of Computer Science Book 0.', 35.38, '', 'public/uploads/image/20181021/1540115039634.jpg', '', '', '', '', 1, '2018-10-22 00:43:59', '2018-10-22 01:10:33'),
-(2, 0, 9, 10, 'Computer Science Book CSC413', 'This is the description of Computer Science Book 1.\r\nThis is the description of Computer Science Book 1.', 35.76, '', 'public/uploads/image/20181021/1540116544521.jpg', '', '', '', '', 1, '2018-10-22 01:09:04', '2018-10-22 01:11:30'),
-(3, 0, 9, 10, 'Computer Science Book CSC848', 'This is the description of Computer Science Book 2.\r\nThis is the description of Computer Science Book 2.', 36.14, '', 'public/uploads/image/20181021/1540116568719.jpg', '', '', '', '', 1, '2018-10-22 01:09:28', '2018-10-22 01:11:42'),
-(4, 0, 9, 10, 'Computer Science Book CSC220', 'This is the description of Computer Science Book 3.\r\nThis is the description of Computer Science Book 3.', 36.52, '', 'public/uploads/image/20181021/1540116589960.jpg', '', '', '', '', 1, '2018-10-22 01:09:49', '2018-10-22 01:11:52'),
-(5, 0, 9, 10, 'Computer Science Book CSC648', 'This is the description of Computer Science Book 4.\r\nThis is the description of Computer Science Book 4.', 36.9, '', 'public/uploads/image/20181021/1540116604142.jpg', '', '', '', '', 1, '2018-10-22 01:10:04', '2018-10-22 01:12:02'),
-(6, 0, 9, 11, 'Math Book MATH228', 'This is the description of Math Book 0.\r\nThis is the description of Math Book 0.', 37.28, '', 'public/uploads/image/20181022/1540158367133.jpg', '', '', '', '', 1, '2018-10-22 12:46:07', '2018-10-22 12:47:33'),
-(7, 0, 9, 11, 'Math Book MATH324', 'This is the description of Math Book 1.\r\nThis is the description of Math Book 1.', 37.66, '', 'public/uploads/image/20181022/1540158381999.jpg', '', '', '', '', 1, '2018-10-22 12:46:21', '2018-10-22 12:48:18'),
-(8, 0, 9, 11, 'Math Book MATH325', 'This is the description of Math Book 2.\r\nThis is the description of Math Book 2.', 38.04, '', 'public/uploads/image/20181022/1540158398350.jpg', '', '', '', '', 1, '2018-10-22 12:46:38', '2018-10-22 12:48:07'),
-(9, 0, 9, 11, 'Math Book MATH227', 'This is the description of Math Book 3.\r\nThis is the description of Math Book 3.', 38.42, '', 'public/uploads/image/20181022/1540158412964.jpg', '', '', '', '', 1, '2018-10-22 12:46:52', '2018-10-22 12:48:00'),
-(10, 0, 9, 11, 'Math Book MATH226', 'This is the description of Math Book 4.\r\nThis is the description of Math Book 4.', 38.8, '', 'public/uploads/image/20181022/1540158424120.jpg', '', '', '', '', 1, '2018-10-22 12:47:04', '2018-10-22 12:47:49'),
-(11, 0, 9, 24, 'History Book HIST422', 'This is the description of History Book 0.\r\nThis is the description of History Book 0.', 39.18, '', 'public/uploads/image/20181022/1540172452553.jpg', '', '', '', '', 1, '2018-10-22 16:40:52', '2018-11-09 22:20:32'),
-(12, 0, 9, 24, 'History Book HIST428', 'This is the description of History Book 1.\r\nThis is the description of History Book 1.', 39.56, '', 'public/uploads/image/20181022/1540172471205.jpg', '', '', '', '', 1, '2018-10-22 16:41:11', '2018-11-09 22:20:55'),
-(13, 0, 9, 25, 'Physics Book PHYS222', 'This is the description of Physics Book 0.\r\nThis is the description of Physics Book 0.', 39.94, '', 'public/uploads/image/20181022/1540172496429.jpg', '', '', '', '', 1, '2018-10-22 16:41:36', '2018-11-09 22:21:29'),
-(14, 0, 9, 25, 'Physics Book PHYS230', 'This is the description of Physics Book 1.\r\nThis is the description of Physics Book 1.', 40.32, '', 'public/uploads/image/20181022/1540172519235.jpg', '', '', '', '', 1, '2018-10-22 16:41:59', '2018-11-09 22:21:11'),
-(15, 0, 20, 22, 'BasketBalls 0', 'This is the description of BasketBalls 0.\r\nThis is the description of BasketBalls 0.', 40.7, '', 'public/uploads/image/20181022/1540176871653.jpg', '', '', '', '', 1, '2018-10-22 17:54:31', '2018-10-22 17:54:31'),
-(16, 0, 20, 22, 'BasketBalls 1', 'This is the description of BasketBalls 1.\r\nThis is the description of BasketBalls 1.', 41.08, '', 'public/uploads/image/20181022/1540176890322.jpg', '', '', '', '', 1, '2018-10-22 17:54:50', '2018-10-22 17:54:50'),
-(17, 0, 20, 27, 'Boards Game 0', 'This is the description of Boards Game 0.\r\nThis is the description of Boards Game 0.', 41.46, '', 'public/uploads/image/20181022/1540176913237.jpg', '', '', '', '', 1, '2018-10-22 17:55:13', '2018-10-22 17:55:13'),
-(18, 0, 20, 27, 'Boards Game 1', 'This is the description of Boards Game 1.\r\nThis is the description of Boards Game 1.', 41.84, '', 'public/uploads/image/20181022/1540176935838.jpg', '', '', '', '', 1, '2018-10-22 17:55:26', '2018-10-22 17:55:35'),
-(19, 0, 20, 26, 'Cards Game 0', 'This is the description of Cards Game 0.\r\nThis is the description of Cards Game 0.', 42.22, '', 'public/uploads/image/20181022/1540176958712.jpg', '', '', '', '', 1, '2018-10-22 17:55:58', '2018-10-22 17:55:58'),
-(20, 0, 20, 26, 'Cards Game 1', 'This is the description of Cards Game 1.\r\nThis is the description of Cards Game 1.', 42.6, '', 'public/uploads/image/20181022/1540176992599.jpg', '', '', '', '', 1, '2018-10-22 17:56:32', '2018-10-22 17:56:32'),
-(21, 0, 20, 23, 'Skateboards 0', 'This is the description of Skateboards 0.\r\nThis is the description of Skateboards 0.', 42.98, '', 'public/uploads/image/20181022/1540177019582.jpg', '', '', '', '', 1, '2018-10-22 17:56:59', '2018-10-22 17:56:59'),
-(22, 0, 20, 23, 'Skateboards 1', 'This is the description of Skateboards 1.\r\nThis is the description of Skateboards 1.', 43.36, '', 'public/uploads/image/20181022/1540177038944.jpg', '', '', '', '', 1, '2018-10-22 17:57:18', '2018-10-22 17:57:18'),
-(23, 0, 12, 29, 'Adapters 0', 'This is the description of Adapters 0.\r\nThis is the description of Adapters 0.', 43.74, '', 'public/uploads/image/20181022/1540178717359.jpg', '', '', '', '', 1, '2018-10-22 18:25:17', '2018-10-22 18:25:17'),
-(24, 0, 12, 29, 'Adapters 1', 'This is the description of Adapters 1.\r\nThis is the description of Adapters 1.', 44.12, '', 'public/uploads/image/20181022/1540178737318.jpg', '', '', '', '', 1, '2018-10-22 18:25:37', '2018-10-22 18:25:37'),
-(25, 0, 12, 28, 'Cleaners 0', 'This is the description of Cleaners 0.\r\nThis is the description of Cleaners 0.', 44.5, '', 'public/uploads/image/20181022/1540178775811.jpg', '', '', '', '', 1, '2018-10-22 18:26:15', '2018-10-22 18:26:15'),
-(26, 0, 12, 28, 'Cleaners 1', 'This is the description of Cleaners 1.\r\nThis is the description of Cleaners 1.', 44.88, '', 'public/uploads/image/20181022/1540178800646.jpg', '', '', '', '', 1, '2018-10-22 18:26:40', '2018-10-22 18:26:40'),
-(27, 0, 12, 13, 'Game Controller 0', 'This is the description of Game Controller 0.\r\nThis is the description of Game Controller 0.', 45.26, '', 'public/uploads/image/20181022/1540178860377.jpg', '', '', '', '', 1, '2018-10-22 18:27:40', '2018-10-22 18:27:40'),
-(28, 0, 12, 13, 'Game Controller 1', 'This is the description of Game Controller 1.\r\nThis is the description of Game Controller 1.', 45.64, '', 'public/uploads/image/20181022/1540178908658.jpg', '', '', '', '', 1, '2018-10-22 18:28:28', '2018-10-22 18:28:28'),
-(29, 0, 12, 14, 'Kitchen 0', 'This is the description of kitchen 0.\r\nThis is the description of kitchen 0.', 46.02, '', 'public/uploads/image/20181022/1540179155429.jpg', '', '', '', '', 1, '2018-10-22 18:32:35', '2018-10-22 18:32:35'),
-(30, 0, 12, 14, 'Kitchen 1', 'This is the description of kitchen 1.\r\nThis is the description of kitchen 1.', 46.4, '', 'public/uploads/image/20181022/1540179174351.jpg', '', '', '', '', 1, '2018-10-22 18:32:54', '2018-10-22 18:32:54'),
-(31, 0, 15, 17, 'Chair 0', 'This is the description of chair 0.\r\nThis is the description of chair 0.', 46.78, '', 'public/uploads/image/20181022/1540181392573.jpg', '', '', '', '', 1, '2018-10-22 19:09:52', '2018-10-22 19:09:52'),
-(32, 0, 15, 17, 'Chair 1', 'This is the description of chair 1.\r\nThis is the description of chair 1.', 47.16, '', 'public/uploads/image/20181022/1540181408731.jpg', '', '', '', '', 1, '2018-10-22 19:10:08', '2018-10-22 19:10:08'),
-(33, 0, 15, 17, 'Chair 2', 'This is the description of chair 2.\r\nThis is the description of chair 2.', 47.54, '', 'public/uploads/image/20181022/1540182429809.jpg', '', '', '', '', 1, '2018-10-22 19:27:09', '2018-10-22 19:27:09'),
-(34, 0, 15, 32, 'Mattress 0', 'This is the description of mattress 0.\r\nThis is the description of mattress 0.', 47.92, '', 'public/uploads/image/20181022/1540182452248.jpg', '', '', '', '', 1, '2018-10-22 19:27:32', '2018-10-22 19:27:32'),
-(35, 0, 15, 32, 'Mattress 1', 'This is the description of mattress 1.\r\nThis is the description of mattress 1.', 48.3, '', 'public/uploads/image/20181022/1540182480296.jpg', '', '', '', '', 1, '2018-10-22 19:28:00', '2018-10-22 19:28:00'),
-(36, 0, 15, 32, 'Mattress 2', 'This is the description of mattress 2.\r\nThis is the description of mattress 2.', 48.68, '', 'public/uploads/image/20181022/1540182508267.jpg', '', '', '', '', 1, '2018-10-22 19:28:28', '2018-10-22 19:28:28'),
-(37, 0, 15, 16, 'Table 0', 'This is the description of table 0.\r\nThis is the description of table 0.', 49.06, '', 'public/uploads/image/20181022/1540182551966.jpg', '', '', '', '', 1, '2018-10-22 19:29:11', '2018-10-22 19:29:11'),
-(38, 0, 15, 16, 'Table 1', 'This is the description of table 1.\r\nThis is the description of table 1.', 49.44, '', 'public/uploads/image/20181022/1540182568345.jpg', '', '', '', '', 1, '2018-10-22 19:29:28', '2018-10-22 19:29:28'),
-(39, 0, 15, 16, 'Table 2', 'This is the description of table 2.\r\nThis is the description of table 2.', 49.82, '', 'public/uploads/image/20181022/1540182584464.jpg', '', '', '', '', 1, '2018-10-22 19:29:44', '2018-10-22 19:29:44'),
-(40, 0, 1, 30, 'Cap 0', 'This is the description of cap 0.\r\nThis is the description of cap 0.', 50.2, '', 'public/uploads/image/20181022/1540183643180.jpg', '', '', '', '', 1, '2018-10-22 19:46:52', '2018-10-22 19:47:23'),
-(41, 0, 1, 30, 'Cap 1', 'This is the description of cap 1.\r\nThis is the description of cap 1.', 50.58, '', 'public/uploads/image/20181022/1540183681226.jpg', '', '', '', '', 1, '2018-10-22 19:48:01', '2018-10-22 19:48:01'),
-(42, 0, 1, 30, 'Cap 2', 'This is the description of cap 2.\r\nThis is the description of cap 2.', 50.96, '', 'public/uploads/image/20181022/1540183694535.jpg', '', '', '', '', 1, '2018-10-22 19:48:14', '2018-10-22 19:48:14'),
-(43, 0, 1, 7, 'Shoes 0', 'This is the description of shoes 0.\r\nThis is the description of shoes 0.', 51.34, '', 'public/uploads/image/20181022/1540183757905.jpg', '', '', '', '', 1, '2018-10-22 19:49:17', '2018-10-22 19:49:17'),
-(44, 0, 1, 7, 'Shoes 1', 'This is the description of shoes 1.\r\nThis is the description of shoes 1.', 51.72, '', 'public/uploads/image/20181022/1540183784117.jpg', '', '', '', '', 1, '2018-10-22 19:49:45', '2018-10-22 19:49:45'),
-(45, 0, 1, 7, 'Shoes 2', 'This is the description of shoes 2.\r\nThis is the description of shoes 2.', 52.1, '', 'public/uploads/image/20181022/1540183802383.jpg', '', '', '', '', 1, '2018-10-22 19:50:02', '2018-10-22 19:50:02'),
-(46, 0, 1, 2, 'T shirt 0', 'This is the description of t-shirt 0.\r\nThis is the description of t-shirt 0.', 52.48, '', 'public/uploads/image/20181022/1540183947792.jpg', '', '', '', '', 1, '2018-10-22 19:52:27', '2018-10-22 19:52:27'),
-(47, 0, 1, 2, 'T shirt 1', 'This is the description of t-shirt 1.\r\nThis is the description of t-shirt 1.', 52.86, '', 'public/uploads/image/20181022/1540183964544.jpg', '', '', '', '', 1, '2018-10-22 19:52:44', '2018-11-09 22:21:47'),
-(48, 0, 1, 2, 'T shirt 2', 'This is the description of t-shirt 2.\r\nThis is the description of t-shirt 2.', 53.24, '', 'public/uploads/image/20181022/1540183976532.jpg', '', '', '', '', 1, '2018-10-22 19:52:56', '2018-10-22 19:52:56');
+(1, 2, 9, 10, 'Computer Science Book CSC510', 'This is the description of Computer Science Book 0.\r\nThis is the description of Computer Science Book 0.', 35.38, '', 'public/uploads/image/20181021/1540115039634.jpg', '', '', '', '', 1, '2018-10-22 00:43:59', '2018-10-22 01:10:33'),
+(2, 3, 9, 10, 'Computer Science Book CSC413', 'This is the description of Computer Science Book 1.\r\nThis is the description of Computer Science Book 1.', 35.76, '', 'public/uploads/image/20181021/1540116544521.jpg', '', '', '', '', 1, '2018-10-22 01:09:04', '2018-10-22 01:11:30'),
+(3, 4, 9, 10, 'Computer Science Book CSC848', 'This is the description of Computer Science Book 2.\r\nThis is the description of Computer Science Book 2.', 36.14, '', 'public/uploads/image/20181021/1540116568719.jpg', '', '', '', '', 1, '2018-10-22 01:09:28', '2018-10-22 01:11:42'),
+(4, 5, 9, 10, 'Computer Science Book CSC220', 'This is the description of Computer Science Book 3.\r\nThis is the description of Computer Science Book 3.', 36.52, '', 'public/uploads/image/20181021/1540116589960.jpg', '', '', '', '', 1, '2018-10-22 01:09:49', '2018-10-22 01:11:52'),
+(5, 6, 9, 10, 'Computer Science Book CSC648', 'This is the description of Computer Science Book 4.\r\nThis is the description of Computer Science Book 4.', 36.9, '', 'public/uploads/image/20181021/1540116604142.jpg', '', '', '', '', 1, '2018-10-22 01:10:04', '2018-10-22 01:12:02'),
+(6, 7, 9, 11, 'Math Book MATH228', 'This is the description of Math Book 0.\r\nThis is the description of Math Book 0.', 37.28, '', 'public/uploads/image/20181022/1540158367133.jpg', '', '', '', '', 1, '2018-10-22 12:46:07', '2018-10-22 12:47:33'),
+(7, 1, 9, 11, 'Math Book MATH324', 'This is the description of Math Book 1.\r\nThis is the description of Math Book 1.', 37.66, '', 'public/uploads/image/20181022/1540158381999.jpg', '', '', '', '', 1, '2018-10-22 12:46:21', '2018-10-22 12:48:18'),
+(8, 2, 9, 11, 'Math Book MATH325', 'This is the description of Math Book 2.\r\nThis is the description of Math Book 2.', 38.04, '', 'public/uploads/image/20181022/1540158398350.jpg', '', '', '', '', 1, '2018-10-22 12:46:38', '2018-10-22 12:48:07'),
+(9, 3, 9, 11, 'Math Book MATH227', 'This is the description of Math Book 3.\r\nThis is the description of Math Book 3.', 38.42, '', 'public/uploads/image/20181022/1540158412964.jpg', '', '', '', '', 1, '2018-10-22 12:46:52', '2018-10-22 12:48:00'),
+(10, 4, 9, 11, 'Math Book MATH226', 'This is the description of Math Book 4.\r\nThis is the description of Math Book 4.', 38.8, '', 'public/uploads/image/20181022/1540158424120.jpg', '', '', '', '', 1, '2018-10-22 12:47:04', '2018-10-22 12:47:49'),
+(11, 5, 9, 24, 'History Book HIST422', 'This is the description of History Book 0.\r\nThis is the description of History Book 0.', 39.18, '', 'public/uploads/image/20181022/1540172452553.jpg', '', '', '', '', 1, '2018-10-22 16:40:52', '2018-11-09 22:20:32'),
+(12, 6, 9, 24, 'History Book HIST428', 'This is the description of History Book 1.\r\nThis is the description of History Book 1.', 39.56, '', 'public/uploads/image/20181022/1540172471205.jpg', '', '', '', '', 1, '2018-10-22 16:41:11', '2018-11-09 22:20:55'),
+(13, 7, 9, 25, 'Physics Book PHYS222', 'This is the description of Physics Book 0.\r\nThis is the description of Physics Book 0.', 39.94, '', 'public/uploads/image/20181022/1540172496429.jpg', '', '', '', '', 1, '2018-10-22 16:41:36', '2018-11-09 22:21:29'),
+(14, 1, 9, 25, 'Physics Book PHYS230', 'This is the description of Physics Book 1.\r\nThis is the description of Physics Book 1.', 40.32, '', 'public/uploads/image/20181022/1540172519235.jpg', '', '', '', '', 1, '2018-10-22 16:41:59', '2018-11-09 22:21:11'),
+(15, 2, 20, 22, 'BasketBalls 0', 'This is the description of BasketBalls 0.\r\nThis is the description of BasketBalls 0.', 40.7, '', 'public/uploads/image/20181022/1540176871653.jpg', '', '', '', '', 1, '2018-10-22 17:54:31', '2018-10-22 17:54:31'),
+(16, 3, 20, 22, 'BasketBalls 1', 'This is the description of BasketBalls 1.\r\nThis is the description of BasketBalls 1.', 41.08, '', 'public/uploads/image/20181022/1540176890322.jpg', '', '', '', '', 1, '2018-10-22 17:54:50', '2018-10-22 17:54:50'),
+(17, 4, 20, 27, 'Boards Game 0', 'This is the description of Boards Game 0.\r\nThis is the description of Boards Game 0.', 41.46, '', 'public/uploads/image/20181022/1540176913237.jpg', '', '', '', '', 1, '2018-10-22 17:55:13', '2018-10-22 17:55:13'),
+(18, 5, 20, 27, 'Boards Game 1', 'This is the description of Boards Game 1.\r\nThis is the description of Boards Game 1.', 41.84, '', 'public/uploads/image/20181022/1540176935838.jpg', '', '', '', '', 1, '2018-10-22 17:55:26', '2018-10-22 17:55:35'),
+(19, 6, 20, 26, 'Cards Game 0', 'This is the description of Cards Game 0.\r\nThis is the description of Cards Game 0.', 42.22, '', 'public/uploads/image/20181022/1540176958712.jpg', '', '', '', '', 1, '2018-10-22 17:55:58', '2018-10-22 17:55:58'),
+(20, 7, 20, 26, 'Cards Game 1', 'This is the description of Cards Game 1.\r\nThis is the description of Cards Game 1.', 42.6, '', 'public/uploads/image/20181022/1540176992599.jpg', '', '', '', '', 1, '2018-10-22 17:56:32', '2018-10-22 17:56:32'),
+(21, 1, 20, 23, 'Skateboards 0', 'This is the description of Skateboards 0.\r\nThis is the description of Skateboards 0.', 42.98, '', 'public/uploads/image/20181022/1540177019582.jpg', '', '', '', '', 1, '2018-10-22 17:56:59', '2018-10-22 17:56:59'),
+(22, 2, 20, 23, 'Skateboards 1', 'This is the description of Skateboards 1.\r\nThis is the description of Skateboards 1.', 43.36, '', 'public/uploads/image/20181022/1540177038944.jpg', '', '', '', '', 1, '2018-10-22 17:57:18', '2018-10-22 17:57:18'),
+(23, 3, 12, 29, 'Adapters 0', 'This is the description of Adapters 0.\r\nThis is the description of Adapters 0.', 43.74, '', 'public/uploads/image/20181022/1540178717359.jpg', '', '', '', '', 1, '2018-10-22 18:25:17', '2018-10-22 18:25:17'),
+(24, 4, 12, 29, 'Adapters 1', 'This is the description of Adapters 1.\r\nThis is the description of Adapters 1.', 44.12, '', 'public/uploads/image/20181022/1540178737318.jpg', '', '', '', '', 1, '2018-10-22 18:25:37', '2018-10-22 18:25:37'),
+(25, 5, 12, 28, 'Cleaners 0', 'This is the description of Cleaners 0.\r\nThis is the description of Cleaners 0.', 44.5, '', 'public/uploads/image/20181022/1540178775811.jpg', '', '', '', '', 1, '2018-10-22 18:26:15', '2018-10-22 18:26:15'),
+(26, 6, 12, 28, 'Cleaners 1', 'This is the description of Cleaners 1.\r\nThis is the description of Cleaners 1.', 44.88, '', 'public/uploads/image/20181022/1540178800646.jpg', '', '', '', '', 1, '2018-10-22 18:26:40', '2018-10-22 18:26:40'),
+(27, 7, 12, 13, 'Game Controller 0', 'This is the description of Game Controller 0.\r\nThis is the description of Game Controller 0.', 45.26, '', 'public/uploads/image/20181022/1540178860377.jpg', '', '', '', '', 1, '2018-10-22 18:27:40', '2018-10-22 18:27:40'),
+(28, 1, 12, 13, 'Game Controller 1', 'This is the description of Game Controller 1.\r\nThis is the description of Game Controller 1.', 45.64, '', 'public/uploads/image/20181022/1540178908658.jpg', '', '', '', '', 1, '2018-10-22 18:28:28', '2018-10-22 18:28:28'),
+(29, 2, 12, 14, 'Kitchen 0', 'This is the description of kitchen 0.\r\nThis is the description of kitchen 0.', 46.02, '', 'public/uploads/image/20181022/1540179155429.jpg', '', '', '', '', 1, '2018-10-22 18:32:35', '2018-10-22 18:32:35'),
+(30, 3, 12, 14, 'Kitchen 1', 'This is the description of kitchen 1.\r\nThis is the description of kitchen 1.', 46.4, '', 'public/uploads/image/20181022/1540179174351.jpg', '', '', '', '', 1, '2018-10-22 18:32:54', '2018-10-22 18:32:54'),
+(31, 4, 15, 17, 'Chair 0', 'This is the description of chair 0.\r\nThis is the description of chair 0.', 46.78, '', 'public/uploads/image/20181022/1540181392573.jpg', '', '', '', '', 1, '2018-10-22 19:09:52', '2018-10-22 19:09:52'),
+(32, 5, 15, 17, 'Chair 1', 'This is the description of chair 1.\r\nThis is the description of chair 1.', 47.16, '', 'public/uploads/image/20181022/1540181408731.jpg', '', '', '', '', 1, '2018-10-22 19:10:08', '2018-10-22 19:10:08'),
+(33, 6, 15, 17, 'Chair 2', 'This is the description of chair 2.\r\nThis is the description of chair 2.', 47.54, '', 'public/uploads/image/20181022/1540182429809.jpg', '', '', '', '', 1, '2018-10-22 19:27:09', '2018-10-22 19:27:09'),
+(34, 7, 15, 32, 'Mattress 0', 'This is the description of mattress 0.\r\nThis is the description of mattress 0.', 47.92, '', 'public/uploads/image/20181022/1540182452248.jpg', '', '', '', '', 1, '2018-10-22 19:27:32', '2018-10-22 19:27:32'),
+(35, 1, 15, 32, 'Mattress 1', 'This is the description of mattress 1.\r\nThis is the description of mattress 1.', 48.3, '', 'public/uploads/image/20181022/1540182480296.jpg', '', '', '', '', 1, '2018-10-22 19:28:00', '2018-10-22 19:28:00'),
+(36, 2, 15, 32, 'Mattress 2', 'This is the description of mattress 2.\r\nThis is the description of mattress 2.', 48.68, '', 'public/uploads/image/20181022/1540182508267.jpg', '', '', '', '', 1, '2018-10-22 19:28:28', '2018-10-22 19:28:28'),
+(37, 3, 15, 16, 'Table 0', 'This is the description of table 0.\r\nThis is the description of table 0.', 49.06, '', 'public/uploads/image/20181022/1540182551966.jpg', '', '', '', '', 1, '2018-10-22 19:29:11', '2018-10-22 19:29:11'),
+(38, 4, 15, 16, 'Table 1', 'This is the description of table 1.\r\nThis is the description of table 1.', 49.44, '', 'public/uploads/image/20181022/1540182568345.jpg', '', '', '', '', 1, '2018-10-22 19:29:28', '2018-10-22 19:29:28'),
+(39, 5, 15, 16, 'Table 2', 'This is the description of table 2.\r\nThis is the description of table 2.', 49.82, '', 'public/uploads/image/20181022/1540182584464.jpg', '', '', '', '', 1, '2018-10-22 19:29:44', '2018-10-22 19:29:44'),
+(40, 6, 1, 30, 'Cap 0', 'This is the description of cap 0.\r\nThis is the description of cap 0.', 50.2, '', 'public/uploads/image/20181022/1540183643180.jpg', '', '', '', '', 1, '2018-10-22 19:46:52', '2018-10-22 19:47:23'),
+(41, 7, 1, 30, 'Cap 1', 'This is the description of cap 1.\r\nThis is the description of cap 1.', 50.58, '', 'public/uploads/image/20181022/1540183681226.jpg', '', '', '', '', 1, '2018-10-22 19:48:01', '2018-10-22 19:48:01'),
+(42, 1, 1, 30, 'Cap 2', 'This is the description of cap 2.\r\nThis is the description of cap 2.', 50.96, '', 'public/uploads/image/20181022/1540183694535.jpg', '', '', '', '', 1, '2018-10-22 19:48:14', '2018-10-22 19:48:14'),
+(43, 2, 1, 7, 'Shoes 0', 'This is the description of shoes 0.\r\nThis is the description of shoes 0.', 51.34, '', 'public/uploads/image/20181022/1540183757905.jpg', '', '', '', '', 1, '2018-10-22 19:49:17', '2018-10-22 19:49:17'),
+(44, 3, 1, 7, 'Shoes 1', 'This is the description of shoes 1.\r\nThis is the description of shoes 1.', 51.72, '', 'public/uploads/image/20181022/1540183784117.jpg', '', '', '', '', 1, '2018-10-22 19:49:45', '2018-10-22 19:49:45'),
+(45, 4, 1, 7, 'Shoes 2', 'This is the description of shoes 2.\r\nThis is the description of shoes 2.', 52.1, '', 'public/uploads/image/20181022/1540183802383.jpg', '', '', '', '', 1, '2018-10-22 19:50:02', '2018-10-22 19:50:02'),
+(46, 5, 1, 2, 'T shirt 0', 'This is the description of t-shirt 0.\r\nThis is the description of t-shirt 0.', 52.48, '', 'public/uploads/image/20181022/1540183947792.jpg', '', '', '', '', 1, '2018-10-22 19:52:27', '2018-10-22 19:52:27'),
+(47, 6, 1, 2, 'T shirt 1', 'This is the description of t-shirt 1.\r\nThis is the description of t-shirt 1.', 52.86, '', 'public/uploads/image/20181022/1540183964544.jpg', '', '', '', '', 1, '2018-10-22 19:52:44', '2018-11-09 22:21:47'),
+(48, 7, 1, 2, 'T shirt 2', 'This is the description of t-shirt 2.\r\nThis is the description of t-shirt 2.', 53.24, '', 'public/uploads/image/20181022/1540183976532.jpg', '', '', '', '', 1, '2018-10-22 19:52:56', '2018-10-22 19:52:56');
 
 -- --------------------------------------------------------
 
@@ -202,22 +202,23 @@ CREATE TABLE IF NOT EXISTS `message` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `item_id` int(11) NOT NULL,
   `from_user_id` int(11) NOT NULL,
-  `to_usre_id` int(11) NOT NULL,
+  `to_user_id` int(11) NOT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
-  `parent_id` int(11) DEFAULT NULL,
-  `lft` int(11) DEFAULT NULL,
-  `rgt` int(11) DEFAULT NULL,
-  `depth` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `ct_message_item_id_index` (`item_id`),
   KEY `ct_message_from_user_id_index` (`from_user_id`),
-  KEY `ct_message_to_usre_id_index` (`to_usre_id`),
-  KEY `ct_message_parent_id_index` (`parent_id`),
-  KEY `ct_message_lft_index` (`lft`),
-  KEY `ct_message_rgt_index` (`rgt`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  KEY `ct_message_to_usre_id_index` (`to_user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `item_id`, `from_user_id`, `to_user_id`, `content`, `created_at`, `updated_at`) VALUES
+(1, 47, 7, 6, 'Hello, is XL size available for this item?', '2018-12-07 02:05:50', '2018-12-07 02:05:50'),
+(2, 46, 7, 5, 'Hi, do you have this T-shirt with white color?', '2018-12-07 02:08:26', '2018-12-07 02:08:26');
 
 -- --------------------------------------------------------
 
@@ -272,7 +273,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `stu_id`, `avatar`, `
 (4, 'itachi', '550a141f12de6341fba65b0ad0433500', 'itachi@mail.sfsu.edu', 0, '', 0, '2018-11-12 13:44:06', '2018-11-12 13:44:06'),
 (5, 'tsunade', '5b1b68a9abf4d2cd155c81a9225fd158', 'tsunade@mail.sfsu.edu', 0, '', 0, '2018-11-22 15:52:36', '2018-11-22 15:52:36'),
 (6, 'sakura', 'f379eaf3c831b04de153469d1bec345e', 'sakura@mail.sfsu.edu', 0, '', 0, '2018-11-23 20:07:32', '2018-11-23 20:07:32'),
-(9, 'jzhao11', '96e79218965eb72c92a549dd5a330112', '1@1', 0, '', 0, '2018-12-01 23:39:56', '2018-12-01 23:39:56');
+(7, 'jzhao11', '96e79218965eb72c92a549dd5a330112', 'jzh@mail.sfsu.edu', 0, '', 0, '2018-12-01 23:39:56', '2018-12-01 23:39:56');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
