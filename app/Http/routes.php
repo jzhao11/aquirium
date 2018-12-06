@@ -47,14 +47,12 @@ Route::group(["namespace" => "Home"], function(){
     
     Route::any("/about", "HomeController@about");
     Route::any("/personal", "HomeController@personal");
-    Route::any("/logindetail", "HomeController@logindetail");
+    Route::any("/registerdetail", "HomeController@registerDetail");
+    Route::any("/logindetail", "HomeController@loginDetail");
+    Route::any("/login", "HomeController@login");
+    Route::any("/register", "HomeController@register");
+    Route::any("/logout", "HomeController@logout");
     Route::any("/dashboard", "HomeController@dashboard");
-    
-    Route::any("/test", "HomeController@test");
-    Route::any("/news", "HomeController@news");
-    Route::any("/newsdetail", "HomeController@newsdetail");
-    Route::any("/cases", "HomeController@cases");
-    Route::any("/casedetail", "HomeController@casedetail");
 });
 /*
  * end of HomeController
@@ -96,10 +94,7 @@ Route::group(["namespace" => "Home"], function(){
  * start of UserController
  */
 Route::group(["namespace" => "Home"], function(){
-    Route::any("/userretrievedetail", "UserController@userRetrieveDetail");
-    Route::any("/usercreatedetail", "UserController@userCreateDetail");
     Route::any("/userupdatedetail", "UserController@userUpdateDetail");
-    Route::any("/usercreate", "UserController@userCreate");
     Route::any("/userupdate", "UserController@userUpdate");
     Route::any("/userdelete", "UserController@userDelete");
     Route::any("/userretrieve", "UserController@userRetrieve");

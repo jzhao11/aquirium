@@ -26,7 +26,7 @@ class HomeController extends Controller {
         $filter_cond = $filter_id ? "filter_id = ".$filter_id : "filter_id >= 0";
         $item = Item::whereRaw($category_cond)
                 ->whereRaw($filter_cond)
-                ->whereRaw("status < 2")
+                ->whereRaw("status = 1")
                 ->whereRaw("title like '%".$search_txt."%'")
                 // or description like '%".$search_txt."%'
                 ->orderBy($order_by, $order)
@@ -35,15 +35,16 @@ class HomeController extends Controller {
         $empty_flag = 0;
         if (!count($item)) {
             $item = Item::whereRaw($category_cond)
-                    ->whereRaw("status < 2")
+                    ->whereRaw("status = 1")
                     ->orderBy($order_by, $order)
                     ->paginate(6);
             $empty_flag = 1;
         }
         
         $category = Category::where("depth", 0)->get();
+        $category_title = ($category_selected = Category::where("id", $category_id)->first()) ? $category_selected->title : "All";
         $filter = $category_id ? Category::where("parent_id", $category_id)->get() : $category;
-        return view("Home/index", compact("category", "filter", "item", "search_txt", "category_id", "empty_flag"));
+        return view("Home/index", compact("category", "category_title", "filter", "item", "search_txt", "category_id", "empty_flag"));
     }
     
     public function about() {
