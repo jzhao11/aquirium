@@ -9,12 +9,9 @@ $category_id = isset($category_id) ? $category_id : "";
 $category_title = isset($category_title) ? $category_title : "All";
 ?>
 
-<!-- Bootstrap CSS File -->
-<link href="<?php echo asset("public/lib/bootstrap/css/bootstrap.min.css"); ?>" rel="stylesheet">
-
 <div class="container-fluid column_center">
     <div class="row">    
-        <div class="col-xs-8 col-xs-offset-2">
+        <div class="col-xs-4 col-xs-offset-4">
         <form action="index" id="search">
     	    <div class="input-group">
                 <div class="input-group-btn search-panel">
@@ -22,6 +19,7 @@ $category_title = isset($category_title) ? $category_title : "All";
                     	<span id="search_concept"><?php echo $category_title; ?></span> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
+                    	<li><a href="#0">All</a></li>
                     <?php
                     foreach ($category as $e) {
                     ?>
@@ -29,11 +27,10 @@ $category_title = isset($category_title) ? $category_title : "All";
                     <?php
                     }
                     ?>
-                        <li><a href="#0">All</a></li>
                     </ul>
                 </div>
                 <input type="hidden" name="category_id" value="<?php echo $category_id; ?>" id="category_id">         
-                <input type="text" class="form-control" name="search_txt" id="search_txt" value="<?php echo $search_txt; ?>">
+                <input type="text" class="form-control" style="min-width: 120px" name="search_txt" id="search_txt" value="<?php echo $search_txt; ?>">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                 </span>
