@@ -2,6 +2,11 @@
 <!-- the detail of each item can be accessed by clicking "View Detail" -->
 <!-- this page is visible to registered user and admin user -->
 
+<?php
+$item = isset($item) ? $item : "";
+$i = $item->firstItem();
+?>
+
 @extends("Home.base")
 @section("bodycontent")
 <div class="main" style="background:#fff">
@@ -17,55 +22,43 @@
                   <th scope="col">Title</th>
                   <th scope="col">Seller</th>
                   <th scope="col">Price</th>
+                  <th scope="col">Status</th>
                   <th scope="col">Operation</th>
                 </tr>
                 </thead>
                 <tbody>
+                <?php
+                foreach ($item as $e) {
+                ?>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Basketball</td>
-                  <td>Perry</td>
-                  <td>$33.33</td>
-                  <td><a href="#">View Detail</a></td>
+                  <th scope="row"><?php echo $i++; ?></th>
+                  <td><?php echo $e->title; ?></td>
+                  <td><?php echo $e->username; ?></td>
+                  <td>$<?php echo $e->price; ?></td>
+                  <td>
+                  <?php
+                      if ($e->status == 1) {
+                          echo "Approved";
+                      } else if ($e->status == 0) {
+                          echo "Pending";
+                      } else {
+                          echo "Rejected";
+                      }
+                  ?>
+                  </td>
+                  <td><a href="itemupdatedetail?item_id=<?php echo $e->id; ?>">View Detail</a></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Math Book</td>
-                  <td>Jacob</td>
-                  <td>$44.33</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Cleaner</td>
-                  <td>Larry</td>
-                  <td>$66.33</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Mattress</td>
-                  <td>Patch</td>
-                  <td>$77.33</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Skateboard</td>
-                  <td>Thomas</td>
-                  <td>$88.33</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>Shoes</td>
-                  <td>Jimmy</td>
-                  <td>$99.33</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
+                <?php
+                }
+                ?>
                 </tbody>
             </table>
-        </div>
+        	<div style="text-align:right">
+        	<?php
+        	    echo $item->links();
+        	?>
+    	    </div>
+	    </div>
     </div>
 	</div>
 </div>
