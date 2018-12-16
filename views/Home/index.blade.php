@@ -3,7 +3,6 @@
 <!-- this page is also used for showing results of searching -->
 
 <?php
-$filter = isset($filter) ? $filter : "";
 $item = isset($item) ? $item : "";
 $empty_flag = isset($empty_flag) ? $empty_flag : 0;
 $search_txt = isset($search_txt) ? $search_txt : "";
@@ -56,7 +55,7 @@ $category_id = isset($category_id) ? $category_id : "";
                     <ul class="grid_2-bottom">
                     	<li class="grid_2-left"><p><small>$<?php echo $e->price; ?></small></p></li>
                     	<li class="grid_2-right">
-                    		<a href="<?php echo asset("messagecreatedetail?item_id=".$e->id); ?>" target="contact_<?php echo $e->id; ?>">
+                    		<a href="<?php echo asset("messagecreatedetail?item_id=".$e->id."&empty_flag=".$empty_flag."&search_txt=".$search_txt); ?>" target="contact_<?php echo $e->id; ?>">
                     		<div class="btn btn-primary btn-normal btn-inline" target="_self" title="Contact">Contact Seller</div>
                     		</a>
                     	</li>
