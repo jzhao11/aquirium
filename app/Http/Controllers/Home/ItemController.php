@@ -33,7 +33,8 @@ class ItemController extends Controller {
                         ->paginate(10);                     // 10 items in each page
             }
             $leftnavbar = "item";
-            return view("Home/itemRetrieve", compact("item", "leftnavbar"));
+            $category = Category::where("depth", 0)->get();
+            return view("Home/itemRetrieve", compact("item", "leftnavbar", "category"));
         }
     }
     
