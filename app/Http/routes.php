@@ -60,7 +60,6 @@ Route::group(["namespace" => "Home"], function(){
 
 /*
  * start of CategoryController
- */
 Route::group(["namespace" => "Home"], function(){
     Route::any("/categorycreatedetail", "CategoryController@categorycreatedetail");
     Route::any("/categoryupdatedetail", "CategoryController@categoryupdatedetail");
@@ -69,7 +68,6 @@ Route::group(["namespace" => "Home"], function(){
     Route::any("/categoryupdate", "CategoryController@categoryupdate");
     Route::any("/categorydelete", "CategoryController@categorydelete");
 });
-/*
  * end of CategoryController
  */
 
