@@ -8,6 +8,8 @@ $message = isset($message) ? $message : "";
 
 @extends("Home.base")
 @section("bodycontent")
+@include("Home.searchbar")
+
 <div class="container">
 	<div class="col-sm-6 col-sm-offset-3">
 		<h3>MESSAGE DETAILS</h3><br>

@@ -9,6 +9,7 @@ $item = isset($item) ? $item : "";
 
 @extends("Home.base")
 @section("bodycontent")
+@include("Home.searchBar")
 <div class="container">
 	<div class="col-sm-6 col-sm-offset-3">
 		<h3>SEND A MESSAGE TO THE SELLER</h3><br>
