@@ -49,8 +49,9 @@ class CategoryController extends Controller {
         return redirect()->action("Home\\CategoryController@categoryretrieve");
     }
     
-    public function categorydelete($id) {
-        $root = Category::where("id", $id)->first();
+    public function categorydelete() {
+        $category_id = Input::get("category_id");
+        $root = Category::where("id", $category_id)->first();
         $root->delete();
         
         return redirect()->action("Home\\CategoryController@categoryretrieve");
