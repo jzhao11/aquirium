@@ -5,6 +5,8 @@
 
 <?php
 $item = isset($item) ? $item : "";
+$empty_flag = isset($empty_flag) ? $empty_flag : 0;
+$search_txt = isset($search_txt) ? $search_txt : "";
 ?>
 
 @extends("Home.base")
@@ -52,7 +54,7 @@ $item = isset($item) ? $item : "";
                         	<p><?php echo $item->description; ?></p>
         				</div>
         				<div class="form-group">
-        					<a href="<?php echo asset("messagecreatedetail?to_user_id=".$item->user_id."&item_id=".$item->id); ?>" class="btn btn-primary" target="message_<?php echo $item->id; ?>">CONTACT SELLER</a>
+        					<a href="<?php echo asset("messagecreatedetail?item_id=".$item->id."&empty_flag=".$empty_flag."&search_txt=".$search_txt); ?>" class="btn btn-primary" target="message_<?php echo $item->id; ?>">CONTACT SELLER</a>
     					</div>
         			</div>
     			</div>

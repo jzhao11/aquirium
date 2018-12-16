@@ -9,6 +9,8 @@ $i = $item->firstItem();
 
 @extends("Home.base")
 @section("bodycontent")
+@include("Home.searchbar")
+
 <div class="main" style="background:#fff">
 	<div class="content_top">
     <div class="container">
