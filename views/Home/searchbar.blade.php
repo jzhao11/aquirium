@@ -32,7 +32,7 @@ $category_title = isset($category_title) ? $category_title : "All";
                 <input type="hidden" name="category_id" value="<?php echo $category_id; ?>" id="category_id">         
                 <input type="text" class="form-control" style="min-width: 120px" name="search_txt" id="search_txt" value="<?php echo $search_txt; ?>">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                    <button class="btn btn-default" type="button" onclick="search()"><span class="glyphicon glyphicon-search"></span></button>
                 </span>
             </div>
         </form>

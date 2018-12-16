@@ -12,9 +12,20 @@ $i = $item->firstItem();
 <div class="main" style="background:#fff">
 	<div class="content_top">
     <div class="container">
-    
     	@include("Home.leftNavBar")
         <div class="col-md-9 content_right">
+            <p style="font-size:24px">DASHBOARD</p>
+            <?php
+            if (session("user_priority")) {
+            ?>
+            	<p>To approve/reject a posted item, click <b>View Detail</b></p>
+            <?php
+            } else {
+            ?>
+            	<p>To edit a posted item, click <b>View Detail</b></p>
+            <?php
+            }
+            ?>
             <table class="table">
                 <thead>
                 <tr>

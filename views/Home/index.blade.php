@@ -17,13 +17,18 @@ $category_id = isset($category_id) ? $category_id : "";
 	<div class="content_top">
   	<div class="container">
 		<div class="col-md-12 content_right">
-		<div style="text-align:right">
-	    <?php
-        if ($empty_flag) {
-	        echo "Sorry, items not found. Here are some newly posted items. ";
-	    }
-	    echo "Showing ".$item->firstItem()." to ".$item->lastItem()." out of ".$item->total();
-	    ?>
+		<div>
+			<div class="pull-left" style="font-size:24px;">
+				SFSU Online Marketplace
+			</div>
+    		<div style="text-align:right">
+    	    <?php
+            if ($empty_flag) {
+    	        echo "Sorry, items not found. Here are some new items<br>";
+    	    }
+    	    echo "Showing ".$item->firstItem()." to ".$item->lastItem()." out of ".$item->total();
+    	    ?>
+    	    </div>
 	    </div>
 	    <div style="text-align:right">
     	<?php
@@ -42,7 +47,7 @@ $category_id = isset($category_id) ? $category_id : "";
         <div class="col-md-4 top_grid1-box1" style="padding-right:0; padding-left:0;">
 	     	<div class="grid_1">
                 <div class="b-link-stroke b-animate-go thickbox thumbnail">
-                    <a href="<?php echo asset("itemretrievedetail?item_id=".$e->id); ?>" target="item_<?php echo $e->id; ?>">
+                    <a href="<?php echo asset("itemretrievedetail?item_id=".$e->id."&empty_flag=".$empty_flag."&search_txt=".$search_txt); ?>" target="item_<?php echo $e->id; ?>">
                     <img src="<?php echo asset($e->title_img); ?>" class="img-responsive" alt="" style="height:12em"/>
                     </a>
                 </div>
@@ -52,7 +57,7 @@ $category_id = isset($category_id) ? $category_id : "";
                     	<li class="grid_2-left"><p><small>$<?php echo $e->price; ?></small></p></li>
                     	<li class="grid_2-right">
                     		<a href="<?php echo asset("messagecreatedetail?item_id=".$e->id); ?>" target="contact_<?php echo $e->id; ?>">
-                    		<div class="btn btn-primary btn-normal btn-inline" target="_self" title="Contact">Contact</div>
+                    		<div class="btn btn-primary btn-normal btn-inline" target="_self" title="Contact">Contact Seller</div>
                     		</a>
                     	</li>
                     	<div class="clearfix"></div>

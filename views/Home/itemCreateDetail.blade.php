@@ -14,61 +14,65 @@ $category = isset($category) ? $category : "";
 
 <div class="about">
     <div class="container">
-        <div class="col-sm-8 col-sm-offset-2">
-        <h3>POST YOUR ITEM FOR SALE</h3>
-		<p>Required fields are marked with *</p><br>
-		<form enctype="multipart/form-data" method="post" action="itemcreate" id="itemcreate" data-toggle="validator" role="form">
-            <div class="form-group">
-            	<label for="title" class="control-label">Title *</label>
-            	<input type="text" class="form-control" id="title" name="title" aria-describedby="title" placeholder="Enter title" required>
-            	<div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group">
-                <label for="category_id" class="control-label">Category *</label>
-                <select class="form-control" id="category_id" name="category_id" required>
-                	<option value="">Select a Category</option>
-                <?php
-                foreach ($category as $e) {
-                ?>
-        			<option value="<?php echo $e->id; ?>">
-                    <?php echo $e->title; ?>
-        			</option>
-                <?php
-                }
-                ?>
-                </select>
-                <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group">
-            	<label for="price" class="control-label">Price *</label>
-            	<input type="number" step="0.01" class="form-control" id="price" name="price" aria-describedby="price" placeholder="Enter price" required>
-            	<div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group">
-                <label for="description" class="control-label">Description</label>
-                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description"></textarea>
-            	<div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group">
-                <label for="title_img" class="control-label">Title Image *</label>
-                <input type="file" class="form-control-file" id="title_img" name="title_img" required>
-                <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group">
-            	Your posting has to be approved at first by the admin.
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn" style="padding: 3px 12px" onclick="cancel()">CANCEL</button>
-            	<button type="submit" class="btn btn-primary pull-right">POST</button>
-            </div>
-        </form>
+        <div class="col-sm-6 col-sm-offset-3">
+            <p style="font-size:24px">POST YOUR ITEM FOR SALE</p>
+    		<p>Required fields are marked with *</p><br>
+    		<form enctype="multipart/form-data" method="post" action="itemcreate" id="itemcreate" data-toggle="validator" role="form">
+                <div class="form-group">
+                	<label for="title" class="control-label">Title *</label>
+                	<input type="text" class="form-control" id="title" name="title" aria-describedby="title" placeholder="Enter title" required>
+                	<div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="category_id" class="control-label">Category *</label>
+                    <select class="form-control" id="category_id" name="category_id" required>
+                    	<option value="">Select a Category</option>
+                    <?php
+                    foreach ($category as $e) {
+                    ?>
+            			<option value="<?php echo $e->id; ?>">
+                        <?php echo $e->title; ?>
+            			</option>
+                    <?php
+                    }
+                    ?>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                	<label for="price" class="control-label">Price *</label>
+                	<input type="number" step="0.01" class="form-control" id="price" name="price" aria-describedby="price" placeholder="Enter price" required>
+                	<div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="control-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description"></textarea>
+                	<div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="title_img" class="control-label">Title Image *</label>
+                    <input type="file" class="form-control-file" id="title_img" name="title_img" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                	Your posting has to be firstly approved by the admin.<br>
+                	It may take 24 hrs. Thank you for your patience.<br>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn" style="padding: 3px 12px" onclick="cancel()">CANCEL</button>
+                	<button type="submit" class="btn btn-primary pull-right">POST</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 <script>
 $("#itemcreate").validator().on("submit", function (e) {
+	var user_id = "<?php echo session("user_id"); ?>";
     if (!e.isDefaultPrevented()) {
-    	alert("It may take up to 24 hrs to be approved. Thank you.");
+        if (user_id == "") {
+        	alert("You have to register/login to post an item.");
+        }
     }
 });
 </script>
