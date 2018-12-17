@@ -4,30 +4,20 @@
 according to different user behaviors -->
 <!-- failure of registration/login will stay on this page -->
 
-<?php
-$item = isset($item) ? $item : "";
-$message = isset($message) ? $message : "";
-?>
-
 @extends("Home.base")
 @section("bodycontent")
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript" src="<?php echo asset("public/lib/bootstrap/js/validator.js"); ?>"></script>
 
 <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-6 col-sm-offset-3">
 	    <h3>REGISTRATION</h3>
 		<p>Required fields are marked with *</p><br>
         <form id="register" data-toggle="validator" role="form">
             <div class="form-group">
-                <label for="username" class="control-label">Usernme *</label>
+                <label for="username" class="control-label">Username *</label>
                 <input type="text" class="form-control" name="username" id="username" data-minlength="4" placeholder="Enter Username" data-error="Minimum of 4 characters" required>
             	<div class="help-block with-errors">Minimum of 4 characters</div>
-            </div>
-            <div class="form-group">
-            	<label for="email" class="control-label">Email *</label>
-            	<input type="email" class="form-control" name="email" id="email" placeholder="Enter Email" data-error="This email address is invalid." required>
-            	<div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
             	<label for="stu_id" class="control-label">SFSU ID</label>
@@ -55,8 +45,6 @@ $message = isset($message) ? $message : "";
             <div class="form-group">
             	<button type="submit" class="btn btn-primary">REGISTER</button>
             </div>
-            <input type="hidden" id="item" value="<?php echo $item; ?>">
-            <input type="hidden" id="message" value="<?php echo $message; ?>">
         </form>
     </div>
 	<div class="clearfix"></div>
@@ -70,23 +58,21 @@ $("#register").validator().on("submit", function (e) {
 });
 
 function register(){
+	var redirection = "<?php echo session("redirection"); ?>";
     $.ajax ({
         url: "<?php echo url("register")?>",
         type: "POST",
         data: {
             "username":$("#username").val(),
 			"password":$("#password").val(),
-			"email":$("#email").val(),
-			"stu_id":$("stu_id").val(),
-			"item":$("#item").val(),
-			"message":$("#message").val()
+			"stu_id":$("#stu_id").val()
 		},
         success: function (rst) {
             if (rst == -1) {
 				alert("This username already existed!");
             } else {
-            	message("You have successfully registered!");
-                location.href = rst;
+            	alert("You have successfully registered!");
+            	location.href = redirection;
             }
         }
     });

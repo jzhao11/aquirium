@@ -2,14 +2,22 @@
 <!-- the detail of each message can be accessed by clicking "View Detail" -->
 <!-- this page is visible to registered user and admin user -->
 
+<?php
+$message = isset($message) ? $message : "";
+$i = $message->firstItem();
+?>
+
 @extends("Home.base")
 @section("bodycontent")
+@include("Home.searchbar")
+
 <div class="main" style="background:#fff">
 	<div class="content_top">
     <div class="container">
-    
     	@include("Home.leftNavBar")
         <div class="col-md-9 content_right">
+        	<p style="font-size:24px">DASHBOARD</p>
+        		<p>To view the detail of a message, click <b>View Detail</b></p>
             <table class="table">
                 <thead>
                 <tr>
@@ -21,50 +29,26 @@
                 </tr>
                 </thead>
                 <tbody>
+                <?php
+                foreach ($message as $e) {
+                ?>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Perry</td>
-                  <td>Naomi</td>
-                  <td>2018-11-09</td>
-                  <td><a href="#">View Detail</a></td>
+                  <th scope="row"><?php echo $i++; ?></th>
+                  <td><?php echo $e->from_username; ?></td>
+                  <td><?php echo $e->to_username; ?></td>
+                  <td><?php echo substr($e->created_at, 0, 10); ?></td>
+                  <td><a href="messageupdatedetail?message_id=<?php echo $e->id; ?>">View Detail</a></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>2018-11-10</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>Bird</td>
-                  <td>2018-11-11</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Patch</td>
-                  <td>Mike</td>
-                  <td>2018-11-12</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Thomas</td>
-                  <td>Harry</td>
-                  <td>2018-11-13</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>Jimmy</td>
-                  <td>Clark</td>
-                  <td>2018-11-14</td>
-                  <td><a href="#">View Detail</a></td>
-                </tr>
+                <?php
+                }
+                ?>
                 </tbody>
             </table>
+            <div style="text-align:right">
+        	<?php
+        	    echo $message->links();
+        	?>
+    	    </div>
         </div>
     </div>
 	</div>

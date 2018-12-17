@@ -3,7 +3,6 @@
 <!-- this page is also used for showing results of searching -->
 
 <?php
-$filter = isset($filter) ? $filter : "";
 $item = isset($item) ? $item : "";
 $empty_flag = isset($empty_flag) ? $empty_flag : 0;
 $search_txt = isset($search_txt) ? $search_txt : "";
@@ -16,56 +15,19 @@ $category_id = isset($category_id) ? $category_id : "";
 <div class="main">
 	<div class="content_top">
   	<div class="container">
-        <!-- 
-        <div class="col-md-3 sidebar_box">
-        <div class="sidebar">
-			<div class="menu_box">
-		    <h3 class="menu_head">Filters</h3>
-			  <ul class="menu">
-			  <?php
-			  foreach ($filter as $e) {
-			  ?>
-			  		<li><a href="#" onclick="filter('<?php echo $e->id; ?>')">
-			  		<?php
-			  		echo $e->title; 
-			  		?>
-			  		</a></li>
-	          <?php
-			  }
-			  ?>
-			</ul>
-        </div>
-        <script type="text/javascript">
-			$(function() {
-			    var menu_ul = $('.menu > li > ul'),
-			           menu_a  = $('.menu > li > a');
-			    menu_ul.hide();
-			    menu_a.click(function(e) {
-			        e.preventDefault();
-			        if(!$(this).hasClass('active')) {
-			            menu_a.removeClass('active');
-			            menu_ul.filter(':visible').slideUp('normal');
-			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-			        } else {
-			            $(this).removeClass('active');
-			            $(this).next().stop(true,true).slideUp('normal');
-			        }
-			    });
-			
-			});
-		</script>
-        </div>
-        <div class="tlinks"></div>
-        </div>
-	    -->
 		<div class="col-md-12 content_right">
-		<div style="text-align:right">
-	    <?php
-        if ($empty_flag) {
-	        echo "Sorry, items not found. Here are some newly posted items. ";
-	    }
-	    echo "Showing ".$item->firstItem()." to ".$item->lastItem()." out of ".$item->total();
-	    ?>
+		<div>
+			<div class="pull-left" style="font-size:24px;">
+				SFSU Online Marketplace
+			</div>
+    		<div style="text-align:right">
+    	    <?php
+            if ($empty_flag) {
+    	        echo "Sorry, items not found. Here are some new items<br>";
+    	    }
+    	    echo "Showing ".$item->firstItem()." to ".$item->lastItem()." out of ".$item->total();
+    	    ?>
+    	    </div>
 	    </div>
 	    <div style="text-align:right">
     	<?php
@@ -76,7 +38,6 @@ $category_id = isset($category_id) ? $category_id : "";
     	}
     	?>
 	    </div>
-	    <br>
 	    <div class="top_grid2">
 	    <?php
 	    $i = 0;
@@ -85,7 +46,7 @@ $category_id = isset($category_id) ? $category_id : "";
         <div class="col-md-4 top_grid1-box1" style="padding-right:0; padding-left:0;">
 	     	<div class="grid_1">
                 <div class="b-link-stroke b-animate-go thickbox thumbnail">
-                    <a href="<?php echo asset("itemretrievedetail?id=".$e->id); ?>" target="item_<?php echo $e->id; ?>">
+                    <a href="<?php echo asset("itemretrievedetail?item_id=".$e->id."&empty_flag=".$empty_flag."&search_txt=".$search_txt); ?>" target="item_<?php echo $e->id; ?>">
                     <img src="<?php echo asset($e->title_img); ?>" class="img-responsive" alt="" style="height:12em"/>
                     </a>
                 </div>
@@ -94,8 +55,8 @@ $category_id = isset($category_id) ? $category_id : "";
                     <ul class="grid_2-bottom">
                     	<li class="grid_2-left"><p><small>$<?php echo $e->price; ?></small></p></li>
                     	<li class="grid_2-right">
-                    		<a href="<?php echo asset("messagecreatedetail?to_user_id=".$e->user_id."&item_id=".$e->id); ?>" target="contact_<?php echo $e->id; ?>">
-                    		<div class="btn btn-primary btn-normal btn-inline" target="_self" title="Contact">Contact</div>
+                    		<a href="<?php echo asset("messagecreatedetail?item_id=".$e->id."&empty_flag=".$empty_flag."&search_txt=".$search_txt); ?>" target="contact_<?php echo $e->id; ?>">
+                    		<div class="btn btn-primary btn-normal btn-inline" target="_self" title="Contact">Contact Seller</div>
                     		</a>
                     	</li>
                     	<div class="clearfix"></div>

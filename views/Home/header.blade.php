@@ -8,6 +8,7 @@
 <div class="container">
     <div class="navbar-header">
 		<a href="<?php echo asset("index"); ?>" class="navbar-brand" style="color:#EE9A00">AQUIRIUM</a>
+    	<p class="navbar-text">SFSU Software Engineering Project (Demonstration Only)</p>
     </div>
     <div class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-right">

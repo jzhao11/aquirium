@@ -42,7 +42,7 @@
 				<li><a>Privacy Policy</a></li>
 				<li><a>Terms of Service</a></li>
 				<li><a>Contact Us</a></li>
-				<li><a>Support & FAQ</a></li>
+				<li><a>Support</a></li>
 			</ul>
 		</div>
 		<div class="copy">
