@@ -1,6 +1,6 @@
 # http://54.183.220.150
-# A Buy-Sell Web Application for SFSU
-# Contact: christianz0991@gmail.com
+# A Buy-Sell Web Application for SFSU: Aquirium
+# Email: christianz0991@gmail.com
 # Team Members:
 # Jianfei Zhao (Team Leader)
 # Feras Alazzeh (Back-end Leader)
