@@ -1,4 +1,4 @@
-# http://54.183.220.150
+# http://54.183.220.150/sfsubuysell
 # A Buy-Sell Web Application for SFSU: Aquirium
 # Email: christianz0991@gmail.com
 # Team Members:
